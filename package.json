@@ -1,0 +1,57 @@
+{
+  "name": "music-bot-example",
+  "version": "1.1.0",
+  "description": "A dedicated music bot example project for Zhycorp Development made by iCrawl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhycorp/music-bot-example.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "NodeJS",
+    "Npm",
+    "Zhycorp"
+  ],
+  "author": "iCrawl",
+  "license": "by-nc-nd/4.0",
+  "bugs": {
+    "url": "https://github.com/zhycorp/music-bot-example/issues"
+  },
+  "homepage": "https://github.com/zhycorp/music-bot-example#readme",
+  "engines": {
+    "node": "12.x"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord.js": "^12.5.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-opus": "^0.3.3",
+    "opusscript": "^0.0.7",
+    "simple-youtube-api": "^5.2.1",
+    "ytdl-core": "^4.1.0",
+    "fs": "^0.0.2",
+    "moment": "^2.29.1",
+    "snekfetch": "^4.0.4",
+    "pretty-ms": "^7.0.1",
+    "ms": "^2.1.2",
+    "enmap": "^5.8.1",
+    "solenolyrics": "^5.0.0",
+    "adf.ly": "^1.2.0",
+    "gifs-pro": "^1.0.0",
+    "random": "^2.2.0",
+    "quick.db": "^7.1.2",
+    "node-fetch": "^2.6.1",
+    "hastebin-save": "^1.0.0",
+    "alexa-bot-api": "^0.1.4",
+    "os": "^0.1.1"
+  },
+  "optionalDependencies": {
+    "@discordjs/uws": "^11.149.1"
+  }
+}
