@@ -84,7 +84,7 @@ __Bot Owner Only__
 [**JOIN OUR SUPPORT SERVER**](https://discord.gg/kBPpv47EJp)`
       )
       .setImage("https://i.imgur.com/CjNPEda.gif")
-      .setFooter("©️ 2020 Saber Bot");
+      .setFooter("©️ 2020 Lejhand");
     message.channel.send(helpembed);
   }
 }
