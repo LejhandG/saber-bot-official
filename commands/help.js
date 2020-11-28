@@ -31,8 +31,8 @@ __Invites Commands__
 __Moderation Commands__
 \`ban\`, \`kick\`, \`mute\`, \`lockdown\`
 \`sofban\`, \`warn\`, \`unmute\`, \`role\`
-\`slowmode\`, \`createrole\`, \`muteall\`
-\`unmute\`, \`purge\`, \`unmuteall\`
+\`slowmode\`, \`createrole\`
+\`unmute\`, \`purge\`
 \`createtext\`, \`createvoice\`
 \`createcategory\`
 
