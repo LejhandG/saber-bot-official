@@ -29,7 +29,7 @@ bot.on("shardDisconnect", (event, id) =>
   )
 );
 bot.on("shardReconnecting", id =>
-  console.log(`[SHARD] Shard ${id} reconnecting...`)
+  console.log(`[SHARD] Shard ${id} is reconnecting...`)
 );
 
 const commandFile = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
