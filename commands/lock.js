@@ -1,5 +1,5 @@
 module.exports = {
-    name: "lockdown",
+    name: "lock",
 description: "Lock the channel",
 alias: ["lock"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
@@ -33,10 +33,8 @@ if(!check.has("SEND_MESSAGES")) {
   channel.updateOverwrite(message.guild.id, {
     SEND_MESSAGES: true,
   }).then(() => {
-        message.reply('Locked! :thumbsup:')
-    }).then(() => {
-message.reply('Unlocked! :thumbsup:')  
-}) 
+        message.reply('Unlocked! :thumbsup:')
+    })
  
  return;
 }
