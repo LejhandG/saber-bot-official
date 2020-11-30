@@ -26,7 +26,7 @@ __Chat Commands__
 \`chat\`
 
 __Invites Commands__
-\`invites\`, \`test\`
+\`invites\`
 
 __Moderation Commands__
 \`ban\`, \`kick\`, \`mute\`, \`lockdown\`
