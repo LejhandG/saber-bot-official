@@ -29,7 +29,7 @@ __Invites Commands__
 \`invites\`
 
 __Moderation Commands__
-\`ban\`, \`kick\`, \`mute\`, \`lockdown\`
+\`ban\`, \`kick\`, \`mute\`, \`lock\`
 \`sofban\`, \`warn\`, \`unmute\`, \`role\`
 \`slowmode\`, \`createrole\`
 \`unmute\`, \`purge\`
