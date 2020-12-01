@@ -8,11 +8,11 @@ module.exports = {
     let user = message.mentions.users.first()
   if (!user) user = message.author
 
-
-
+  let avatar = user.displayAvatarURL({size: 4096, dynamic: true});
 
   let embed = new MessageEmbed()
-  .setAuthor(`${user.tag}`, user.displayAvatarURL({size: 2048}))
+  .setAuthor(`${user.tag}`, user.displayAvatarURL({size: 4096}))
+  .setDescription(`[Avatar URL of **${user.tag}**](${avatar})`)
   .setImage(user.displayAvatarURL({ dynamic: true}))
   .setColor("RANDOM")
   .setFooter("Command used by " + message.author.tag)
