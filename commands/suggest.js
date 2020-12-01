@@ -10,7 +10,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let name = args.slice(1).join(' ');
   if (name.length < 1) return message.reply('Write some suggestions !!');
   
-  const hook = new Discord.WebhookClient('7780686781115793428', 'pQj8A0w1nZvzodMD3vnu1DtNg0tXgjZWx_EO5403covFgFhg-eZeWm6XRALO7dTfnJec');
+  const hook = new Discord.WebhookClient('780686781115793428', 'pQj8A0w1nZvzodMD3vnu1DtNg0tXgjZWx_EO5403covFgFhg-eZeWm6XRALO7dTfnJec');
   
   let user = message.guild.members.cache.get(args[0])
   if (!user) user = message.author
