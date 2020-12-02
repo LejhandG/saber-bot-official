@@ -16,10 +16,17 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let embed = new MessageEmbed()
     .setAuthor(user.tag, user.displayAvatarURL())
     .setDescription(user)
+    .addField('User', [
+      `**❯ Username:** ${user.username}`,
+      `**❯ Discriminator:** ${user.discriminator}`,
+      `**❯ ID:** ${user.id}`,
+      `**❯ Avatar:** [Link to avatar](${user.displayAvatarURL({ dynamic: true })})`,
+      `**❯ Time Created:** ${moment(user.createdTimestamp).format('LT')} ${moment(user.createdTimestamp).format('LL')} ${moment(user.createdTimestamp).fromNow()}`,
+      `\u200b`
+    ])
     .addField(`Joined`, moment(message.guild.member(user).joinedAt).format("llll"),true)
     .setThumbnail(user.displayAvatarURL())
     .addField("Join Position", joinPos.findIndex(obj => obj.user.id === user.id) === 0 ? 1 : joinPos.findIndex(obj => obj.user.id === user.id),true)
-    .addField(`Registered`, moment(user.createdAt).format("llll"),true)
     .addField(`Roles [${message.guild.members.cache.get(user.id).roles.size}]`, message.guild.members.cache.get(user.id).roles.cache.map(r => r.toLocaleString()).join(" "))
     .setTimestamp()
     .setFooter(user.id)
