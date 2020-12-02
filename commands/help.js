@@ -35,6 +35,7 @@ __Moderation Commands__
 \`unmute\`, \`purge\`
 \`createtext\`, \`createvoice\`
 \`createcategory\`, \`hackban\`
+\`unban\`
 
 __Fun Commands__
 \`meme\`, \`roast\`, \`amongus\`
