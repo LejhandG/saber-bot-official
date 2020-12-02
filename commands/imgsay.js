@@ -11,7 +11,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
   
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
-      .setImage("https://flamingtext.com/net-fu/proxy_form.cgi?script=3d-logo&text=" + args.slice(1, args.length + 1).join(" ") + "+&_loc=generate&imageoutput=true")
+      .setImage("https://flamingtext.com/net-fu/proxy_form.cgi?script=3d-logo&text=" + args.slice(1, args.length + 1).join("+") + "+&_loc=generate&imageoutput=true")
       .setFooter("Command used by " + message.author.tag)
     message.channel.send(helpembed);
 }
