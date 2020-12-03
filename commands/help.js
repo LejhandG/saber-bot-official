@@ -39,7 +39,7 @@ __Moderation Commands__
 
 __Fun Commands__
 \`meme\`, \`roast\`, \`amongus\`
-\`8ball\`, \`dadjokes\`
+\`8ball\`, \`dadjokes\`, \`coin\`
 
 __Image Commands__
 \`spongeburn\`, \`imgsay\`, \`cat\`
