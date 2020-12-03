@@ -35,11 +35,11 @@ __Moderation Commands__
 \`unmute\`, \`purge\`
 \`createtext\`, \`createvoice\`
 \`createcategory\`, \`hackban\`
-\`unban\`
+\`unban\`, \`say\`
 
 __Fun Commands__
 \`meme\`, \`roast\`, \`amongus\`
-\`8ball\`
+\`8ball\`, \`dadjokes\`
 
 __Image Commands__
 \`spongeburn\`, \`imgsay\`, \`cat\`
