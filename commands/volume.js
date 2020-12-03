@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Volume",
+  name: "volume",
   description: "Set the bot song volume",
   alias: ["vol", "volume"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
