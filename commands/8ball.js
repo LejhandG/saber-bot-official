@@ -20,7 +20,18 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
         "Yes, ofcourse",
         "Wtf, are you serious",
         "Probably",
-	    "Probably not",
+	"Probably not",
+	"Dont know, try again",
+        "Of course no, try again maybe",
+        "I mean, i guess so",
+        "If you say so",
+        "Im not saying anything but you know the answer",
+        "Definately not",
+        "Its a possibility",
+        "A huge chance",
+        "A small chance",
+        "You better hope so",
+        "You better not hope so"
       ];
       let response =
         responses[Math.floor(Math.random() * responses.length - 1)];
