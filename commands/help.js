@@ -50,6 +50,7 @@ __Image Commands__
 \`emojigen\`, \`fact\`, \`captcha\`
 \`chalk\`, \`caution\`, \`genie\`
 \`ifthosekids\`, \`trumptweet\`
+\`dog\`
 
 __Search Commands__
 \`pokemon\`
