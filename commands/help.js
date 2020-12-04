@@ -49,7 +49,7 @@ __Image Commands__
 \`watermeme\`, \`mcdc\`, \`call\`
 \`emojigen\`, \`fact\`, \`captcha\`
 \`chalk\`, \`caution\`, \`genie\`
-\`ifthosekids\`
+\`ifthosekids\`, \`trumptweet\`
 
 __Search Commands__
 \`pokemon\`
