@@ -69,6 +69,7 @@ __Misc Commands__
 
 __Embed Commands__
 \`say\`, \`embed\`, \`rules\`
+\`announce\`
 
 __API Commands__
 \`ping\`, \`uptime\`
