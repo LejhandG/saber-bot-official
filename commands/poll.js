@@ -5,7 +5,9 @@ module.exports = {
 description: "Poll Command",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play, client) => {
-  
+    
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
+    
   let polltimer = args.slice(1).join(' ');
   if (polltimer.length < 1) return message.reply('Write the time for which the poll should be in milli-seconds !');
   
