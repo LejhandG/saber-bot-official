@@ -37,6 +37,10 @@ __Moderation Commands__
 \`createcategory\`, \`hackban\`
 \`unban\`
 
+__Ticket Commands__
+\`tnew\`, \`tclose\`, \`trole\`
+\`tcategory\`, \`tadduser\`
+
 __Fun Commands__
 \`meme\`, \`roast\`, \`amongus\`
 \`8ball\`, \`dadjokes\`, \`coin\`
