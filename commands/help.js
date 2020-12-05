@@ -20,7 +20,7 @@ __Music Commands__
 \`search\` > **\`search [title]\`**
 \`skip\`, \`stop\`,  \`pause\`, \`resume\`
 \`nowplaying\`, \`queue\`, \`volume\`
-\`loop\`, \`lyrics\`
+\`lyrics\`
 
 __Chat Commands__
 \`chat\`
