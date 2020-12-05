@@ -60,7 +60,7 @@ __Utility Commands__
 
 __Info Commands__
 \`serverinfo\`, \`whois\`, \`avatar\`
-\`stats\`
+\`stats\`, \`roles\`
 
 __Misc Commands__
 \`invite\`, \`support\`, \`website\`
