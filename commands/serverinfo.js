@@ -21,7 +21,8 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
       "us-east": "U.S. East",
       "us-south": "U.S. South",
       "us-west": "U.S. West",
-      "eu-west": "Western Europe"
+      "eu-west": "Western Europe",
+      "india" : "India"
     }
     
     // Members
