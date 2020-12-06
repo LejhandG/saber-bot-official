@@ -38,6 +38,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
       let Embed = new MessageEmbed()
         .setTitle(`8Ball!`)
         .setDescription(`Your question: ${question}\nMy reply: ${response}`)
+        .setFooter("Command used by " + message.author.tag)
         .setColor(`RANDOM`);
       message.channel.send(Embed);
     }
