@@ -63,6 +63,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     .setDescription(jokes[Math.floor(Math.random() * jokes.length)])
 
     .setColor("0x#FF0000")
+    .setFooter("Command used by " + message.author.tag)
 
     message.channel.send(DAD);
 
