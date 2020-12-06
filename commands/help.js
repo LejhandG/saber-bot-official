@@ -72,8 +72,8 @@ __Misc Commands__
 \`syntax\`
 
 __Embed Commands__
-\`say\`, \`embed\`, \`rules\`
-\`announce\`
+\`say\`, \`advancedembed\`, \`rules\`
+\`announce\`, \`embed\`, \`imageembed\`
 
 __API Commands__
 \`ping\`, \`uptime\`
