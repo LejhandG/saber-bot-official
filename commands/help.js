@@ -69,7 +69,7 @@ __Info Commands__
 __Misc Commands__
 \`invite\`, \`support\`, \`website\`
 \`setnick\`, \`botnick\`, \`donate\`
-\`syntax\`
+\`syntax\`, \`vote\`
 
 __Embed Commands__
 \`say\`, \`advancedembed\`, \`rules\`
