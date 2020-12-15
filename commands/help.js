@@ -54,6 +54,8 @@ __Image Commands__
 \`emojigen\`, \`fact\`, \`captcha\`
 \`chalk\`, \`caution\`, \`genie\`
 \`ifthosekids\`, \`trumptweet\`
+\`shoot\`, \`stonks\`, \`disgusting\`
+\`grave\`, \`smart\`, \`scared\`
 
 __Search Commands__
 \`pokemon\`
