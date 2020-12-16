@@ -1,3 +1,5 @@
+const { MessageEmbed } = require('discord.js')
+
 module.exports = {
   name: "kick",
   description: "Kick user",
@@ -6,11 +8,17 @@ module.exports = {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
+      const modavt = message.author.displayAvatarURL({ format: 'png' });
+      const victim = user.displayAvatarURL({ format: 'png' });
       if (member) {
         member
           .kick("Optional reason that will display in the audit logs")
           .then(() => {
-            message.reply(`Successfully kicked ${user.tag}`);
+            let embed = new MessageEmbed()
+            .setDescription(`Successfully kicked ${user.tag}`)
+            .setImage("https://api.no-api-key.com/api/v2/kick?&kicked=" + victim + "&kicker=" + modavt)
+
+            message.channel.send(embed)
           })
           .catch(err => {
             message.reply("I was unable to kick the member");
