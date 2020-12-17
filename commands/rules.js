@@ -36,7 +36,7 @@ const embed1 = new Discord.MessageEmbed()
 :small_orange_diamond: ➯ **Self-Bots and Alt IDs are not allowed.**
 :small_orange_diamond: ➯ **Take permission before join with alt ID's.**
 :small_orange_diamond: ➯ **You can complaint about any mod with proofs.**
-:small_orange_diamond: ➯ **on't use ghost username (no name) in Username.**
+:small_orange_diamond: ➯ **Don't use ghost username (no name) in Username.**
 :small_orange_diamond: ➯ **Don't Mess up with server admin or mod or Ping Them unnecessarily.**`);
 
 message.channel.send(embed1);
