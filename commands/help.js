@@ -56,7 +56,7 @@ __Image Commands__
 \`ifthosekids\`, \`trumptweet\`
 \`shoot\`, \`stonks\`, \`disgusting\`
 \`grave\`, \`smart\`, \`scared\`
-\`buzz\`
+\`buzz\`, \`wasted\`
 
 __Search Commands__
 \`pokemon\`
