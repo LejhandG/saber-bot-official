@@ -8,7 +8,6 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   
     let servercount = bot.guilds.cache.size;
-    let usercount = bot.users.cache.size;
     let channelscount = bot.channels.cache.size;
     let arch = os.arch();
     let platform = os.platform();
@@ -25,7 +24,6 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     .addField('Architecture', `${arch}`, true)
     .addField('Platform', `${platform}`, true)
     .addField('Cores', `${cores}`, true)
-    .addField('Users Count', `${usercount}`, true)
     .addField('Uptime', `${uptime}`, true)
     .addField('Version', `${version}`, true)
     .addField('Total Memory', `${tomem}`, true)
