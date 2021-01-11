@@ -6,7 +6,7 @@ module.exports = {
     name: "help",
 description: "Show bot commands list",
 alias: [],
-run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play, client, Client) => {
     const botMessage = await message.reply('**__Command List__**');
     ReactionCollector.paginator({
         botMessage,
