@@ -134,10 +134,10 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
             \`suggest\`, \`review\`         
             `)
             .setFooter("©️ 2020 Saber Bot")
-            collectorOptions: {
-                time: 60000
-            }
         ],
+        collectorOptions: {
+                time: 60000
+        }
         });
 }
 }
