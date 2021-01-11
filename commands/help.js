@@ -58,6 +58,7 @@ __Image Commands__
 \`grave\`, \`smart\`, \`scared\`
 \`buzz\`, \`wasted\`, \`trash\`
 \`blueify\`, \`simpcard\`, \`snow\`
+\`dog\`, \`cutecat\`
 
 __Search Commands__
 \`pokemon\`
