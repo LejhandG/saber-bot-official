@@ -42,7 +42,7 @@ __Ticket Commands__
 \`tcategory\`, \`tadduser\`
 
 __Fun Commands__
-\`meme\`, \`roast\`, \`amongus\`
+\`meme\`, \`roast\`
 \`8ball\`, \`dadjokes\`, \`coin\`
 
 __Image Commands__
