@@ -1,5 +1,5 @@
 const { ReactionCollector } = require('discord.js-collector')
-const { bot, MessageEmbed } = require("discord.js");
+const { Client, MessageEmbed } = require("discord.js");
 const client = new Client();
 
 module.exports = {
