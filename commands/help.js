@@ -69,7 +69,7 @@ __Utility Commands__
 
 __Info Commands__
 \`serverinfo\`, \`whois\`, \`avatar\`
-\`stats\`, \`roles\`
+\`stats\`, \`roles\`, \`covid\`
 
 __Misc Commands__
 \`invite\`, \`support\`, \`website\`
