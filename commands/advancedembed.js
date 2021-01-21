@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "advancedembed",
 description: "Embed",
-alias: [],
+alias: ["ae", "advembed"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have the required permission to use this command.').then(m => {
         setTimeout(() => {
