@@ -12,8 +12,9 @@ const max = 37
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("I am very angryyyy")
       .setImage("https://leref.ga/api/public/angry/" + random.int(min, max) + ".gif")
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
