@@ -37,7 +37,6 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
         responses[Math.floor(Math.random() * responses.length - 1)];
       let Embed = new MessageEmbed()
         .setTitle(`8Ball!`)
-        .setThumbnail("https://tenor.com/view/number8-ball-8ball-object-ball-without-adoubt-gif-16887407")
         .setDescription(`Your question: ${question}\nMy reply: ${response}`)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
