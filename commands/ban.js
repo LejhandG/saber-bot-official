@@ -1,6 +1,3 @@
-const db = require("quick.db")
-const Discord = require("discord.js")
-
 module.exports = {
   name: "ban",
   description: "Ban user",
@@ -27,17 +24,6 @@ module.exports = {
           .catch(err => {
             message.reply("I was unable to ban the member");
             console.error(err);
-          
-          let wChan = db.fetch(`${member.guild.id}`)
-	
-	        if(wChan == null) return;
-	
-	        if(!wChan) return;
-          
-                    try{
-  member.guild.channels.get(wChan).send() //Send the image to the channel
-  }catch(e){
-  }
           });
       } else {
         message.reply("That user isn't in this guild!");
