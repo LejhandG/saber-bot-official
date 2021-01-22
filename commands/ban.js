@@ -1,5 +1,4 @@
-const Discord = require("discord.js")
-const MessageEmbed = require("discord.js")
+const Discord = require('discord.js')
 
 module.exports = {
   name: "ban",
@@ -7,45 +6,34 @@ module.exports = {
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
+    if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("You don't have premission to do that!");
+    
+    const user = message.mentions.users.first();
+
+    if (user === message.author) return message.channel.send("You can't ban yourself.");
+    
     let wrong = new MessageEmbed()
         .setTitle(`Command: /ban`)
         .setDescription(`
 **Description:** 
-It bans the user from the server
+Bans the member from the guild
 **Usage:**
-/ban [user] [reason]
+/ban [user]
 **Example:**
-/ban @Vortex They were bad
+/ban @Vortex
 `)
-    .setFooter(message.author.tag, message.author.avatarURL())
+        .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
-    
-    if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("You don't have premission to do that!");
-    
-    const user = message.mentions.users.first();
-    let reason1 = args.slice(2).join(' ');
-    
-    let banlog = new MessageEmbed()
-        .setTitle(`Member Banned`)
-        .setDescription(`
-**Member Banned** - ${user}
-**Moderator** - ${message.author.tag}
-**Reason** - ${reason1}
-`)
-    .setFooter(message.author.tag, message.author.avatarURL())
-        .setColor(`RANDOM`);
-
-    if (user === message.author) return message.channel.send("You can't ban yourself.");
 
     if (user) {
       const member = message.guild.member(user);
       if (member) {
         member
           .ban({
-            reason: 'They were bad !'
+            reason: "They were bad!"
           })
           .then(() => {
-            message.reply(banlog);
+            message.reply(`Successfully banned ${user.tag}`);
           })
           .catch(err => {
             message.reply("I was unable to ban the member");
