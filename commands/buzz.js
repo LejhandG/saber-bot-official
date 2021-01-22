@@ -25,7 +25,7 @@ Adds text to toy story meme
   const helpembed = new MessageEmbed()
       .setTitle("Buzz")
       .setColor("RANDOM")
-      .setImage("https://api.memegen.link/images/buzz/" + args.slice(1, args.length + 1).join(" ") + ".png")
+      .setImage("https://api.memegen.link/images/buzz/" + args.slice(1, args.length + 1).join("+") + ".png")
       .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
