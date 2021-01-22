@@ -13,7 +13,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let arch = os.arch();
     let platform = os.platform();
     let cores = os.cpus().length;
-    let uptime = ms(os.uptime(), {verbose:true})
+    let uptime = ms(bot.uptime, {verbose:true})
     let version = os.version();
     let tomem = os.totalmem() / 1048576;
 
