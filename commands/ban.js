@@ -7,6 +7,7 @@ module.exports = {
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("You don't have premission to do that!");
     
     const user = message.mentions.users.first();
+    let reason1 = args.slice(2).join(' ');
 
     if (user === message.author) return message.channel.send("You can't ban yourself.");
 
@@ -15,7 +16,7 @@ module.exports = {
       if (member) {
         member
           .ban({
-            reason: "They were bad!"
+            reason: reason1
           })
           .then(() => {
             message.reply(`Successfully banned ${user.tag}`);
