@@ -15,7 +15,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let cores = os.cpus().length;
     let uptime = ms(os.uptime(), {verbose:true})
     let version = os.version();
-    let tomem = os.totalmem();
+    let tomem = os.totalmem() / 1048576;
 
     let stats = new Discord.MessageEmbed()
     .setTitle(`Statistics of ${bot.user.username}`)
@@ -27,7 +27,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     .addField('Cores', `${cores}`, true)
     .addField('Uptime', `${uptime}`, true)
     .addField('Version', `${version}`, true)
-    .addField('Total Memory', `${tomem}`, true)
+    .addField('Total Memory', `${tomem} mb`, true)
     .setTimestamp()
     .setFooter(`${message.author.tag}`, message.author.displayAvatarURL());
     message.channel.send(stats);
