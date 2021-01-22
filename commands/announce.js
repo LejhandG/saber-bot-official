@@ -7,12 +7,25 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /announce`)
+        .setDescription(`
+**Description:** 
+Its announces a message in a particular channel
+**Usage:**
+/announce [channel] [message]
+**Example:**
+/announce #general Important Announcement
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
 
      let channel = message.mentions.channels.first()
-  if (!channel) return message.reply('Write the name of the channel !!');
+  if (!channel) return message.reply(wrong);
 
   let text = args.slice(2).join(' ');
-  if (text.length < 1) return message.reply('Write the announcement !!');
+  if (text.length < 1) return message.reply(wrong);
     
       if (text.length > 2000) return message.reply('Announcement should be less than 2000 words!!');
     
