@@ -9,7 +9,8 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let wrong = new MessageEmbed()
         .setTitle(`Command: /8ball`)
         .setDescription(`
-**Description: Its give answer to your question**
+**Description:** 
+Its gives an answer to your question
 **Usage:**
 /8ball [question]
 **Example:**
