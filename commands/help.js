@@ -46,14 +46,12 @@ __Fun Commands__
 \`8ball\`, \`dadjokes\`, \`coin\`
 
 __Image Commands__
-\`spongeburn\`, \`imgsay\`, \`cat\`
+\`imgsay\`, \`cat\`
 \`slap\`, \`clap\`, \`hug\`
 \`duck\`, \`cry\`, \`kiss\`
 \`angry\`, \`mcachiv\`, \`cmy\`
-\`watermeme\`, \`mcdc\`
-\`emojigen\`, \`fact\`, \`captcha\`
-\`chalk\`, \`caution\`, \`genie\`
-\`ifthosekids\`, \`trumptweet\`
+\`watermeme\`, \`mcdc\`, \`emojigen\`
+\`trumptweet\`
 \`shoot\`, \`stonks\`, \`disgusting\`
 \`grave\`, \`smart\`, \`scared\`
 \`buzz\`, \`wasted\`, \`trash\`
