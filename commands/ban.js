@@ -42,7 +42,7 @@ It bans the user from the server
             reason: reason1
           })
           .then(() => {
-            message.reply(`Successfully banned ${user.tag}`);
+            message.reply(banlog);
           })
           .catch(err => {
             message.reply("I was unable to ban the member");
