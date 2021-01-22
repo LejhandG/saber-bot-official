@@ -12,7 +12,7 @@ const max = 37
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
-      .setTitle("I am very angryyyy")
+      .setTitle(message.author.tag + "is very angry")
       .setImage("https://leref.ga/api/public/angry/" + random.int(min, max) + ".gif")
       .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
