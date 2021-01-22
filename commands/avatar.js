@@ -15,9 +15,7 @@ module.exports = {
   let embed = new MessageEmbed()
   .setAuthor(`${user.tag}`, user.displayAvatarURL({size: 4096}))
   .setDescription(`
-  **❯** [Avatar URL of **${user.tag}**](${avatar})
-  **❯** [Png Avatar URL of **${user.tag} avatar **](${pngavatar})
-  **❯** [Jpg URL of **${user.tag} avatar**](${jpgavatar})
+[link](${avatar}) | [png](${pngavatar}) | [jpg](${jpgavatar})
   `)
   .setImage(user.displayAvatarURL({ dynamic: true}))
   .setColor("RANDOM")
