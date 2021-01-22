@@ -30,8 +30,9 @@ Its announces a message in a particular channel
       if (text.length > 2000) return message.reply('Announcement should be less than 2000 words!!');
     
     const ok = new MessageEmbed()
-      .setTitle(`New announcement!`)
+      .setTitle(`New announcement`)
       .setDescription(text)
+      .setFooter(message.author.tag, message.author.avatarURL())
       .setColor("RANDOM");
     channel.send(ok);
     message.delete();
