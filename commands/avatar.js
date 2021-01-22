@@ -19,7 +19,7 @@ module.exports = {
   `)
   .setImage(user.displayAvatarURL({ dynamic: true}))
   .setColor("RANDOM")
-  .setFooter("Command used by " + message.author.tag)
+  .setFooter(message.author.tag, message.author.avatarURL())
   message.channel.send(embed)
 
 }
