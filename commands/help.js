@@ -50,7 +50,7 @@ __Image Commands__
 \`slap\`, \`clap\`, \`hug\`
 \`duck\`, \`cry\`, \`kiss\`
 \`angry\`, \`mcachiv\`, \`cmy\`
-\`watermeme\`, \`mcdc\`, \`call\`
+\`watermeme\`, \`mcdc\`
 \`emojigen\`, \`fact\`, \`captcha\`
 \`chalk\`, \`caution\`, \`genie\`
 \`ifthosekids\`, \`trumptweet\`
