@@ -41,7 +41,7 @@ It bans the user from the server
       if (member) {
         member
           .ban({
-            reason: reason1
+            reason: 'They were bad !'
           })
           .then(() => {
             message.reply(banlog);
