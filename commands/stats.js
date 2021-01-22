@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const os = require('os');
+const ms = require("pretty-ms");
 
 module.exports = {
     name: "stats",
@@ -12,7 +13,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let arch = os.arch();
     let platform = os.platform();
     let cores = os.cpus().length;
-    let uptime = os.uptime();
+    let uptime = ms(os.uptime(), {verbose:true})
     let version = os.version();
     let tomem = os.totalmem();
 
