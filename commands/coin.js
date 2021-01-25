@@ -1,4 +1,5 @@
 const Discord = module.require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
 var hd = [
     "Heads",
