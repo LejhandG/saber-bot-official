@@ -281,12 +281,13 @@ Its gives you covid stats about the country
 /covid [country]
 **Example:**
 /covid India
+**PLEASE INPUT ONLY COUNTRY NAMES**
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
   
     let name = args.slice(1).join(' ');
-  if (name.length < 1 && name !==countries) return message.reply(wrong);
+  if (name.length < 1 || name !==countries) return message.reply(wrong);
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
