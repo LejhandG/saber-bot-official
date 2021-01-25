@@ -26,7 +26,7 @@ Its claps for the mentioned user
   const ClapGif = gifs.getClapGif()
   
   let embed = new MessageEmbed()
-  .setTitle(message.author.tag + " clapped for " + args.slice(1, args.length + 1).join(" "))
+  .setTitle(message.author.tag + " clapped for " + user.tag)
   .setImage(ClapGif)
   .setColor("RANDOM")
   .setFooter(message.author.tag, message.author.avatarURL())
