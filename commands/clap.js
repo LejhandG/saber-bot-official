@@ -6,9 +6,22 @@ module.exports = {
 description: "Random Clap GIF",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /clap`)
+        .setDescription(`
+**Description:** 
+Its claps for the mentioned user
+**Usage:**
+/clap [user]
+**Example:**
+/clap @Vortex
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
   
   let name = args.slice(1).join(' ');
-  if (name.length < 1) return message.reply('Write name of some user to clap for !!');
+  if (name.length < 1) return message.reply(wrong);
   
   const ClapGif = gifs.getClapGif()
   
@@ -16,7 +29,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
   .setTitle(message.author.tag + " clapped for " + args.slice(1, args.length + 1).join(" "))
   .setImage(ClapGif)
   .setColor("RANDOM")
-  .setFooter("Command used by " + message.author.tag)
+  .setFooter(message.author.tag, message.author.avatarURL())
   message.channel.send(embed)
 }
 }
