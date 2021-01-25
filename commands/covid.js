@@ -286,9 +286,7 @@ Its gives you covid stats about the country
         .setColor(`RANDOM`);
   
     let name = args.slice(1).join(' ');
-  if (name.length < 1) return message.reply(wrong);
-    
-    if (!countries) return message.reply("Write a valid country name")
+  if (name.length < 1 && !countries) return message.reply(wrong);
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
