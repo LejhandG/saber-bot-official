@@ -21,10 +21,7 @@ Its claps for the mentioned user
         .setColor(`RANDOM`);
     
   let user = message.mentions.users.first()
-  if (!user)
-  
-  let name = args.slice(1).join(' ');
-  if (name.length < 1) return message.reply(wrong);
+  if (!user) return message.reply(wrong)
   
   const ClapGif = gifs.getClapGif()
   
