@@ -7,9 +7,18 @@ var hd = [
 
 module.exports = {
     name: "coin",
-description: "command description",
+description: "Coin Flip",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
-    message.channel.send(message.author.username + " You Flipped: " + (hd[Math.floor(Math.random() * hd.length)]));
+    
+    let response = (hd[Math.floor(Math.random() * hd.length)])
+    
+    let product = new MessageEmbed()
+    .setTitle("Heads or Tails")
+    .setDescription(message.author.username + " You Flipped: " + response)
+    .setColor("RANDOM")
+    .setFooter(message.author.tag, message.author.avatarURL())
+    
+    message.channel.send(product);
 }
 }
