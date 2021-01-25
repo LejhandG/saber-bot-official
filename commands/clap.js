@@ -19,6 +19,8 @@ Its claps for the mentioned user
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
+    
+  let user = message.mentions.users.first()
   
   let name = args.slice(1).join(' ');
   if (name.length < 1) return message.reply(wrong);
