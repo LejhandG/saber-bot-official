@@ -288,6 +288,8 @@ Its gives you covid stats about the country
   
     let name = args.slice(1).join(' ');
   if (name.length < 1) return message.reply(wrong);
+    
+    if (!countries.includes(name)) return message.reply("This is not a valid country")
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
