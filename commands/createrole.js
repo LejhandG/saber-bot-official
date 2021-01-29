@@ -28,7 +28,7 @@ Create's a role in the guild
 
   
   let text = args.slice(1).join(' ');
-  if (text.length < 1) return message.reply('Write name of the role');
+  if (text.length < 1) return message.reply(wrong);
   
 let guild = message.member.guild; let rolename = args.slice(1).join(" ");
 message.guild.roles.create({ data: { name: rolename } });
