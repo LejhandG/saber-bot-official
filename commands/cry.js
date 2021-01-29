@@ -12,8 +12,9 @@ const max = 40
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle(message.author.tag + "is crying")
       .setImage("https://leref.ga/api/public/cry/" + random.int(min, max) + ".gif")
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
