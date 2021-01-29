@@ -10,7 +10,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
         .setTitle(`Command: /createvoice`)
         .setDescription(`
 **Description:** 
-Creates a text channel with the name
+Creates a voice channel with the name
 **Usage:**
 /createvoice [category id] [name]
 **Example:**
