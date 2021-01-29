@@ -16,9 +16,22 @@ const user = message.author;
 
 dbl.hasVoted(user.id).then(voted => {
     if (voted) {
+        
+let wrong = new MessageEmbed()
+        .setTitle(`Command: /chat`)
+        .setDescription(`
+**Description:** 
+Chats with the AI of the bot
+**Usage:**
+/chat [text]
+**Example:**
+/chat Hello, How are you?
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
 
 let text = args.slice(1).join(' ');
-if (text.length < 1) return message.reply('Write something to chat :|');
+if (text.length < 1) return message.reply(wrong);
   
 ai.getReply(text).then(reply => message.channel.send(reply))
 
