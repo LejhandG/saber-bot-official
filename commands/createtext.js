@@ -26,7 +26,7 @@ Creates a text channel with the name
     })
   
   let text = args.slice(2).join(' ');
-  let categoryid = args.slice(1).join(' ');
+  let categoryid = args[1];
   if (text.length < 1) return message.reply(wrong);
   if (categoryid.length < 1) return message.reply(wrong);
     
