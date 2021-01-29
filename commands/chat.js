@@ -14,9 +14,6 @@ let ai = new alexa("aw2plm")
 
 const user = message.author;
 
-dbl.hasVoted(user.id).then(voted => {
-    if (voted) {
-        
 let wrong = new MessageEmbed()
         .setTitle(`Command: /chat`)
         .setDescription(`
@@ -29,6 +26,9 @@ Chats with the AI of the bot
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
+
+dbl.hasVoted(user.id).then(voted => {
+    if (voted) {
 
 let text = args.slice(1).join(' ');
 if (text.length < 1) return message.reply(wrong);
