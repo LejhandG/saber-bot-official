@@ -14,6 +14,6 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
   if (text.length < 1) return message.reply('Write the category name');
     
   message.guild.channels.create(args.slice(1, args.length + 1).join(" "), { type : 'category'});
-  message.channel.send('Category' + text 'Created by' + message.author.tag);  
+  message.channel.send('Category' + text + 'created by' + message.author.tag);  
 }
 }
