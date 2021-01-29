@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const { MessageEmbed } = require("discord.js");
 const DBL = require("dblapi.js");
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MTA3OTY0Mzk4MDg5MDIyNSIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA3Mjc1ODQwfQ.3jq8XhAoxzjXFDuoty8d5on2EV7jjDhAmAqLfmOeyxc', client);
 
