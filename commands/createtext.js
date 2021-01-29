@@ -30,7 +30,9 @@ Creates a text channel with the name
   if (text.length < 1) return message.reply(wrong);
   if (categoryid.length < 1) return message.reply(wrong);
     
-  message.guild.channels.create(args.slice(1, args.length + 1).join(" "), { type : 'text'}).setParent(categoryid)
+  message.guild.channels.create(args.slice(1, args.length + 1).join(" "), { type : 'text'}).then(channel => {
+        channel.setParent(categoryid);
+    })
   message.channel.send('Channel ' + text + ' created by ' + message.author.tag);  
 }
 }
