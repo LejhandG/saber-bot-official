@@ -27,14 +27,12 @@ Its announces a message in a particular channel
   let text = args.slice(2).join(' ');
   if (text.length < 1) return message.reply(wrong);
     
-      if (text.length > 2000) return message.reply('Announcement should be less than 2000 words!!');
-    
     const ok = new MessageEmbed()
       .setTitle(`New announcement`)
       .setDescription(text)
       .setFooter(message.author.tag, message.author.avatarURL())
       .setColor("RANDOM");
-    channel.send(ok);
+    channel.send(ok, { split : true });
     message.delete();
   },
 };
