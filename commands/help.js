@@ -1,31 +1,78 @@
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed } = require("discord.js");
+const pagination = require('discord.js-pagination');
+const Discord = require('discord.js');
 
 module.exports = {
   name: "help",
   description: "Show bot commands list",
   alias: ["cmd", "command", "commands", "helps"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
-    const helpembed = new MessageEmbed()
-      .setColor("GOLD")
-      .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
-      .setDescription(
-        `
-__**Command list**__
-   
-__Music Commands__
+
+    const impinfo = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+
+    **__Important Info__**
+
+1. Music Commands
+2. Chat Commands
+3. Invites Commands
+4. Moderation Commands
+5. Ticket Commands
+6. Fun Commands
+7. Image Commands
+8. Utility Commands
+9. Info Commands
+10. Misc Commands
+11. Embed Commands
+12. API Commands
+13. Suggest Commands
+
+[**INVITE OUR BOT**](https://discord.com/oauth2/authorize?client_id=751079643980890225&scope=bot&permissions=2146958847)
+[**CHECK OUT OUR WEBSITE**](https://saberofficial.ml/)
+[**DONATE US**](https://patreon.com/saberbot)
+[**JOIN OUR SUPPORT SERVER**](https://discord.gg/kBPpv47EJp)
+[**DOCUMENTATION**](https://docs.saberofficial.ml/)
+    `)
+    .setFooter("©️ 2021 Saber Bot");
+
+    const music = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Music Commands__**
 \`play\` > **\`play [title/url]\`**
 \`search\` > **\`search [title]\`**
 \`skip\`, \`stop\`,  \`pause\`, \`resume\`
 \`nowplaying\`, \`queue\`, \`volume\`
 \`lyrics\`, \`skipto\`, \`remove\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Chat Commands__
+    const chat = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Chat Commands__**
 \`chat\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Invites Commands__
+    const invites = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Invites Commands__**
 \`invites\`, \`serverinvites\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Moderation Commands__
+    const moderation = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Moderation Commands__**
 \`ban\`, \`kick\`, \`mute\`, \`lock\`
 \`sofban\`, \`warn\`, \`unmute\`, \`role\`
 \`slowmode\`, \`createrole\`
@@ -33,16 +80,35 @@ __Moderation Commands__
 \`createtext\`, \`createvoice\`
 \`createcategory\`, \`hackban\`
 \`unban\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Ticket Commands__
+    const ticket = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Ticket Commands__**
 \`tnew\`, \`tclose\`, \`trole\`
 \`tcategory\`, \`tadduser\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Fun Commands__
+    const fun = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Fun Commands__**
 \`meme\`, \`roast\`
 \`8ball\`, \`dadjokes\`, \`coin\`
+\`pokemon\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Image Commands__
+    const image = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Image Commands__**
 \`imgsay\`, \`cat\`
 \`slap\`, \`clap\`, \`hug\`
 \`duck\`, \`cry\`, \`kiss\`
@@ -54,44 +120,89 @@ __Image Commands__
 \`buzz\`, \`wasted\`, \`trash\`
 \`blueify\`, \`simpcard\`, \`snow\`
 \`dog\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Search Commands__
-\`pokemon\`
-
-__Utility Commands__
+    const utility = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Utility Commands__**
 \`poll\`, \`shorten\`, \`weather\`
 \`hastebin\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Info Commands__
+    const info = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+**__Info Commands__**
 \`serverinfo\`, \`whois\`, \`avatar\`
 \`stats\`, \`roles\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Misc Commands__
+    const misc = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Misc Commands__**
 \`invite\`, \`support\`, \`website\`
 \`setnick\`, \`botnick\`, \`donate\`
 \`syntax\`, \`vote\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Embed Commands__
+    const embed = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Embed Commands__**
 \`say\`, \`advancedembed\`, \`rules\`
-\`announce\`, \`embed\`, \`imageembed\`
+\`announce\`, \`embed\`, \`imageembed\`    
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__API Commands__
+    const api = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__API Commands__**
 \`ping\`, \`uptime\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Suggest Commands__
+    const suggest = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Suggest Commands__**
 \`suggest\`, \`review\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
-__Bot Owner Only__
-\`servers\`, \`dm\`
+    const pages = [
+      impinfo,
+      music,
+      chat,
+      invites,
+      moderation,
+      ticket,
+      fun,
+      image,
+      utility,
+      info,
+      misc,
+      embed,
+      api,
+      suggest,
+]
 
-[**HOW TO USE OUR COMMANDS?**](https://pastebin.com/FQ2PzKjZ)
-[**INVITE OUR BOT**](https://discord.com/oauth2/authorize?client_id=751079643980890225&scope=bot&permissions=2146958847)
-[**CHECK OUT OUR WEBSITE**](https://saberofficial.ml/)
-[**DONATE US**](https://patreon.com/saberbot)
-[**JOIN OUR SUPPORT SERVER**](https://discord.gg/kBPpv47EJp)`
-      )
-      .setImage("https://i.imgur.com/CjNPEda.gif")
-      .setFooter("©️ 2020 Saber Bot");
-    message.channel.send(helpembed);
+const emojiList = ["⏪", "⏩"];
+
+const timeout = '120000';
+
+pagination(message, pages, emojiList, timeout)
   }
 }
