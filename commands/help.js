@@ -11,10 +11,7 @@ module.exports = {
       .setDescription(
         `
 __**Command list**__
-
-__Getting Started__
-\`setup\` , \`setupembed\`
-        
+   
 __Music Commands__
 \`play\` > **\`play [title/url]\`**
 \`search\` > **\`search [title]\`**
