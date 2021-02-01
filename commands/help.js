@@ -129,7 +129,6 @@ module.exports = {
     .setDescription(`
     **__Utility Commands__**
 \`poll\`, \`shorten\`, \`weather\`
-\`hastebin\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
