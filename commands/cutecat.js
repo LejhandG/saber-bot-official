@@ -12,6 +12,7 @@ const max = 99999999
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("Cutecat Command 🐱")
       .setImage("https://cataas.com/cat?" + random.int(min, max))
       .setFooter("Command used by " + message.author.tag)
     message.channel.send(helpembed);
