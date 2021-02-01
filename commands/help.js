@@ -15,19 +15,19 @@ module.exports = {
 
     **__Important Info__**
 
-1. Music Commands
-2. Chat Commands
-3. Invites Commands
-4. Moderation Commands
-5. Ticket Commands
-6. Fun Commands
-7. Image Commands
-8. Utility Commands
-9. Info Commands
-10. Misc Commands
-11. Embed Commands
-12. API Commands
-13. Suggest Commands
+🔸 1. Music Commands
+🔸 2. Chat Commands
+🔸 3. Invites Commands
+🔸 4. Moderation Commands
+🔸 5. Ticket Commands
+🔸 6. Fun Commands
+🔸 7. Image Commands
+🔸 8. Utility Commands
+🔸 9. Info Commands
+🔸 10. Misc Commands
+🔸 11. Embed Commands
+🔸 12. API Commands
+🔸 13. Suggest Commands
 
 [**INVITE OUR BOT**](https://discord.com/oauth2/authorize?client_id=751079643980890225&scope=bot&permissions=2146958847)
 [**CHECK OUT OUR WEBSITE**](https://saberofficial.ml/)
