@@ -4,7 +4,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "clap",
 description: "Random Clap GIF",
-alias: [],
+alias: ["applaud"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
