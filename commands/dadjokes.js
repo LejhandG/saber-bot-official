@@ -60,10 +60,10 @@ description: "command description",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     var DAD = new MessageEmbed()
+    .setTitle("Dadjokes are hilarious")
     .setDescription(jokes[Math.floor(Math.random() * jokes.length)])
-
     .setColor("0x#FF0000")
-    .setFooter("Command used by " + message.author.tag)
+    .setFooter(message.author.tag, message.author.avatarURL())
 
     message.channel.send(DAD);
 
