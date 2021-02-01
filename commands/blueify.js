@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js")
 module.exports = {
     name: "blueify",
 description: "Blueify Command",
-alias: [],
+alias: ["blue"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   
     let user = message.mentions.users.first()
