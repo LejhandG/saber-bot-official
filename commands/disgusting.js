@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js")
 module.exports = {
     name: "disgusting",
 description: "Disgusting Command",
-alias: [],
+alias: ["eww"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   
     let user = message.mentions.users.first()
@@ -12,9 +12,10 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let avatar = user.displayAvatarURL({ format: 'png' });
 
   const helpembed = new MessageEmbed()
+      .setTitle("Disgusting Command")
       .setColor("RANDOM")
       .setImage("https://useless-api--vierofernando.repl.co/disgusting?image=" + avatar)
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
