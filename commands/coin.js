@@ -9,7 +9,7 @@ var hd = [
 module.exports = {
     name: "coin",
 description: "Coin Flip",
-alias: ["coinflip", "flip"],
+alias: ["coinflip", "flip", "toss"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let response = (hd[Math.floor(Math.random() * hd.length)])
