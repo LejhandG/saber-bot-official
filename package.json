@@ -30,8 +30,11 @@
     "@discordjs/opus": "^0.3.3",
     "adf.ly": "^1.2.0",
     "alexa-bot-api": "^0.1.4",
+    "child_process": "^1.0.2",
+    "dateformat": "^4.4.1",
     "dblapi.js": "^2.4.1",
     "discord.js": "^12.5.1",
+    "discord.js-pagination": "^1.0.3",
     "discord_ticket_maker": "^1.3.2",
     "dotenv": "^8.2.0",
     "enmap": "^5.8.2",
@@ -40,10 +43,10 @@
     "ffmpeg-static": "^4.2.7",
     "fs": "^0.0.2",
     "gifs-pro": "^1.0.2",
-    "hastebin-save": "^1.2.2",
     "moment": "^2.29.1",
     "ms": "^2.1.3",
     "node-fetch": "^2.6.1",
+    "node-gyp": "^7.1.2",
     "node-opus": "^0.3.3",
     "opusscript": "^0.0.7",
     "os": "^0.1.1",
@@ -53,7 +56,7 @@
     "simple-youtube-api": "^5.2.1",
     "snekfetch": "^4.0.4",
     "solenolyrics": "^5.0.0",
-    "ytdl-core": "^4.3.1"
+    "ytdl-core": "^4.4.5"
   },
   "optionalDependencies": {
     "@discordjs/uws": "^11.149.1"
