@@ -14,7 +14,7 @@ const max = 99999999
       .setColor("RANDOM")
       .setTitle("Cutecat Command 🐱")
       .setImage("https://cataas.com/cat?" + random.int(min, max))
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
