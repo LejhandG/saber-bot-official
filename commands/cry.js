@@ -4,7 +4,7 @@ const random = require('random')
 module.exports = {
     name: "cry",
 description: "Cry Commands",
-alias: [],
+alias: ["sob"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   
 const min = 1
