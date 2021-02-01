@@ -25,6 +25,7 @@ Change my mind meme format
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("Change My Mind Command")
       .setImage("https://vacefron.nl/api/changemymind?text=" + args.slice(1, args.length + 1).join("+"))
       .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
