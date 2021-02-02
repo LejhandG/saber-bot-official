@@ -12,8 +12,9 @@ const max = 100
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("Cute Dogs 🐶")
       .setImage("https://atlanta.x-h.fr/api/pets/dog/" + random.int(min, max))
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
