@@ -57,7 +57,7 @@ var jokes = [
 module.exports = {
     name: "dadjokes",
 description: "command description",
-alias: [],
+alias: ["dadjoke"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     var DAD = new MessageEmbed()
     .setTitle("Dadjokes are hilarious")
