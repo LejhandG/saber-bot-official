@@ -74,7 +74,9 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
         }
     }
 
-    message.channel.send(embed)
+    message.channel.send(embed).catch(err => {
+            message.reply("An error occured");
+          });
 
 }
 }
