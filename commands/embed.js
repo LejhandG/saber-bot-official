@@ -37,5 +37,6 @@ Embeds the text given by you
     .setFooter(message.author.tag, message.author.avatarURL())
 
     message.channel.send(exampleEmbed);
+    message.delete();
 }
 }
