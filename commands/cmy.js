@@ -28,6 +28,8 @@ Change my mind meme format
       .setTitle("Change My Mind Command")
       .setImage("https://vacefron.nl/api/changemymind?text=" + args.slice(1, args.length + 1).join("+"))
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occured");
+          });
 }
 }
