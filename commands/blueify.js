@@ -16,6 +16,8 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
       .setTitle("Blueify Command")
       .setImage("https://api.no-api-key.com/api/v2/blueify?image=" + avatar)
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occured");
+          });
 }
 }
