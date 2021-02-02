@@ -28,7 +28,9 @@ Creates a category of the name
   let text = args.slice(1).join(' ');
   if (text.length < 1) return message.reply(wrong);
     
-  message.guild.channels.create(args.slice(1, args.length + 1).join(" "), { type : 'category'});
+  message.guild.channels.create(args.slice(1, args.length + 1).join(" "), { type : 'category'}).catch(err => {
+            message.reply("An error occured");
+          });
   message.channel.send('Category ' + text + ' created by ' + message.author.tag);  
 }
 }
