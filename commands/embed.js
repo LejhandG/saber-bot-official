@@ -26,7 +26,6 @@ Embeds the text given by you
 
    let colour = args.slice(1).join(' ');
    if (colour.length < 1) return message.reply(wrong);
-   if (colour.length > 7) return message.reply('Not a valid hex code')
 
    let text = args.slice(2).join(' ');
    if (text.length < 1) return message.reply(wrong);
