@@ -20,6 +20,8 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     .setColor("RANDOM")
     .setFooter(message.author.tag, message.author.avatarURL())
     
-    message.channel.send(product);
+    message.channel.send(product).catch(err => {
+            message.reply("An error occured");
+          });
 }
 }
