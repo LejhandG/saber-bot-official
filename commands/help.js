@@ -111,8 +111,7 @@ module.exports = {
     **__Image Commands__**
 \`imgsay\`, \`cat\`
 \`slap\`, \`clap\`, \`hug\`
-\`duck\`, \`cry\`, \`kiss\`
-\`mcachiv\`, \`cmy\`
+\`duck\`, \`mcachiv\`, \`cmy\`
 \`watermeme\`, \`mcdc\`, \`trumptweet\`
 \`shoot\`, \`stonks\`, \`disgusting\`
 \`grave\`, \`smart\`, \`scared\`
