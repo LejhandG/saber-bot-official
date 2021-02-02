@@ -54,7 +54,9 @@ Its gives an answer to your question
         .setDescription(`Your question: ${question}\nMy reply: ${response}`)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
-      message.channel.send(Embed);
+      message.channel.send(Embed).catch(err => {
+            message.reply("An error occured");
+          });
     }
   },
 };
