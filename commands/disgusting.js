@@ -16,6 +16,8 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
       .setColor("RANDOM")
       .setImage("https://useless-api--vierofernando.repl.co/disgusting?image=" + avatar)
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occured");
+          });
 }
 }
