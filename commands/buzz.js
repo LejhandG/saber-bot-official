@@ -27,6 +27,8 @@ Adds text to toy story meme
       .setColor("RANDOM")
       .setImage("https://api.memegen.link/images/buzz/" + args.slice(1, args.length + 1).join("_") + ".png")
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occured");
+          });
 }
 }
