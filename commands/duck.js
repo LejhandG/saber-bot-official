@@ -15,6 +15,8 @@ const max = 131
       .setTitle("Duck Command")
       .setImage("https://random-d.uk/api/v2/" + random.int(min, max) + ".jpg")
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occured");
+          });
 }
 }
