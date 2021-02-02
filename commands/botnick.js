@@ -23,13 +23,10 @@ It changes the nickname of the bot.
     
     let name = args.slice(1).join(' ');
     if (name.length < 1) return message.reply(wrong);
+    if (name.length > 32) return message.reply("Nickname should be less than 32 characters")
 
     if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('You cannot change my nickname');
-    try {
       message.guild.me.setNickname(message.content.replace('/botnick ', ''));
       message.channel.send("Nickname of the bot changed")
-      } catch(error) {
-  message.channel.send("Can't change nickname");
-}
   }
   }
