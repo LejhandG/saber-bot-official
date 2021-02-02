@@ -112,7 +112,7 @@ module.exports = {
 \`imgsay\`, \`cat\`
 \`slap\`, \`clap\`, \`hug\`
 \`duck\`, \`cry\`, \`kiss\`
-\`angry\`, \`mcachiv\`, \`cmy\`
+\`mcachiv\`, \`cmy\`
 \`watermeme\`, \`mcdc\`, \`trumptweet\`
 \`shoot\`, \`stonks\`, \`disgusting\`
 \`grave\`, \`smart\`, \`scared\`
