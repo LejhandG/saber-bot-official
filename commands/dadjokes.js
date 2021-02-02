@@ -65,7 +65,9 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     .setColor("0x#FF0000")
     .setFooter(message.author.tag, message.author.avatarURL())
 
-    message.channel.send(DAD);
+    message.channel.send(DAD).catch(err => {
+            message.reply("An error occured");
+          });
 
 }
 }
