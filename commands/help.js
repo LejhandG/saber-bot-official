@@ -113,8 +113,7 @@ module.exports = {
 \`slap\`, \`clap\`, \`hug\`
 \`duck\`, \`cry\`, \`kiss\`
 \`angry\`, \`mcachiv\`, \`cmy\`
-\`watermeme\`, \`mcdc\`, \`emojigen\`
-\`trumptweet\`
+\`watermeme\`, \`mcdc\`, \`trumptweet\`
 \`shoot\`, \`stonks\`, \`disgusting\`
 \`grave\`, \`smart\`, \`scared\`
 \`buzz\`, \`wasted\`, \`trash\`
@@ -149,7 +148,7 @@ module.exports = {
     **__Misc Commands__**
 \`invite\`, \`support\`, \`website\`
 \`setnick\`, \`botnick\`, \`donate\`
-\`syntax\`, \`vote\`
+\`vote\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
