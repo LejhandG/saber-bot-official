@@ -30,6 +30,8 @@ Its claps for the mentioned user
   .setImage(ClapGif)
   .setColor("RANDOM")
   .setFooter(message.author.tag, message.author.avatarURL())
-  message.channel.send(embed)
+  message.channel.send(embed).catch(err => {
+            message.reply("An error occured");
+          });
 }
 }
