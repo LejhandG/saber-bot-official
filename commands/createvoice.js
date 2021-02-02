@@ -33,6 +33,9 @@ Creates a voice channel with the name
   message.guild.channels.create(text, { type : 'voice'}).then(channel => {
         channel.setParent(categoryid);
     })
+    .catch(err => {
+            message.reply("An error occured");
+          });
   message.channel.send('Channel ' + text + ' created by ' + message.author.tag);  
 }
 }
