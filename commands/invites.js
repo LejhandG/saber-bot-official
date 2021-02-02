@@ -1,7 +1,7 @@
 module.exports = {
     name: "invites",
 description: "Check the invites",
-alias: [],
+alias: ["checkinvites"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   
   let user = message.mentions.users.first()
@@ -19,7 +19,14 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
                     var invite = userInvites[i];
                     userInviteCount += invite['uses'];
                 }
-                     message.channel.send(`You have ${userInviteCount} invites.`);
+            let lol = new MessageEmbed()
+        .setDescription(`
+You have **${userInviteCount} invites**.
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
+            
+                     message.channel.send(lol);
             }
         )
     }
