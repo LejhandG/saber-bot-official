@@ -34,7 +34,9 @@ dbl.hasVoted(user.id).then(voted => {
 let text = args.slice(1).join(' ');
 if (text.length < 1) return message.reply(wrong);
   
-ai.getReply(text).then(reply => message.channel.send(reply))
+ai.getReply(text).then(reply => message.channel.send(reply)).catch(err => {
+            message.reply("An error occured");
+          });
 
     }
     
