@@ -118,7 +118,6 @@ module.exports = {
 \`grave\`, \`smart\`, \`scared\`
 \`buzz\`, \`wasted\`, \`trash\`
 \`blueify\`, \`simpcard\`, \`snow\`
-\`dog\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
