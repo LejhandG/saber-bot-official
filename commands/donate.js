@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js")
 module.exports = {
   name: "donate",
   description: "Patreon Link",
-  alias: [],
+  alias: ["patreon"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     const helpembed = new MessageEmbed()
       .setColor("GOLD")
