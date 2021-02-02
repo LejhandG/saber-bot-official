@@ -24,8 +24,11 @@ It changes the nickname of the bot.
     if (name.length < 1) return message.reply(wrong);
 
     if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('You cannot change my nickname');
+    try {
       message.guild.me.setNickname(message.content.replace('/botnick ', ''));
-      message.channel.send("Nickname of the bot changed !!")
-
+      message.channel.send("Nickname of the bot changed")
+      } catch(error) {
+  message.channel.send("Can't change nickname");
+}
   }
   }
