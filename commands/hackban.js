@@ -3,6 +3,20 @@ module.exports = {
 description: "Hackban Command",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /hackban`)
+        .setDescription(`
+**Description:** 
+Bans the user using user id and also outside the server
+**Usage:**
+/hackban [user id] [reason]
+**Example:**
+/hackban 4534653541323 They were bad!
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
+
 
     if (!message.member.hasPermission("BAN_MEMBERS")) {
 
@@ -18,7 +32,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
 
 
-    if (!userID) return message.channel.send("Please insert a valid user ID.");
+    if (!userID) return message.channel.send(wrong);
 
     if (isNaN(userID)) return message.channel.send("User ID must be a number.");
 
@@ -36,7 +50,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
         await message.guild.members.ban(user.id, {reason: reason});
 
-        return message.channel.send(`**${user.tag}** has been banned, from outside this server.`);
+        return message.channel.send(`**${user.tag}** has been banned.`);
 
     }).catch(error => {
 
