@@ -31,7 +31,9 @@ Create's a role in the guild
   if (text.length < 1) return message.reply(wrong);
   
 let guild = message.member.guild; let rolename = args.slice(1).join(" ");
-message.guild.roles.create({ data: { name: rolename } });
+message.guild.roles.create({ data: { name: rolename } }).catch(err => {
+            message.reply("An error occured");
+          });
   message.channel.send("Role " + rolename + " created by " + message.author.tag);
 }
 }
