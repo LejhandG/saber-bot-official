@@ -15,6 +15,8 @@ const max = 99999999
       .setTitle("Cutecat Command 🐱")
       .setImage("https://cataas.com/cat?" + random.int(min, max))
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occured");
+          });
 }
 }
