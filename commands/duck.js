@@ -12,8 +12,9 @@ const max = 131
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("Duck Command")
       .setImage("https://random-d.uk/api/v2/" + random.int(min, max) + ".jpg")
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
