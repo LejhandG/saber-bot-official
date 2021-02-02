@@ -34,7 +34,9 @@ Its announces a message in a particular channel
       .setDescription(text)
       .setFooter(message.author.tag, message.author.avatarURL())
       .setColor("RANDOM");
-    channel.send(ok);
+    channel.send(ok).catch(err => {
+            message.reply("An error occured");
+          });
     message.delete();
   },
 };
