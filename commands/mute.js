@@ -6,8 +6,22 @@ module.exports = {
 description: "Mutes the user",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /mute`)
+        .setDescription(`
+**Description:** 
+Mutes the member mentioned
+**Usage:**
+/mute @member [time]
+**Example:**
+/mute @Vortex 1m
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
+    
   if (!message.member.hasPermission("MUTE_MEMBERS")) {
-  	return message.reply('you do not have the required permissions to use this cmd.')
+  	return message.reply('You do not have the required permissions to use this command.')
   }
 
  if (!message.guild.roles.cache.find(r => r.name === "Muted")) {
@@ -34,9 +48,9 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
 
 
-    let member = message.guild.members.cache.find(r => r.name === args[0]) || message.guild.members.cache.get(args[0]) || message.mentions.members.first()
-    if (!member) return message.reply('Invalid arguments, you forgot a member.')
-    if (!args[2]) return message.reply('you forgot to supply a valid time.')
+    let member = message.guild.members.cache.find(r => r.name === args[1]) || message.guild.members.cache.get(args[1]) || message.mentions.members.first()
+    if (!member) return message.reply(wrong)
+    if (!args[2]) return message.reply(wrong)
     let time = args[2]
     let roletoremove = message.guild.roles.cache.find(r => r.name === "Muted")
 
