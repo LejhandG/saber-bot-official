@@ -145,8 +145,7 @@ module.exports = {
     .setDescription(`
     **__Misc Commands__**
 \`invite\`, \`support\`, \`website\`
-\`setnick\`, \`botnick\`, \`donate\`
-\`vote\`
+\`botnick\`, \`donate\`, \`vote\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
