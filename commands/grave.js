@@ -16,6 +16,8 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
       .setTitle("Grave Command")
       .setImage("https://vacefron.nl/api/grave?user=" + avatar)
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occurred");
+          });
 }
 }
