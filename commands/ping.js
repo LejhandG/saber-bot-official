@@ -19,6 +19,8 @@ const Embede = new Discord.MessageEmbed()
 .addField("My API Latency is:", `${Math.round(bot.ws.ping)}ms`, inline)
 
 Embede.setTimestamp()
-message.channel.send(Embede)
+message.channel.send(Embede).catch(err => {
+            message.reply("An error occured");
+          });
   }
 }
