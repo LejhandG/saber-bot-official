@@ -21,6 +21,8 @@ Makes a poll with question and options
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
     
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
+    
         const [question, ...choices] = args.splice(1).join(' ').split(' | ')
         if (!question) return message.reply(wrong)
         if (!choices.length) return message.reply(wrong)
