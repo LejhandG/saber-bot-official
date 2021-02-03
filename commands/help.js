@@ -199,6 +199,8 @@ const emojiList = ["⏪", "⏩"];
 
 const timeout = '120000';
 
-pagination(message, pages, emojiList, timeout)
+pagination(message, pages, emojiList, timeout).catch(err => {
+            message.reply("An error occurred");
+          });
   }
 }
