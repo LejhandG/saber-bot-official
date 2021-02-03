@@ -29,7 +29,7 @@ Bans the member and instantly unbans me
 
         message.channel.send( { embed: { description: `\`[⏲20s]\` Are you sure you want ban ${member}? \`[yes/no]\``, color: 'YELLOW' } } )
 
-        const collector = new MessageCollector(message.channel, message => message.author.id === message.author.id, {
+        const collector = createMessageCollector(message.channel, message => message.author.id === message.author.id, {
             time: 20000
         })
 
