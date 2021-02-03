@@ -5,6 +5,20 @@ module.exports = {
 description: "Unmutes the user",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /unmute`)
+        .setDescription(`
+**Description:** 
+Unmutes a already muted member
+**Usage:**
+/unmute @user
+**Example:**
+/unmute @Vortex
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
+    
   if (!message.member.hasPermission("MUTE_MEMBERS")) {
     return message.reply('you do not have the required permissions to use this cmd.')
   }
@@ -14,7 +28,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let role = message.guild.roles.cache.find(r => r.name === "Muted")
     if (!role) return message.reply('There was not even a role by the name of muted.. try muting somebody before.')
 
-    if (!member) return message.reply('Invalid arguments, could not find that user.')
+    if (!member) return message.reply(wrong)
 
 
     if(!member.roles.cache.has(role.id)) return message.reply('the user you specified was not muted.')
