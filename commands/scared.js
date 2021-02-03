@@ -13,8 +13,9 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("Scared Command")
       .setImage("https://useless-api.vierofernando.repl.co/baby?image=" + avatar)
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
