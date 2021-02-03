@@ -145,8 +145,21 @@ description: "Roast Command",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   
+  let wrong = new MessageEmbed()
+        .setTitle(`Command: /roast`)
+        .setDescription(`
+**Description:** 
+Roasts the mentioned user
+**Usage:**
+/roast @user
+**Example:**
+/roast @Vortex
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
+  
   let name = args.slice(1).join(' ');
-  if (name.length < 1) return message.reply('Tag the person to be roasted !!');
+  if (name.length < 1) return message.reply(wrong);
   
   if (message.channel.nsfw) {
    let user = message.mentions.users.first()
@@ -156,14 +169,14 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
    .setColor("ORANGE")
    .setThumbnail("https://cdn.discordapp.com/attachments/587597405940350999/774247521140473897/oof-size-large-23-memes-85.jpg")
    .setDescription(randomMessage)
-   .setFooter("Command used by " + message.author.tag)
+   .setFooter(message.author.tag, message.author.avatarURL())
    
    message.channel.send(user.tag)
    message.channel.send(helpembed)
   }
   else
     {
-      message.channel.send('This is a SFW channel ! This command is NSFW')
+      message.channel.send('This is a SFW channel. This command is NSFW')
     }
 }
 }
