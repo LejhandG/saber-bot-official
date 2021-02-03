@@ -5,9 +5,23 @@ module.exports = {
 description: "Unban Command",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /unban`)
+        .setDescription(`
+**Description:** 
+Unbans a member already banned in the guild
+**Usage:**
+/unban [id]
+**Example:**
+/unban 791040912740294
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
+    
     if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('You are missing **BAN_MEMBERS** permission!').then(m => m.delete({ timeout: 5000 }));
 
-    if (!args[1]) return message.channel.send('Please enter a user id to unban!').then(m => m.delete({ timeout: 5000 }));
+    if (!args[1]) return message.channel.send(wrong).then(m => m.delete({ timeout: 5000 }));
 
     let member;
 
