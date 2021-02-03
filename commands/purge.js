@@ -22,9 +22,6 @@ Deletes the message in the channel
         .setColor(`RANDOM`);
     
   const args = message.content.split(" ");
-    
-  let text = args[1]
-  if (text.length < 1) return message.reply(wrong)
   
   if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You do not have the required permission to use this command.').then(m => {
     setTimeout(() => {
@@ -37,12 +34,12 @@ if (message.mentions.users.size > 0) {
     if (!args[1]) amountToDelete = 50;
 
     console.log(amountToDelete)
-    if (parseInt(amountToDelete) > 100) return message.reply(wrong)
+    if (parseInt(amountToDelete) > 100) return message.reply("The integer should be less than 100")
     let userMessages = await message.channel.messages.fetch({limit: parseInt(amountToDelete)})
     let userFilter = userMessages.filter(obj => obj.author.id === message.mentions.users.first().id)
 
     message.channel.bulkDelete(userFilter)
-    message.reply('done.').then(m => m.delete({timeout: 3000}))
+    message.reply('Done.').then(m => m.delete({timeout: 3000}))
     return;
 }
 
@@ -51,7 +48,7 @@ if (message.mentions.users.size > 0) {
     let botFilter = awaitBotMessages.filter(obj => obj.author.bot)
 
     message.channel.bulkDelete(botFilter)
-    message.reply('done.').then(m => m.delete({timeout: 5000}))
+    message.reply('Done.').then(m => m.delete({timeout: 5000}))
 
     return;
 }
@@ -62,7 +59,7 @@ if (message.mentions.users.size > 0) {
     
     message.channel.bulkDelete(imageFilter)
 
-    message.reply('done.').then(m => m.delete({timeout: 5000}))
+    message.reply('Done.').then(m => m.delete({timeout: 5000}))
     return;
 }
 
@@ -85,7 +82,7 @@ if (args[1] === "all") {
    messages += deleteAble.size
    }
 } else if(typeof(parseInt(args[1])) == "number") {
-    if (parseInt(args[1]) > 100) return message.reply(`must be a valid integer below or exact 100, otherwise use !purge all.`)
+    if (parseInt(args[1]) > 100) return message.reply(`must be a valid integer below or exact 100, otherwise use /purge all.`)
     let messages = await message.channel.messages.fetch({ limit: parseInt(args[1]) })
     message.channel.bulkDelete(messages).then(m => {
         message.reply('Deleted **' + m.size + '** messages.').then(m => setTimeout(() => {
