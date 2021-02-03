@@ -10,7 +10,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
   const embed = new MessageEmbed()
   .addField("Bot Uptime", uptime)
   .setColor("RANDOM")
-  .setFooter("Command used by " + message.author.tag)
+  .setFooter(message.author.tag, message.author.avatarURL())
   
   message.channel.send(embed)
 }
