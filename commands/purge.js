@@ -22,6 +22,9 @@ Deletes the message in the channel
         .setColor(`RANDOM`);
     
   const args = message.content.split(" ");
+    
+  let text = args[1]
+  if (text.length < 1) return message.reply(wrong)
   
   if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You do not have the required permission to use this command.').then(m => {
     setTimeout(() => {
@@ -40,11 +43,6 @@ if (message.mentions.users.size > 0) {
 
     message.channel.bulkDelete(userFilter)
     message.reply('done.').then(m => m.delete({timeout: 3000}))
-    return;
-}
-    
-    if (args[1] === NaN) {
-    message.channel.send(wrong)
     return;
 }
 
