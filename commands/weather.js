@@ -11,8 +11,9 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("Weather of " + name )
       .setImage("https://wttr.in/" + args.slice(1, args.length + 1).join("+") + ".png?m")
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
