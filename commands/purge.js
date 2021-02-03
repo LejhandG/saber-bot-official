@@ -62,6 +62,11 @@ if (message.mentions.users.size > 0) {
     message.reply('Done.').then(m => m.delete({timeout: 5000}))
     return;
 }
+    
+    if (args[1] === "help") {
+    message.channel.send(wrong)
+    return;
+}
 
 
 
