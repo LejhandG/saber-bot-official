@@ -1,4 +1,5 @@
 var adfly=require("adf.ly")();
+const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "shorten",
