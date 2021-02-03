@@ -28,7 +28,9 @@ You have **${userInviteCount} invites**.
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
             
-                     message.channel.send(lol);
+                     message.channel.send(lol).catch(err => {
+            message.reply("An error occurred");
+          });
             }
         )
     }
