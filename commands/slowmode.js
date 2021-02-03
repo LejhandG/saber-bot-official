@@ -7,10 +7,9 @@ description: "Sets the channel slowmode",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
-    let channel = message.mentions.channels.first(),
       time = args.slice(1).join(" ");
   
-  if (!channel) time = args.join(" "), channel = message.channel;
+      channel = message.channel;
  
   
   if (args[1] === "off" || args[1] === "0s") {
