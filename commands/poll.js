@@ -7,9 +7,23 @@ module.exports = {
 description: "Poll Command",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /poll`)
+        .setDescription(`
+**Description:** 
+Makes a poll with question and options
+**Usage:**
+/poll question | option1 | option2
+**Example:**
+/poll How are you all | Fine | Sad
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
+    
         const [question, ...choices] = args.splice(1).join(' ').split(' | ')
-        if (!question) return message.reply("You've got to create a question for you poll")
-        if (!choices.length) return message.reply("Your poll has to have at least one choice !")
+        if (!question) return message.reply(wrong)
+        if (!choices.length) return message.reply(wrong)
         if (choices.length > 20) return message.reply("Your poll can't have more than 20 choices !")
         message.delete()
         const sent = await message.channel.send(new Discord.MessageEmbed()
