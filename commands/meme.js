@@ -1,19 +1,46 @@
 const { MessageEmbed } = require("discord.js")
-const random = require('random')
+const got = require("got");
+const Discord = require("discord.js");
 
 module.exports = {
     name: "meme",
 description: "Meme Commands",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
-  
-const min = 1
-const max = 500
+    const subReddits = [
+    "meme",
+    "me_irl",
+    "dankmeme",
+    "AdviceAnimals",
+    "dankmemes",
+    "MemeEconomy",
+    "ComedyCemetery",
+    "memes",
+    "PrequelMemes",
+    "terriblefacebookmemes",
+    "funny",
+    "teenagers",
+  ];
+  const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 
-  const helpembed = new MessageEmbed()
-      .setColor("RANDOM")
-      .setImage("https://ctk-api.herokuapp.com/meme/" + random.int(min, max))
-      .setFooter("Command used by " + message.author.tag)
-    message.channel.send(helpembed);
+  const embed = new Discord.MessageEmbed();
+  got(`https://www.reddit.com/r/${random}/random/.json`).then((response) => {
+    let content = JSON.parse(response.body);
+    let permalink = content[0].data.children[0].data.permalink;
+    let memeUrl = `https://reddit.com${permalink}`;
+    let memeImage = content[0].data.children[0].data.url;
+    let memeTitle = content[0].data.children[0].data.title;
+    let memeUpvotes = content[0].data.children[0].data.ups;
+    let memeDownvotes = content[0].data.children[0].data.downs;
+    let memeNumComments = content[0].data.children[0].data.num_comments;
+    embed.setTitle(`${memeTitle}`);
+    embed.setURL(`${memeUrl}`);
+    embed.setImage(memeImage);
+    embed.setColor("#ffc256")
+    embed.setFooter(
+      `👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`
+    );
+    message.channel.send(embed);
+   });
 }
 }
