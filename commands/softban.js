@@ -46,12 +46,12 @@ Bans the member and instantly unbans me
                         collector.stop('success');
                         if (err) return message.channel.send(`Error: \`${err}\``)
                     })
-                break
+                break;
                 case "no":
                     message.delete()
                     message.channel.send(`Cancelled`)
                     collector.stop('success')
-                break
+                break;
                 case "y":
                     message.delete()
                     member.ban(`Banned by ${message.member.user.tag}, reason: ${reason}`)
@@ -62,12 +62,12 @@ Bans the member and instantly unbans me
                         collector.stop('success');
                         if (err) return message.channel.send(`Error: \`${err}\``)
                     })
-                break
+                break;
                 case "n":
                     message.delete()
                     message.channel.send(`Cancelled`)
                     collector.stop('success')
-                break
+                break;
                 default:
                     message.delete()
                     message.channel.send(`Cancelled`)
