@@ -20,7 +20,7 @@ const helpembed = new Discord.MessageEmbed()
 message.channel.send(helpembed);
     
 const embed1 = new Discord.MessageEmbed()
-	.setColor('#00f9ff')
+	.setColor('ORANGE')
   .setDescription(`**__RULES AND REGULATION__**
 
 :small_orange_diamond: ➯ **Don't be offensive or Racist.**
@@ -42,13 +42,13 @@ const embed1 = new Discord.MessageEmbed()
 message.channel.send(embed1);
     
 const embed2 = new Discord.MessageEmbed()
-  .setColor('#00f9ff')
+  .setColor('ORANGE')
   .setImage('https://cdn.discordapp.com/attachments/722759592047542304/740848856811569152/IntroText_20190910_164423.gif')
 
 message.channel.send(embed2);
     
 const embed3 = new Discord.MessageEmbed()
- .setColor('#00f9ff')
+ .setColor('ORANGE')
  .setDescription(`**__#Discord's Terms of Service &__**
 **__Community Guidelines__**
 
