@@ -35,6 +35,9 @@ Embeds the image in your desired colors.
     .setImage(image)
     .setFooter(message.author.tag, message.author.avatarURL())
 
-    message.channel.send(exampleEmbed);
+    message.channel.send(exampleEmbed).catch(err => {
+            message.reply("An error occurred");
+          });
+    message.delete();
 }
 }
