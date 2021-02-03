@@ -125,7 +125,7 @@ module.exports = {
     .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
     .setDescription(`
     **__Utility Commands__**
-\`poll\`, \`shorten\`, \`weather\`
+\`poll\`, \`weather\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
