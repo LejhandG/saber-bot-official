@@ -20,6 +20,10 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     "terriblefacebookmemes",
     "funny",
     "teenagers",
+    "comedyheaven",
+    "blackmagicfuckery",
+    "WatchPeopleDieInside",
+    "HistoryMemes",
   ];
   const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 
