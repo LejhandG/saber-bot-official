@@ -12,7 +12,7 @@ run: async (bot, message, url, searchString, youtube, handleVideo, serverQueue, 
 **Description:** 
 Deletes the message in the channel
 **Usage:**
-/purge [number] | /purge bots | /purge @user 100 | /purge images
+/purge [number] | /purge bots | /purge @user 100 | /purge images | /purge all
 **Example:**
 /purge 100 | /purge @Vortex 10
 
