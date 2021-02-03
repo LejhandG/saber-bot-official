@@ -26,6 +26,8 @@ Turns text to image
       .setColor("RANDOM")
       .setImage("https://flamingtext.com/net-fu/proxy_form.cgi?script=crafts-logo&text=" + args.slice(1, args.length + 1).join("+") + "+&_loc=generate&imageoutput=true")
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occurred");
+          });
 }
 }
