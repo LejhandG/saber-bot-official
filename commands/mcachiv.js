@@ -28,6 +28,8 @@ Sends and image of a minecraft achivement with your text
       .setTitle("New Achievement!")
       .setImage("https://minecraftskinstealer.com/achievement/2/New+achievement%21/" + args.slice(1, args.length + 1).join("+"))
       .setFooter(message.author.tag, message.author.avatarURL())
-    message.channel.send(helpembed);
+    message.channel.send(helpembed).catch(err => {
+            message.reply("An error occurred");
+          });
 }
 }
