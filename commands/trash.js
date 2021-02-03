@@ -13,8 +13,9 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("Trash Command")
       .setImage("https://api.no-api-key.com/api/v2/trash?image=" + avatar)
-      .setFooter("Command used by " + message.author.tag)
+      .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
 }
 }
