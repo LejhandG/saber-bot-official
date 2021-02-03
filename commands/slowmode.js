@@ -8,12 +8,12 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let channel = message.mentions.channels.first(),
-      time = args.slice(2).join(" ");
+      time = args.slice(1).join(" ");
   
   if (!channel) time = args.join(" "), channel = message.channel;
  
   
-  if (args[2] === "off" || args[2] === "0s") {
+  if (args[1] === "off" || args[1] === "0s") {
     channel.setRateLimitPerUser(0);
     return message.channel.send(`**<#${channel.id}> slowmode has been deactivated.**`)
   }
