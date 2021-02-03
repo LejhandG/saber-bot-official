@@ -13,6 +13,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
+      .setTitle("Wasted Command")
       .setImage("https://some-random-api.ml/canvas/wasted?avatar=" + avatar)
       .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed);
