@@ -35,6 +35,9 @@ if(!check.has("SEND_MESSAGES")) {
   }).then(() => {
         message.reply('Unlocked! :thumbsup:')
     })
+    .catch(err => {
+            message.reply("An error occurred");
+          });
  
  return;
 }
@@ -46,6 +49,9 @@ channel.updateOverwrite(message.guild.id, {
 }).then(() => {
       message.reply('Locked! :thumbsup:')
   })
+  .catch(err => {
+            message.reply("An error occurred");
+          });
  
 
 }
