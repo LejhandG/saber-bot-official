@@ -42,6 +42,11 @@ if (message.mentions.users.size > 0) {
     message.reply('done.').then(m => m.delete({timeout: 3000}))
     return;
 }
+    
+    if (args[1] === NaN) {
+    message.channel.send(wrong)
+    return;
+}
 
     if (args[1] === "bots") {
     let awaitBotMessages = await message.channel.messages.fetch({limit: 100})
