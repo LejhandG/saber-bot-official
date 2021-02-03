@@ -6,17 +6,30 @@ module.exports = {
 description: "Random Slap GIF",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /slap`)
+        .setDescription(`
+**Description:** 
+Slaps the mentioned user
+**Usage:**
+/slap @user
+**Example:**
+/slap @Vortex
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
   
-    let name = args.slice(1).join(' ');
-  if (name.length < 1) return message.reply('Write the name of the user to be slapped !!');
+  let user = message.mentions.users.first()
+  if (!user) return message.reply(wrong)
   
   const SlapGif = gifs.getSlapGif()
   
   let embed = new MessageEmbed()
-  .setTitle(message.author.tag + " slapped " + args.slice(1, args.length + 1).join(" "))
+  .setTitle(message.author.tag + " slapped " + user.tag)
   .setImage(SlapGif)
   .setColor("RANDOM")
-  .setFooter("Command used by " + message.author.tag)
+  .setFooter(message.author.tag, message.author.avatarURL())
   message.channel.send(embed)
 }
 }
