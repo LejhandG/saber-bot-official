@@ -20,7 +20,7 @@ Finds the pokemon mentioned by you
         .setColor(`RANDOM`);
   
     let name = args.slice(1).join(' ');
-  if (name.length < 1) return message.reply('Write a name of the pokemon !!');
+  if (name.length < 1) return message.reply(wrong);
   
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
