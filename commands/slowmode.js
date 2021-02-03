@@ -7,6 +7,19 @@ description: "Sets the channel slowmode",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /slowmode`)
+        .setDescription(`
+**Description:** 
+Adds slowmode to the channel
+**Usage:**
+/slowmode [time in s,m,h]
+**Example:**
+/slowmode 10s
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
+    
       time = args.slice(1).join(" ");
   
       channel = message.channel;
@@ -17,7 +30,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     return message.channel.send(`**<#${channel.id}> slowmode has been deactivated.**`)
   }
   
-  if (!time) return message.channel.send("**Please includes the time format, 1s, 1m, 1h**")
+  if (!time) return message.channel.send(wrong)
   
   let convert = ms(time); // This will results the milliseconds.
   let toSecond = Math.floor(convert / 1000);
@@ -30,7 +43,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
   await channel.setRateLimitPerUser(toSecond);
     const embed = new MessageEmbed()
     .setTimestamp()
-    .setColor(`BLACK`)
+    .setColor(`RANDOM`)
     .setFooter(`Slowmode has been set to 1 message every ${ms(ms(time), {long: true})}.`)
     .setTitle(`${message.author.tag} has set a slowmode to this channel.`)
     .addFields(
