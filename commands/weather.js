@@ -5,9 +5,22 @@ module.exports = {
 description: "Shows the weather of the region",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    let wrong = new MessageEmbed()
+        .setTitle(`Command: /weather`)
+        .setDescription(`
+**Description:** 
+Gives you the weather of a valid region
+**Usage:**
+/weather [location]
+**Example:**
+/weather India
+`)
+        .setFooter(message.author.tag, message.author.avatarURL())
+        .setColor(`RANDOM`);
   
     let name = args.slice(1).join(' ');
-  if (name.length < 1) return message.reply('Write the name of the city !!');
+  if (name.length < 1) return message.reply(wrong);
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
