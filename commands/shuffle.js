@@ -9,7 +9,7 @@ module.exports = {
 
     if (!Channel) return message.channel.send("JOIN TO A VOICE CHANNEL");
 
-    const Queue = await client.queue.get(message.guild.id);
+    const Queue = await bot.queue.get(message.guild.id);
 
     if (!Queue)
       return message.channel.send(
