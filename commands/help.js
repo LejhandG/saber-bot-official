@@ -74,7 +74,7 @@ module.exports = {
     .setDescription(`
     **__Moderation Commands__**
 \`ban\`, \`kick\`, \`mute\`, \`lock\`
-\`sofban\`, \`warn\`, \`unmute\`, \`role\`
+\`warn\`, \`unmute\`, \`role\`
 \`slowmode\`, \`createrole\`
 \`unmute\`, \`purge\`
 \`createtext\`, \`createvoice\`
