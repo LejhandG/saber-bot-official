@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
+const { MessageEmbed } = require('discord.js')
  
 const { DiscordTicket } = require('discord_ticket_maker')
 const ticket = new DiscordTicket()
