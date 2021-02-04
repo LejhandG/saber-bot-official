@@ -79,7 +79,7 @@ module.exports = {
 \`unmute\`, \`purge\`
 \`createtext\`, \`createvoice\`
 \`createcategory\`, \`hackban\`
-\`unban\`
+\`unban\`, \`moveall\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
