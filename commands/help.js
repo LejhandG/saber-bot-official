@@ -47,6 +47,7 @@ module.exports = {
 \`skip\`, \`stop\`,  \`pause\`, \`resume\`
 \`nowplaying\`, \`queue\`, \`volume\`
 \`lyrics\`, \`skipto\`, \`remove\`
+\`shuffle\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
