@@ -89,7 +89,7 @@ if (args[1] === "all") {
 } else if(typeof(parseInt(args[1])) == "number") {
     if (parseInt(args[1]) > 100) return message.reply(`must be a valid integer below or exact 100, otherwise use /purge all.`)
     let messages = await message.channel.messages.fetch({ limit: parseInt(args[1]) })
-    message.channel.bulkDelete(messages + 1)
+    message.channel.bulkDelete(messages)
 }
 
 }
