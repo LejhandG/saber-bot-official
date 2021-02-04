@@ -34,7 +34,7 @@ Bans the member and instantly unbans me
             time: 20000
         })
 
-        collector.on('collect', message => {
+        collector.on('collect', msg => {
             switch(message.content) {
                 case "yes":
                     message.delete()
