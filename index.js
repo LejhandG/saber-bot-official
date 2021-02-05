@@ -147,6 +147,7 @@ bot.on("message", async message => {
     hook.send(`${message.author.tag} used ${command} command`)
   }
 })
+bot.snipes = new Map()
 bot.on('messageDelete', function(message, channel){
   
   bot.snipes.set(message.channel.id, {
