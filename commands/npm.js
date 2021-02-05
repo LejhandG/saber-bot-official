@@ -36,7 +36,7 @@ Shows from npm packages
       e.setTimestamp()
       message.say(e)
     } catch (error) {
-      message.say("Npm package not found")
+      message.reply("Npm package not found")
     }
 }
 }
