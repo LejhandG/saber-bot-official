@@ -32,7 +32,7 @@ Shows from npm packages
       e.addField("License",data.license)
       e.addField("Keywords",data.keywords.join(", "))
       e.setColor("RANDOM")
-      e.setFooter(`Requested by ${message.author.username}`,message.author.displayAvatarURL())
+      e.setFooter(`${message.author.username}`,message.author.displayAvatarURL())
       e.setTimestamp()
       message.channel.send(e)
     } catch (error) {
