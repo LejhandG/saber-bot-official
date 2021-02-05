@@ -146,6 +146,15 @@ bot.on("message", async message => {
     const hook = new Discord.WebhookClient('780686530556985384', 'BOv_LNi-U_Nte1yzRc5AGaxl_e8Wd5kF_lJ3ILCEggapLSWeIodWNKV_vzbSyfN_cOVy');
     hook.send(`${message.author.tag} used ${command} command`)
   }
-});
+})
+bot.on('messageDelete', function(message, channel){
+  
+  bot.snipes.set(message.channel.id, {
+    content:message.content,
+    author:message.author.tag,
+    image:message.attachments.first() ? message.attachments.first().proxyURL : null
+  })
+  
+})
 
 bot.login(process.env.BOT_TOKEN);
