@@ -125,7 +125,8 @@ module.exports = {
     .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
     .setDescription(`
     **__Utility Commands__**
-\`poll\`, \`weather\`
+\`poll\`, \`weather\`, \`setsuggest\`
+\`suggestion\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -173,7 +174,7 @@ module.exports = {
     .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
     .setDescription(`
     **__Suggest Commands__**
-\`suggest\`, \`review\`
+\`suggestcmd\`, \`review\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
