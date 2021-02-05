@@ -34,7 +34,7 @@ Shows from npm packages
       e.setColor("RANDOM")
       e.setFooter(`Requested by ${message.author.username}`,message.author.displayAvatarURL())
       e.setTimestamp()
-      message.say(e)
+      message.channel.send(e)
     } catch (error) {
       message.reply("Npm package not found")
     }
