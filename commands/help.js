@@ -100,7 +100,7 @@ module.exports = {
     **__Fun Commands__**
 \`meme\`, \`roast\`
 \`8ball\`, \`dadjokes\`, \`coin\`
-\`pokemon\`, \`sudo\`
+\`pokemon\`, \`sudo\`, \`snipe\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
