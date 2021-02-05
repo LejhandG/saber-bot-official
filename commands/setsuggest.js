@@ -20,6 +20,8 @@ Set the channel for the suggestions
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
+    
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
 
 let channel = message.mentions.channels.first()
  
