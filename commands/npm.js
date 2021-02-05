@@ -32,11 +32,11 @@ Shows from npm packages
       e.addField("License",data.license)
       e.addField("Keywords",data.keywords.join(", "))
       e.setColor("RANDOM")
-      e.setFooter(`Requested by ${msg.author.username}`,msg.author.displayAvatarURL())
+      e.setFooter(`Requested by ${message.author.username}`,message.author.displayAvatarURL())
       e.setTimestamp()
-      msg.say(e)
+      message.say(e)
     } catch (error) {
-      msg.say("Npm package not found")
+      message.say("Npm package not found")
     }
 }
 }
