@@ -98,7 +98,7 @@ module.exports = {
     .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
     .setDescription(`
     **__Fun Commands__**
-\`meme\`, \`roast\`
+\`meme\`, \`roast\`, \`cat\`
 \`8ball\`, \`dadjokes\`, \`coin\`
 \`pokemon\`, \`sudo\`, \`snipe\`
     `)
