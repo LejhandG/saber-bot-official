@@ -22,12 +22,12 @@ Sends suggestion to the server staff
         .setColor(`RANDOM`);
 
 if(!args.slice(1).length) {
-      return message.channel.send("Please Give the Suggestion")
+      return message.channel.send(wrong)
     }
  
     let chx = db.get(`sugchannel_${message.guild.id}`);
  
-    let ch = client.channels.cache.get(chx);
+    let ch = bot.channels.cache.get(chx);
  
     const chan = message.channel;
  
