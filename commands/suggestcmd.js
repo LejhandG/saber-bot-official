@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    name: "suggest",
+    name: "suggestcmd",
 description: "Suggest Command",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
