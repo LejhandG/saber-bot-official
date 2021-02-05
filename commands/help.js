@@ -135,7 +135,7 @@ module.exports = {
     .setDescription(`
 **__Info Commands__**
 \`serverinfo\`, \`whois\`, \`avatar\`
-\`stats\`, \`roles\`, \`djs\`
+\`stats\`, \`roles\`, \`djs\`, \`npm\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
