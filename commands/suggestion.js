@@ -50,6 +50,6 @@ if(!args.slice(1).length) {
  
  
  
-   await chan.send("Sent Your Suggestion to " + `${chan}`).catch(err => {})
+   await chan.send("Sent Your Suggestion").catch(err => {})
 }
 }
