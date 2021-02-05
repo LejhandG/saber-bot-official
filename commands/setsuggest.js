@@ -21,7 +21,7 @@ Set the channel for the suggestions
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
     
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permission to do that!");
 
 let channel = message.mentions.channels.first()
  
@@ -33,6 +33,6 @@ let channel = message.mentions.channels.first()
  
     db.set(`sugchannel_${message.guild.id}`, channel.id)
  
-    message.channel.send(`Welcome Channel is seted as ${channel}`)
+    message.channel.send(`Suggestion Channel is set as ${channel}`)
 }
 }
