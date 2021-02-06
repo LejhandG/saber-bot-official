@@ -9,11 +9,8 @@ const client = new Discord.Client();
 const bot = new Client({
   disableMentions: "all"
 });
-const PREFIX = process.env.PREFIX;
 const youtube = new YouTube(process.env.YTAPI_KEY);
 const queue = new Map();
-
-bot.prefix = PREFIX;
 
 bot.aliases = new Collection();
 bot.commands = new Collection();
@@ -45,6 +42,8 @@ commandFile.forEach(file => {
   })
 
 bot.on("message", async message => {
+  const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || ";"
+  bot.prefix = PREFIX;
   // eslint-disable-line
   if (message.author.bot) return;
   if (!message.content.startsWith(PREFIX)) return;
