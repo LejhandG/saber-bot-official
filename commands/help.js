@@ -29,6 +29,8 @@ module.exports = {
 🔸 12. API Commands
 🔸 13. Suggest Commands
 
+Prefix - \`${PREFIX}\`
+
 [**INVITE OUR BOT**](https://discord.com/oauth2/authorize?client_id=751079643980890225&scope=bot&permissions=2146958847)
 [**CHECK OUT OUR WEBSITE**](https://saberofficial.ml/)
 [**DONATE US**](https://patreon.com/saberbot)
