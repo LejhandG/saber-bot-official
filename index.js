@@ -12,6 +12,8 @@ const bot = new Client({
 const youtube = new YouTube(process.env.YTAPI_KEY);
 const queue = new Map();
 
+const db = require('quick.db')
+
 bot.aliases = new Collection();
 bot.commands = new Collection();
 
