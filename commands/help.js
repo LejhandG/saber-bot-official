@@ -149,6 +149,7 @@ Prefix - \`${bot.prefix}\`
     **__Misc Commands__**
 \`invite\`, \`support\`, \`website\`
 \`botnick\`, \`donate\`, \`vote\`
+\`setprefix\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
