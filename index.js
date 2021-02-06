@@ -42,7 +42,7 @@ commandFile.forEach(file => {
   })
 
 bot.on("message", async message => {
-  const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || ";"
+  const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || "/"
   bot.prefix = PREFIX;
   // eslint-disable-line
   if (message.author.bot) return;
