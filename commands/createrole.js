@@ -8,14 +8,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
   let wrong = new MessageEmbed()
-        .setTitle(`Command: /createrole`)
+        .setTitle(`Command: ${bot.prefix}createrole`)
         .setDescription(`
 **Description:** 
 Create's a role in the guild
 **Usage:**
-/createrole [name]
+${bot.prefix}createrole [name]
 **Example:**
-/createrole Moderator
+${bot.prefix}createrole Moderator
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
