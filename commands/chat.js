@@ -16,14 +16,14 @@ let ai = new alexa("aw2plm")
 const user = message.author;
 
 let wrong = new MessageEmbed()
-        .setTitle(`Command: /chat`)
+        .setTitle(`Command: ${bot.prefix}chat`)
         .setDescription(`
 **Description:** 
 Chats with the AI of the bot
 **Usage:**
-/chat [text]
+${bot.prefix}chat [text]
 **Example:**
-/chat Hello, How are you?
+${bot.prefix}chat Hello, How are you?
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
