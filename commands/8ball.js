@@ -7,14 +7,14 @@ alias: ["ask", "8b"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 	
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /8ball`)
+        .setTitle(`Command: ${bot.prefix}8ball`)
         .setDescription(`
 **Description:** 
 Its gives an answer to your question
 **Usage:**
-/8ball [question]
+${bot.prefix}8ball [question]
 **Example:**
-/8ball Will I get a dog?
+${bot.prefix}8ball Will I get a dog?
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
