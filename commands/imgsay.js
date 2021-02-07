@@ -3,18 +3,18 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "imgsay",
 description: "Image Text",
-alias: [],
+alias: ["imagesay"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /imgsay`)
+        .setTitle(`Command: ${bot.prefix}imgsay`)
         .setDescription(`
 **Description:** 
 Turns text to image
 **Usage:**
-/imgsay [text]
+${bot.prefix}imgsay [text]
 **Example:**
-/imgsay Hello
+${bot.prefix}imgsay Hello
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
