@@ -13,14 +13,14 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     })
     
   let wrong = new MessageEmbed()
-        .setTitle(`Command: /createcategory`)
+        .setTitle(`Command: ${bot.prefix}createcategory`)
         .setDescription(`
 **Description:** 
 Creates a category of the name
 **Usage:**
-/createcategory [name]
+${bot.prefix}createcategory [name]
 **Example:**
-/createcategory DASHBOARD
+${bot.prefix}createcategory DASHBOARD
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
