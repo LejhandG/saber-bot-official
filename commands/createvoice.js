@@ -7,14 +7,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
   let wrong = new MessageEmbed()
-        .setTitle(`Command: /createvoice`)
+        .setTitle(`Command: ${bot.prefix}createvoice`)
         .setDescription(`
 **Description:** 
 Creates a voice channel with the name
 **Usage:**
-/createvoice [category id] [name]
+${bot.prefix}createvoice [category id] [name]
 **Example:**
-/createvoice 789450070457319425 test
+${bot.prefix}createvoice 789450070457319425 test
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
