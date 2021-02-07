@@ -9,14 +9,14 @@
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /botnick`)
+        .setTitle(`Command: ${bot.prefix}botnick`)
         .setDescription(`
 **Description:** 
 It changes the nickname of the bot.
 **Usage:**
-/botnick [name]
+${bot.prefix}botnick [name]
 **Example:**
-/botnick Saber
+${bot.prefix}botnick Saber
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
@@ -26,7 +26,7 @@ It changes the nickname of the bot.
     if (name.length > 32) return message.reply("Nickname should be less than 32 characters")
 
     if (!message.member.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('You cannot change my nickname');
-      message.guild.me.setNickname(message.content.replace('/botnick ', '')).catch(err => {
+      message.guild.me.setNickname(message.content.replace(`${bot.prefix}botnick `, '')).catch(err => {
             message.reply("An error occured");
           });
       message.channel.send("Nickname of the bot changed")
