@@ -13,14 +13,14 @@ module.exports = {
     if (user === message.author) return message.channel.send("You can't ban yourself.");
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /ban`)
+        .setTitle(`Command: ${bot.prefix}ban`)
         .setDescription(`
 **Description:** 
 Bans the member from the guild
 **Usage:**
-/ban [user]
+${bot.prefix}ban [user]
 **Example:**
-/ban @Vortex
+${bot.prefix}ban @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
