@@ -9,14 +9,14 @@ alias: ["discordjs"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
 let wrong = new MessageEmbed()
-        .setTitle(`Command: /djs`)
+        .setTitle(`Command: ${bot.prefix}djs`)
         .setDescription(`
 **Description:** 
 Shows from discordjs library/docs
 **Usage:**
-/djs [text]
+${bot.prefix}djs [text]
 **Example:**
-/djs MessageEmbed
+${bot.prefix}djs MessageEmbed
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
