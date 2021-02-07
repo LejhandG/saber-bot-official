@@ -9,14 +9,14 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /announce`)
+        .setTitle(`Command: ${bot.prefix}announce`)
         .setDescription(`
 **Description:** 
 Its announces a message in a particular channel
 **Usage:**
-/announce [channel] [message]
+${bot.prefix}announce [channel] [message]
 **Example:**
-/announce #general Important Announcement
+${bot.prefix}announce #general Important Announcement
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
