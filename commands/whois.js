@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
   name: "whois",
+  timeout : 2000,
 description: "Find the info about the mentioned user",
 alias: ["userinfo"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
