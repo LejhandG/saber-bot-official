@@ -10,14 +10,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /clearwarns`)
+        .setTitle(`Command: ${bot.prefix}clearwarns`)
         .setDescription(`
 **Description:** 
 Clears the warnings of the mentioned user
 **Usage:**
-/clearwarns @user
+${bot.prefix}clearwarns @user
 **Example:**
-/clearwarns @Vortex
+${bot.prefix}clearwarns @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
