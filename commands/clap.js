@@ -8,14 +8,14 @@ alias: ["applaud"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /clap`)
+        .setTitle(`Command: ${bot.prefix}clap`)
         .setDescription(`
 **Description:** 
 Its claps for the mentioned user
 **Usage:**
-/clap [user]
+${bot.prefix}clap [user]
 **Example:**
-/clap @Vortex
+${bot.prefix}clap @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
