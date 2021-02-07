@@ -10,7 +10,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
 }
 
-if(args[0] === "all") {
+if(args[1] === "all") {
   message.guild.channels.filter(channel => channel.type !== "category") .forEach(channel => {
   let check = channel.permissionsFor(message.guild.id)
 if(!check.has("SEND_MESSAGES")) {
