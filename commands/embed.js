@@ -8,14 +8,14 @@ alias: ["embeds"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /embed`)
+        .setTitle(`Command: ${bot.prefix}embed`)
         .setDescription(`
 **Description:** 
 Embeds the text given by you
 **Usage:**
-/embed [color] [text]
+${bot.prefix}embed [color] [text]
 **Example:**
-/embed #00f9ff Hello
+${bot.prefix}embed #00f9ff Hello
 
 [HEX COLOR LIST](https://www.colorhexa.com/color-names)
 `)
