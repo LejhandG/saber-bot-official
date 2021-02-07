@@ -7,14 +7,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /hackban`)
+        .setTitle(`Command: ${bot.prefix}hackban`)
         .setDescription(`
 **Description:** 
 Bans the user using user id and also outside the server
 **Usage:**
-/hackban [user id] [reason]
+${bot.prefix}hackban [user id] [reason]
 **Example:**
-/hackban 4534653541323 They were bad!
+${bot.prefix}hackban 4534653541323 They were bad!
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
