@@ -7,14 +7,14 @@ module.exports = {
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /kick`)
+        .setTitle(`Command: ${bot.prefix}kick`)
         .setDescription(`
 **Description:** 
 Kicks the user from the guild
 **Usage:**
-/kick @user
+${bot.prefix}kick @user
 **Example:**
-/kick @Vortex
+${bot.prefix}kick @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
