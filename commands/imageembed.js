@@ -8,14 +8,14 @@ alias: ["imgembed"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /imageembed`)
+        .setTitle(`Command: ${bot.prefix}imageembed`)
         .setDescription(`
 **Description:** 
 Embeds the image in your desired colors.
 **Usage:**
-/imageembed [hex] [link]
+${bot.prefix}imageembed [hex] [link]
 **Example:**
-/imageembed #00f9ff https://cdn.discordapp.com/safasfsv.png
+${bot.prefix}imageembed #00f9ff https://cdn.discordapp.com/safasfsv.png
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
