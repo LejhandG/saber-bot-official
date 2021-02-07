@@ -7,14 +7,14 @@ alias: ["changemymind"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /cmy`)
+        .setTitle(`Command: ${bot.prefix}cmy`)
         .setDescription(`
 **Description:** 
 Change my mind meme format
 **Usage:**
-/cmy [text]
+${bot.prefix}cmy [text]
 **Example:**
-/cmy Lol
+${bot.prefix}cmy Lol
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
