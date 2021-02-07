@@ -7,14 +7,14 @@ alias: ["bzz", "bz"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /buzz`)
+        .setTitle(`Command: ${bot.prefix}buzz`)
         .setDescription(`
 **Description:** 
 Adds text to toy story meme
 **Usage:**
-/buzz [text]
+${bot.prefix}buzz [text]
 **Example:**
-/buzz Hello
+${bot.prefix}buzz Hello
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
