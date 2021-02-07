@@ -16,6 +16,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let uptime = ms(bot.uptime, {verbose:true})
     let version = os.version();
     let tomem = os.totalmem() / 1048576;
+    let freemem = os.freemem() / 1048576;
     let data = 0;
     bot.guilds.cache.map(x => data = data + (x.memberCount))
 
@@ -29,6 +30,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     .addField('Cores', `${cores}`, true)
     .addField('Uptime', `${uptime}`, true)
     .addField('Version', `${version}`, true)
+    .addField('Free Memory', `${freemem} mb`, true)
     .addField('Total Memory', `${tomem} mb`, true)
     .addField('Total Users', `${data}`, true)
     .setTimestamp()
