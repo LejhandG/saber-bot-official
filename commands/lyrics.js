@@ -8,14 +8,14 @@ alias: ["lyric"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /lyrics`)
+        .setTitle(`Command: ${bot.prefix}lyrics`)
         .setDescription(`
 **Description:** 
 Sends the lyrics of the mentioned song
 **Usage:**
-/lyrics [song name]
+${bot.prefix}lyrics [song name]
 **Example:**
-/lyrics Rap God
+${bot.prefix}lyrics Rap God
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
