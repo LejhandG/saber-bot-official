@@ -2,6 +2,7 @@ const { Client, Util, MessageEmbed, Collection } = require("discord.js");
 const YouTube = require("simple-youtube-api");
 const ytdl = require("ytdl-core");
 const fs = require("fs");
+const ms = require("ms")
 require("dotenv").config();
 require("./server.js");
 const Discord = require('discord.js');
@@ -10,6 +11,7 @@ const bot = new Client({
   disableMentions: "all"
 });
 const db = require('quick.db')
+const Timeout = new Collection();
 const youtube = new YouTube(process.env.YTAPI_KEY);
 const queue = new Map();
 
@@ -137,8 +139,16 @@ bot.on("message", async message => {
   try {
     const file = bot.commands.get(command) || bot.aliases.get(command)
     if(!file) return;
-    
-    file.run(bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play)
+    if (file) {
+      if(file.timeout) {
+        if(Timeout.has(`${file.name}${message.author.id}`)) return message.channel.send(`You are on a ${ms(Timeout.get(`${file.name}${message.author.id}`) - Date.now(), {long : true})} cooldown.`)
+        file.run(bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play)
+        Timeout.set(`${file.name}${message.author.id}`, Date.now() + file.timeout)
+        setTimeout(() => {
+          Timeout.delete(`${file.name}${message.author.id}`)
+        }, file.timeout)
+      }
+    }
   } catch (err) {
     console.error(err)
   } finally {
