@@ -7,6 +7,7 @@ const ticket = new DiscordTicket()
 
 module.exports = {
     name: "tcategory",
+ timeout : 3000,
 description: "Sets ticket category",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
