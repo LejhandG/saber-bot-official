@@ -20,15 +20,10 @@ setInterval(() => {
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-let data = 0;
-    client.guilds.cache.map(x => data = data + (x.memberCount))
-
-let servercount = client.guilds.cache.size;
-
 const activities_list = [
     `/help`, 
-    `${data} users`,
-    `${servercount} servers`, 
+    `New Commands Daily`,
+    `Surprise Coming Soon`, 
     ];
 
 client.on('ready', () => {
