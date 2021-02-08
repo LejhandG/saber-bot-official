@@ -8,14 +8,14 @@ alias: ["clear"],
 run: async (bot, message, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
   let wrong = new MessageEmbed()
-        .setTitle(`Command: /purge`)
+        .setTitle(`Command: ${bot.prefix}purge`)
         .setDescription(`
 **Description:** 
 Deletes the message in the channel
 **Usage:**
-/purge [number] | /purge bots | /purge @user 100 | /purge images | /purge all
+${bot.prefix}purge [number] | ${bot.prefix}purge bots | ${bot.prefix}purge @user 100 | ${bot.prefix}purge images | ${bot.prefix}purge all
 **Example:**
-/purge 100 | /purge @Vortex 10
+${bot.prefix}purge 100 | ${bot.prefix}purge @Vortex 10
 
 **NUMBER SHOULD BE LESS THAN 100**
 `)
