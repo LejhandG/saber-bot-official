@@ -3,6 +3,7 @@ const random = require('random')
 
 module.exports = {
     name: "duck",
+    timeout : 3000,
 description: "Duck Commands",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
