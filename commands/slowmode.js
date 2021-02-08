@@ -3,6 +3,7 @@ const ms = require("ms");
 
 module.exports = {
     name: "slowmode",
+    timeout : 8000,
 description: "Sets the channel slowmode",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
