@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "hackban",
+    timeout : 10000,
 description: "Hackban Command",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
