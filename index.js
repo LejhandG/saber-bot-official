@@ -168,4 +168,31 @@ bot.on('messageDelete', function(message, channel){
   
 })
 
+bot.on('guildCreate', (guild) => {
+  let channelToSend;
+
+  guild.channels.cache.forEach((channel) => {
+    if (
+    channel.type === "text" && 
+    !channelToSend && 
+    channel.permissionsFor(guild.me).has("SEND_MESSAGES")
+     ) channelToSend = channel;
+  });
+
+  if(!channelToSend) return;
+
+  channelToSend.send(
+    new MessageEmbed()
+    .setTitle("Thanks for adding me to your server! 😊")
+    .setDescription(`
+To get started, go to a text channel and do \`/help\`
+
+If you have any questions or need help with Saber, [click here](https://discord.gg/kBPpv47EJp) to talk to our support team!
+
+For exclusive features like **chat** vote our bot on [**Top.gg**](https://top.gg/bot/751079643980890225/vote)
+    `)
+    .setColor("ORANGE")
+  )
+});
+
 bot.login(process.env.BOT_TOKEN);
