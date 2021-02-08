@@ -2,6 +2,7 @@ const { Client, Util, MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "search",
+  timeout : 3000,
   description: "Search and add song to queue",
   alias: ["sc"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
