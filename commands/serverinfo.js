@@ -47,7 +47,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let created = dateformat(message.guild.createdAt); // Install "dateformat" first.
     
     let ownerTag = undefined;
-    bot.users.fetch(guild.ownerID).then(user => ownerTag = user.tag);
+    bot.users.fetch(message.guild.ownerID).then(user => ownerTag = user.tag);
     
     const embed = new Discord.MessageEmbed()
     .setColor(0x7289DA)
