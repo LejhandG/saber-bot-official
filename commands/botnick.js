@@ -4,7 +4,7 @@
 
   module.exports = {
       name: "botnick",
-    timeout : 3000,
+    timeout : 5000,
   description: "Changes Nickname of the Bot",
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
