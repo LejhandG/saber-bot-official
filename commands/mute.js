@@ -3,6 +3,7 @@ const ms = require("ms")
 
 module.exports = {
     name: "mute",
+    timeout : 5000,
 description: "Mutes the user",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
