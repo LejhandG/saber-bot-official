@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "role",
+    timeout : 5000,
 description: "Adds of removes role to the mentioned user",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
@@ -11,8 +12,8 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
         }, 3000);
     })
 
-    let user = message.guild.members.cache.find(mem => mem.user.username === args[0]) || message.guild.members.cache.get(args[0]) || message.mentions.users.first()
-    let role = message.guild.roles.cache.find(r => r.name === args.slice(1, args.length).join(" ")) || message.guild.roles.cache    .get(args.slice(1, args.length).join(" ")) || message.mentions.roles.first()
+    let user = message.guild.members.cache.find(mem => mem.user.username === args[1]) || message.guild.members.cache.get(args[1]) || message.mentions.users.first()
+    let role = message.guild.roles.cache.find(r => r.name === args.slice(2, args.length).join(" ")) || message.guild.roles.cache    .get(args.slice(2, args.length).join(" ")) || message.mentions.roles.first()
         if (role && user) {
         if (message.guild.member(user).roles.cache.has(role.id)) {
             message.channel.send(`-${role.toString()} from ***${user.tag === undefined ? user.user.tag : user.tag}***`)
@@ -27,7 +28,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
     if (!role && user) {
         message.guild.roles.create({data: {
-        name: args.join(" ").slice(args[0].length)}}).then(async r => {
+        name: args.join(" ").slice(args[1].length)}}).then(async r => {
            let m = await message.reply(`created role ${r.toString()}.`)
            setTimeout(() => {
                  m.edit(`+${r.toString()} to ***${user.tag === undefined ? user.user.tag : user.tag}***`)
