@@ -10,14 +10,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /setprefix`)
+        .setTitle(`Command: ${bot.prefix}setprefix`)
         .setDescription(`
 **Description:** 
 It sets the prefix for your guild
 **Usage:**
-/setprefix [text]
+${bot.prefix}setprefix [text]
 **Example:**
-/setprefix !
+${bot.prefix}setprefix !
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
