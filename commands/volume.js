@@ -1,5 +1,6 @@
 module.exports = {
   name: "volume",
+  timeout : 3000,
   description: "Set the bot song volume",
   alias: ["vol", "volume"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
