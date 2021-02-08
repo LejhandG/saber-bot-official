@@ -8,14 +8,14 @@ alias: ["tweet"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /trumptweet`)
+        .setTitle(`Command: ${bot.prefix}trumptweet`)
         .setDescription(`
 **Description:** 
 Trump tweets your text
 **Usage:**
-/trumptweet [text]
+${bot.prefix}trumptweet [text]
 **Example:**
-/trumptweet Hello
+${bot.prefix}trumptweet Hello
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
