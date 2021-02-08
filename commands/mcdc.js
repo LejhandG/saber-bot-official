@@ -8,14 +8,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /mcdc`)
+        .setTitle(`Command: ${bot.prefix}mcdc`)
         .setDescription(`
 **Description:** 
 Sends and image of a minecraft disconnect with your text
 **Usage:**
-/mcdc [text]
+${bot.prefix}mcdc [text]
 **Example:**
-/mcdc My wifi
+${bot.prefix}mcdc My wifi
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
