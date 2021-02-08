@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "advancedembed",
+    timeout : 10000,
 description: "Embed",
 alias: ["ae", "advembed"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
