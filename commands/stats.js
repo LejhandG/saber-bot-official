@@ -4,6 +4,7 @@ const ms = require("pretty-ms");
 
 module.exports = {
     name: "stats",
+    timeout : 3000,
 description: "Shows the stats of the bot",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
