@@ -8,14 +8,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /weather`)
+        .setTitle(`Command: ${bot.prefix}weather`)
         .setDescription(`
 **Description:** 
 Gives you the weather of a valid region
 **Usage:**
-/weather [location]
+${bot.prefix}weather [location]
 **Example:**
-/weather India
+${bot.prefix}weather India
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
