@@ -9,14 +9,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /slap`)
+        .setTitle(`Command: ${bot.prefix}slap`)
         .setDescription(`
 **Description:** 
 Slaps the mentioned user
 **Usage:**
-/slap @user
+${bot.prefix}slap @user
 **Example:**
-/slap @Vortex
+${bot.prefix}slap @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
