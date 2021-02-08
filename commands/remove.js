@@ -1,5 +1,6 @@
 module.exports = {
     name: "remove",
+    timeout : 3000,
 description: "Removes a song from the queue",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
