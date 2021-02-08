@@ -23,7 +23,7 @@ const client = new Discord.Client();
 let data = 0;
     client.guilds.cache.map(x => data = data + (x.memberCount))
 
-let servercount = bot.guilds.cache.size;
+let servercount = client.guilds.cache.size;
 
 const activities_list = [
     `/help`, 
