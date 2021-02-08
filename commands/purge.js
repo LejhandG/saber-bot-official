@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "purge",
+    timeout : 5000,
 description: "Clears channels",
 alias: ["clear"],
 run: async (bot, message, url, searchString, youtube, handleVideo, serverQueue, play) => {
