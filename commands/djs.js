@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: "djs",
+    timeout : 3000,
 description: "Discord JS Docs",
 alias: ["discordjs"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
