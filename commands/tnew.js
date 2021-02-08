@@ -7,6 +7,7 @@ const ticket = new DiscordTicket()
 
 module.exports = {
     name: "tnew",
+ timeout : 10000,
 description: "Creates a new ticket",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
