@@ -22,8 +22,9 @@ const client = new Discord.Client();
 
 const activities_list = [
     `/help`, 
-    `New Commands Daily`,
-    `Custom Prefix Out`, 
+    `/invite`,
+    `/website`,
+    `/vote`,
     ];
 
 client.on('ready', () => {
