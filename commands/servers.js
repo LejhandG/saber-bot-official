@@ -1,5 +1,6 @@
 module.exports = {
     name: "servers",
+    timeout : 3000,
 description: "List of Servers",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play, client) => {
