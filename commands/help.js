@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 
 module.exports = {
   name: "help",
+  timeout : 4000,
   description: "Show bot commands list",
   alias: ["cmd", "command", "commands", "helps"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
