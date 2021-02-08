@@ -46,9 +46,6 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     let dateformat = require('dateformat');
     let created = dateformat(message.guild.createdAt); // Install "dateformat" first.
     
-    let ownerTag = undefined;
-    bot.users.fetch(message.guild.ownerID).then(user => ownerTag = user.tag);
-    
     const embed = new Discord.MessageEmbed()
     .setColor(0x7289DA)
     .setTimestamp(new Date())
@@ -57,7 +54,6 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     .setDescription(`**ID:** ${message.guild.id}`)
     .addField("Region", location)
     .addField("Date Created", `${created} \nsince **${h}** day(s)`)
-    .addField("Owner", `**${ownerTag}**`)
     .addField("Member Count", `This server has ${message.guild.memberCount} members`)
     .addField(`Channels [${totalchan}]`, `Text: ${text} \nVoice: ${vc} \nCategory: ${category}`)
     .addField("Emoji Count", `This server has ${message.guild.emojis.cache.size} emojis`)
