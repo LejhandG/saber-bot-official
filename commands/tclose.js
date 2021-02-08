@@ -7,6 +7,7 @@ const ticket = new DiscordTicket()
 
 module.exports = {
     name: "tclose",
+ timeout : 3000,
 description: "Closes the ticket",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
