@@ -1,5 +1,6 @@
 module.exports = {
   name: "say",
+  timeout : 3000,
   description: "Say Command",
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
