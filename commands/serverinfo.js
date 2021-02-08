@@ -54,7 +54,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
     .setDescription(`**ID:** ${message.guild.id}`)
     .addField("Region", location)
     .addField("Date Created", `${created} \nsince **${h}** day(s)`)
-    .addField("Owner", `**${message.guild.owner.user.tag}** \n\`${message.guild.owner.user.id}\``)
+    .addField("Owner", `**${message.guild.owner.tag}** \n\`${message.guild.owner.id}\``)
     .addField("Member Count", `This server has ${message.guild.memberCount} members`)
     .addField(`Channels [${totalchan}]`, `Text: ${text} \nVoice: ${vc} \nCategory: ${category}`)
     .addField("Emoji Count", `This server has ${message.guild.emojis.cache.size} emojis`)
