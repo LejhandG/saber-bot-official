@@ -11,17 +11,17 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
   let wrong = new MessageEmbed()
-        .setTitle(`Command: /warn`)
+        .setTitle(`Command: ${bot.prefix}warn`)
         .setDescription(`
 **Description:** 
 It warns the mentioned user
 **Usage:**
-/warn @user [reason]
+${bot.prefix}warn @user [reason]
 **Example:**
-/warn @Vortex No NSFW
+${bot.prefix}warn @Vortex No NSFW
 **Subcommands**
-/checkwarns @user
-/clearwarns @user
+${bot.prefix}checkwarns @user
+${bot.prefix}clearwarns @user
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
