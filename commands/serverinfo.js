@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 
 module.exports = {
     name: "serverinfo",
+    timeout : 3000,
 description: "Shows the info of the server",
 alias: ["si"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
