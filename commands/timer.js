@@ -24,7 +24,7 @@ module.exports = {
     message.channel.send(":white_check_mark: " + "| Timer Started for: " + `${ms(ms(Timer), {long: true})}`)
   
     setTimeout(function(){
-      message.channel.send(message.author.toString() + ` The Timer Has FINISHED!, it lasted: ${ms(ms(Timer), {long: true})}`)
+      message.channel.send(` The Timer Has FINISHED!, it lasted: ${ms(ms(Timer), {long: true})}`)
     }, ms(Timer));
   }
 }
