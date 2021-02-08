@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: "roles",
+    timeout : 3000,
 description: "Shows all the server roles",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
