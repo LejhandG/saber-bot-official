@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "8ball",
-	timeout : 2000,
+	timeout : 3000,
 description: "command description",
 alias: ["ask", "8b"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
