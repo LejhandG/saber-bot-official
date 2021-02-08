@@ -8,14 +8,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /pokemon`)
+        .setTitle(`Command: ${bot.prefix}pokemon`)
         .setDescription(`
 **Description:** 
 Finds the pokemon mentioned by you
 **Usage:**
-/pokemon [name]
+${bot.prefix}pokemon [name]
 **Example:**
-/pokemon Pikachu
+${bot.prefix}pokemon Pikachu
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
