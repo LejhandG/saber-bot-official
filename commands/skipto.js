@@ -1,5 +1,6 @@
 module.exports = {
     name: "skipto",
+    timeout : 3000,
 description: "Skips to a particular song",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
