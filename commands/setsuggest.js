@@ -4,6 +4,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "setsuggest",
+    timeout : 30000,
 description: "Set suggestion channel",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
