@@ -8,6 +8,7 @@ var hd = [
 
 module.exports = {
     name: "coin",
+    timeout : 3000,
 description: "Coin Flip",
 alias: ["coinflip", "flip", "toss"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
