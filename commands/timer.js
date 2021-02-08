@@ -4,7 +4,7 @@ const ms = require('ms');
 
 module.exports = {
   name: "timer",
-  timeout : 3000,
+  timeout : 1800000,
   description: "Timer Countdown",
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
@@ -23,6 +23,9 @@ Sets a timer for a given time
         .setColor(`RANDOM`);
   
   const Timer = args[1]
+  
+  if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have the required permission to use this command.')
+    
     if (ms(Timer) > 3600000) return message.reply("Timer should be less than one hour")
     if(ms(Timer) < 1) return message.reply("Timer should be more than one second")
   
