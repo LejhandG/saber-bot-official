@@ -9,14 +9,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /slowmode`)
+        .setTitle(`Command: ${bot.prefix}slowmode`)
         .setDescription(`
 **Description:** 
 Adds slowmode to the channel
 **Usage:**
-/slowmode [time in s,m,h]
+${bot.prefix}slowmode [time in s,m,h]
 **Example:**
-/slowmode 10s
+${bot.prefix}slowmode 10s
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
