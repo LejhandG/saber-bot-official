@@ -8,14 +8,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /unmute`)
+        .setTitle(`Command: ${bot.prefix}unmute`)
         .setDescription(`
 **Description:** 
 Unmutes a already muted member
 **Usage:**
-/unmute @user
+${bot.prefix}unmute @user
 **Example:**
-/unmute @Vortex
+${bot.prefix}unmute @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
