@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "snipe",
+    timeout : 3000,
 description: "Shows the deleted message in the channel",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
