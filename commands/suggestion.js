@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "suggestion",
+    timeout : 10800000,
 description: "Send suggestion",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
