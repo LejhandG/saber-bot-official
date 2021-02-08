@@ -15,7 +15,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) {
 }    
 
 const helpembed = new Discord.MessageEmbed()
-	.setColor('#00f9ff')
+	.setColor('ORANGE')
   .setImage('https://media.discordapp.net/attachments/722759592047542304/740848562799116299/IntroText_20190910_162937-2.gif?width=845&height=475')
 
 message.channel.send(helpembed);
