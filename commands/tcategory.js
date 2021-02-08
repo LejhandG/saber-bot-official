@@ -13,14 +13,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
  
  let wrong = new MessageEmbed()
-        .setTitle(`Command: /tcategory`)
+        .setTitle(`Command: ${bot.prefix}tcategory`)
         .setDescription(`
 **Description:** 
 Sets the category of the ticket
 **Usage:**
-/tcategory [category id]
+${bot.prefix}tcategory [category id]
 **Example:**
-/tcategory 69814629264426
+${bot.prefix}tcategory 69814629264426
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
