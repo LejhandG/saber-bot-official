@@ -26,7 +26,7 @@ console.log("Streamstatus by Lejhand")
 const hook = new Discord.WebhookClient('780685250149482528', 'bZ7YupqNKT_nWdmJX-9nNen5rIPlsfnGdTqpbTCVO8YKNZg7q7BSpD6MlbFE16K0EbnW');
 hook.send("Bot Is Online !!")
 
-client.user.setActivity(`/help`, {
+client.user.setActivity(`Bot on Maintainence`, {
 type: "WATCHING"})
     .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
     .catch(console.error);
