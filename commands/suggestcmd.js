@@ -13,7 +13,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
   
   const hook = new Discord.WebhookClient('780686781115793428', 'pQj8A0w1nZvzodMD3vnu1DtNg0tXgjZWx_EO5403covFgFhg-eZeWm6XRALO7dTfnJec');
   
-  let user = message.guild.members.cache.get(args[0])
+  let user = message.guild.members.cache.get(args[1])
   if (!user) user = message.author
   
   if(!args.length) return message.channel.send("You did not specify your suggestion to send!")
