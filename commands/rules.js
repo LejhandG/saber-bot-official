@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
   name: "rules",
+	timeout : 30000,
   description: "Embeds rules",
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
