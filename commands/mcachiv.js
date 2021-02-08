@@ -8,14 +8,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
   let wrong = new MessageEmbed()
-        .setTitle(`Command: /mcachiv`)
+        .setTitle(`Command: ${bot.prefix}mcachiv`)
         .setDescription(`
 **Description:** 
 Sends and image of a minecraft achivement with your text
 **Usage:**
-/mcachiv [text]
+${bot.prefix}mcachiv [text]
 **Example:**
-/mcachiv Nether Fortress
+${bot.prefix}mcachiv Nether Fortress
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
