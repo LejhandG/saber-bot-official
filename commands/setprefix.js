@@ -4,6 +4,7 @@ const db = require('quick.db')
 
 module.exports = {
     name: "setprefix",
+    timeout : 30000,
 description: "Sets the server prefix",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
