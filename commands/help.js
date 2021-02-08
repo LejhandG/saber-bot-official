@@ -20,15 +20,16 @@ module.exports = {
 🔸 2. Chat Commands
 🔸 3. Invites Commands
 🔸 4. Moderation Commands
-🔸 5. Ticket Commands
-🔸 6. Fun Commands
-🔸 7. Image Commands
-🔸 8. Utility Commands
-🔸 9. Info Commands
-🔸 10. Misc Commands
-🔸 11. Embed Commands
-🔸 12. API Commands
-🔸 13. Suggest Commands
+🔸 5. Rank Commands
+🔸 6. Ticket Commands
+🔸 7. Fun Commands
+🔸 8. Image Commands
+🔸 9. Utility Commands
+🔸 10. Info Commands
+🔸 11. Misc Commands
+🔸 12. Embed Commands
+🔸 13. API Commands
+🔸 14. Suggest Commands
 
 Prefix - \`${bot.prefix}\`
 
@@ -85,6 +86,15 @@ Prefix - \`${bot.prefix}\`
 \`unban\`, \`moveall\`, \`nuke\`
     `)
     .setFooter("©️ 2021 Saber Bot");
+    
+    const rank = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Rank Commands__**
+\`rank\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
 
     const ticket = new Discord.MessageEmbed()
     .setColor("ORANGE")
@@ -129,7 +139,7 @@ Prefix - \`${bot.prefix}\`
     .setDescription(`
     **__Utility Commands__**
 \`poll\`, \`weather\`, \`setsuggest\`
-\`suggestion\`
+\`suggestion\`, \`timer\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -188,6 +198,7 @@ Prefix - \`${bot.prefix}\`
       chat,
       invites,
       moderation,
+      rank,
       ticket,
       fun,
       image,
