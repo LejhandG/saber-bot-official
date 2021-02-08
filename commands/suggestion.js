@@ -10,14 +10,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
 let wrong = new MessageEmbed()
-        .setTitle(`Command: /suggestion`)
+        .setTitle(`Command: ${bot.prefix}suggestion`)
         .setDescription(`
 **Description:** 
 Sends suggestion to the server staff
 **Usage:**
-/suggestion [text]
+${bot.prefix}suggestion [text]
 **Example:**
-/suggestion Add Saber to the server
+${bot.prefix}suggestion Add Saber to the server
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
