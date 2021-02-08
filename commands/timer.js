@@ -10,7 +10,6 @@ module.exports = {
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   
   const Timer = args[1]
-    if(isNaN(Timer)) return message.reply("The time should be a number not a text")
     if (ms(Timer) > 3600000) return message.reply("Timer should be less than one hour")
     if(ms(Timer) < 1) return message.reply("Timer should be more than one second")
   
