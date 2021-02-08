@@ -20,16 +20,27 @@ setInterval(() => {
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+let data = 0;
+    client.guilds.cache.map(x => data = data + (x.memberCount))
+
+let servercount = bot.guilds.cache.size;
+
+const activities_list = [
+    `/help`, 
+    `${data} users`,
+    `${servercount} servers`, 
+    ];
+
 client.on('ready', () => {
 console.log(`Logged in as ${client.user.tag}!`);
 console.log("Streamstatus by Lejhand")
 const hook = new Discord.WebhookClient('780685250149482528', 'bZ7YupqNKT_nWdmJX-9nNen5rIPlsfnGdTqpbTCVO8YKNZg7q7BSpD6MlbFE16K0EbnW');
-hook.send("Bot Is Online !!")
+hook.send("Bot Is Online")
 
-client.user.setActivity(`Bot on Maintainence`, {
-type: "WATCHING"})
-    .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
-    .catch(console.error);
+setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        client.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
+    }, 10000);
 });
 
 client.login('NzUxMDc5NjQzOTgwODkwMjI1.X1D3bQ.4HuQT9Gh9K0OZpWAzBfCX7yVYkY');
