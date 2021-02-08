@@ -4,6 +4,7 @@ const db = require('quick.db')
 
 module.exports = {
     name: "checkwarns",
+    timeout : 5000,
 description: "Check warns of the user",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
