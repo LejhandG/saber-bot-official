@@ -13,14 +13,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
  
  let wrong = new MessageEmbed()
-        .setTitle(`Command: /tnew`)
+        .setTitle(`Command: ${bot.prefix}tnew`)
         .setDescription(`
 **Description:** 
 Creates a new ticket
 **Usage:**
-/tnew [reason]
+${bot.prefix}tnew [reason]
 **Example:**
-/tnew Want to contact staff
+${bot.prefix}tnew Want to contact staff
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
