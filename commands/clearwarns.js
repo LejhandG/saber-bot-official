@@ -5,6 +5,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "clearwarns",
+    timeout : 5000,
 description: "Clears Warns of the user",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
