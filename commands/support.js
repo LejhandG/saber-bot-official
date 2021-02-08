@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
   name: "support",
+  timeout : 3000,
   description: "Show bot support discord server url",
   alias: ["server"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
