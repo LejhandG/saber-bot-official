@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "blueify",
+    timeout : 3000,
 description: "Blueify Command",
 alias: ["blue"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
