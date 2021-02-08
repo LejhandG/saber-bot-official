@@ -8,14 +8,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /watermeme`)
+        .setTitle(`Command: ${bot.prefix}watermeme`)
         .setDescription(`
 **Description:** 
 Adds text to the watermeme format
 **Usage:**
-/watermeme [text]
+${bot.prefix}watermeme [text]
 **Example:**
-/watermeme Lol
+${bot.prefix}watermeme Lol
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
