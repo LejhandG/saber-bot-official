@@ -6,6 +6,7 @@ const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MTA3OTY0Mz
 
 module.exports = {
     name: "chat",
+    timeout : 5000,
 description: "Chatbot Lol",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
