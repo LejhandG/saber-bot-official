@@ -13,14 +13,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
  
  let wrong = new MessageEmbed()
-        .setTitle(`Command: /tclose`)
+        .setTitle(`Command: ${bot.prefix}tclose`)
         .setDescription(`
 **Description:** 
 Closes the existing ticket
 **Usage:**
-/tclose #channel
+${bot.prefix}tclose #channel
 **Example:**
-/tclose #ticket-1
+${bot.prefix}tclose #ticket-1
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
