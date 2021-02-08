@@ -8,14 +8,14 @@ alias: ["blue"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
 let wrong = new MessageEmbed()
-        .setTitle(`Command: /sudo`)
+        .setTitle(`Command: ${bot.prefix}sudo`)
         .setDescription(`
 **Description:** 
 Send message while being someone else
 **Usage:**
-/sudo @user [text]
+${bot.prefix}sudo @user [text]
 **Example:**
-/sudo @Vortex Lol
+${bot.prefix}sudo @Vortex Lol
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
