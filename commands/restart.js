@@ -2,6 +2,7 @@ const child = require("child_process")
 
 module.exports = {
     name: "restart",
+    timeout : 3000,
 description: "Restarts bot",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
