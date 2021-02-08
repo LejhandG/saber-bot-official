@@ -1,5 +1,6 @@
 module.exports = {
   name: "nowplaying",
+  timeout : 3000,
   description: "Show bot currently playing song",
   alias: ["np"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
