@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "imageembed",
+    timeout : 5000,
 description: "Embeds Image",
 alias: ["imgembed"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
