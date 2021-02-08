@@ -13,14 +13,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
  
  let wrong = new MessageEmbed()
-        .setTitle(`Command: /trole`)
+        .setTitle(`Command: ${bot.prefix}trole`)
         .setDescription(`
 **Description:** 
 Set the role which can see the tickets
 **Usage:**
-/trole @role
+${bot.prefix}trole @role
 **Example:**
-/trole @Staff
+${bot.prefix}trole @Staff
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
