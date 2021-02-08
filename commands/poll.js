@@ -10,14 +10,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /poll`)
+        .setTitle(`Command: ${bot.prefix}poll`)
         .setDescription(`
 **Description:** 
 Makes a poll with question and options
 **Usage:**
-/poll question | option1 | option2
+${bot.prefix}poll question | option1 | option2
 **Example:**
-/poll How are you all | Fine | Sad
+${bot.prefix}poll How are you all | Fine | Sad
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
