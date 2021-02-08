@@ -3,6 +3,7 @@ const { Client, Util, MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "play",
+  timeout : 3000,
   description: "Play song",
   alias: ["p"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
