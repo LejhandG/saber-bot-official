@@ -1,5 +1,6 @@
 module.exports = {
   name: "pause",
+  timeout : 3000,
   description: "Pause song",
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
