@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: "sudo",
+    timeout : 3000,
 description: "Sudo Command",
 alias: ["blue"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
