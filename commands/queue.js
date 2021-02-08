@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
   name: "queue",
+  timeout : 3000,
   description: "Show song queue",
   alias: ["q"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
