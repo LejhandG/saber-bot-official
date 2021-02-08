@@ -1,7 +1,8 @@
 module.exports = {
     name: "lock",
+    timeout : 5000,
 description: "Lock the channel",
-alias: ["lock"],
+alias: ["locks", "lockdown"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
   if (!message.member.hasPermission("MANAGE_CHANNELS")) {
 
