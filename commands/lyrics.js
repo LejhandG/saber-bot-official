@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "lyrics",
+    timeout : 3000,
 description: "Shows the lyrics of the song",
 alias: ["lyric"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
