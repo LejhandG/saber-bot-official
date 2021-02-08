@@ -8,14 +8,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /unban`)
+        .setTitle(`Command: ${bot.prefix}unban`)
         .setDescription(`
 **Description:** 
 Unbans a member already banned in the guild
 **Usage:**
-/unban [id]
+${bot.prefix}unban [id]
 **Example:**
-/unban 791040912740294
+${bot.prefix}unban 791040912740294
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
