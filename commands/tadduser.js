@@ -13,14 +13,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
  
  let wrong = new MessageEmbed()
-        .setTitle(`Command: /tadduser`)
+        .setTitle(`Command: ${bot.prefix}tadduser`)
         .setDescription(`
 **Description:** 
 Adds the user to a existing ticket
 **Usage:**
-/tadduser #channel @user
+${bot.prefix}tadduser #channel @user
 **Example:**
-/tadduser #ticket-1 @Vortex
+${bot.prefix}tadduser #ticket-1 @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
