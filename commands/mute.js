@@ -9,14 +9,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
     let wrong = new MessageEmbed()
-        .setTitle(`Command: /mute`)
+        .setTitle(`Command: ${bot.prefix}mute`)
         .setDescription(`
 **Description:** 
 Mutes the member mentioned
 **Usage:**
-/mute @member [time]
+${bot.prefix}mute @member [time]
 **Example:**
-/mute @Vortex 1m
+${bot.prefix}mute @Vortex 1m
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
