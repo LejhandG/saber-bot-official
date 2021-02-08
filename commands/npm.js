@@ -10,14 +10,14 @@ alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
 let wrong = new MessageEmbed()
-        .setTitle(`Command: /npm`)
+        .setTitle(`Command: ${bot.prefix}npm`)
         .setDescription(`
 **Description:** 
 Shows from npm packages
 **Usage:**
-/npm [text]
+${bot.prefix}npm [text]
 **Example:**
-/npm discord.js
+${bot.prefix}npm discord.js
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
