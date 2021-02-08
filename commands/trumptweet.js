@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "trumptweet",
+    timeout : 3000,
 description: "Trump Tweet",
 alias: ["tweet"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
