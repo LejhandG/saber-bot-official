@@ -4,6 +4,7 @@ const reactions = ['🇦', '🇧', '🇨', '🇩', '🇪', '🇫', '🇬', '🇭
 
 module.exports = {
     name: "poll",
+    timeout : 5000,
 description: "Poll Command",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
