@@ -56,6 +56,7 @@ var jokes = [
 
 module.exports = {
     name: "dadjokes",
+    timeout : 3000,
 description: "command description",
 alias: ["dadjoke"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
