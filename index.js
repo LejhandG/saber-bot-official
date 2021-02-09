@@ -211,16 +211,4 @@ For exclusive features like **chat** vote our bot on [**Top.gg**](https://top.gg
   )
 });
 
-GiveawayCreator.on('giveawayEnd', giveaway => {
-    message.channel.send(`The ${giveaway.prize} giveaway has ended at ${giveaway.endsOn}.`);
-});
-
-GiveawayCreator.on('giveawayStart', giveaway => {
-    message.channel.send(`${giveaway.prize} giveaway has been scheduled for ${giveaway.endsOn}.`);
-});
-
-GiveawayCreator.on('giveawayReroll', giveaway => {
-    message.channel.send(`Rerolled the ${giveaway.prize} giveaway.`);
-});
-
 bot.login(process.env.BOT_TOKEN);
