@@ -26,7 +26,7 @@ Sets a timer for a given time
   
   if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have the required permission to use this command.')
     
-    if (ms(Timer) > 3600000) return message.reply("Timer should be less than one hour")
+    if (ms(Timer) > 600000) return message.reply("Timer should be less than ten minutes")
     if(ms(Timer) < 1) return message.reply("Timer should be more than one second")
   
     if(!args[1]){
