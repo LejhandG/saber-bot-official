@@ -92,7 +92,7 @@ Prefix - \`${bot.prefix}\`
     .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
     .setDescription(`
     **__Rank Commands__**
-\`rank\`
+\`rank\`, \`leaderboard\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
