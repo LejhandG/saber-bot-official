@@ -8,7 +8,7 @@ require("./server.js");
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const bot = new Client({
-  disableMentions: "everyone", "here"
+  disableMentions: "all"
 });
 const { GiveawayCreator } = require('discord-giveaway');
 const Creator = new GiveawayCreator(bot, 'mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test');
