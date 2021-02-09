@@ -31,9 +31,9 @@ ${bot.prefix}gstart #giveaways 1d 1 Nitro
   const channel = message.mentions.channels.first();
     
     if (!channel) return message.channel.send(wrong)
-    if (priz.length < 1) return message.reply(wrong);
-    if (time.length < 1) return message.reply(wrong);
-    if (winerz.length < 1) return message.reply(wrong);
+    if (!priz) return message.reply(wrong);
+    if (!time) return message.reply(wrong);
+    if (!winerz) return message.reply(wrong);
     
         await bot.giveaways.startGiveaway({
             prize: priz,
