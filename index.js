@@ -10,6 +10,8 @@ const client = new Discord.Client();
 const bot = new Client({
   disableMentions: "all"
 });
+const { GiveawayCreator } = require('discord-giveaway');
+const Creator = new GiveawayCreator(bot, 'mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test');
 const db = require('quick.db')
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true})
@@ -23,6 +25,7 @@ const queue = new Map();
 
 bot.aliases = new Collection();
 bot.commands = new Collection();
+bot.giveaways = Creator;
 
 bot.on("warn", console.warn);
 bot.on("error", console.error);
@@ -206,6 +209,18 @@ For exclusive features like **chat** vote our bot on [**Top.gg**](https://top.gg
     `)
     .setColor("ORANGE")
   )
+});
+
+GiveawayCreator.on('giveawayEnd', giveaway => {
+    message.channel.send(`The ${giveaway.prize} giveaway has ended at ${giveaway.endsOn}.`);
+});
+
+GiveawayCreator.on('giveawayStart', giveaway => {
+    message.channel.send(`${giveaway.prize} giveaway has been scheduled for ${giveaway.endsOn}.`);
+});
+
+GiveawayCreator.on('giveawayReroll', giveaway => {
+    message.channel.send(`Rerolled the ${giveaway.prize} giveaway.`);
 });
 
 bot.login(process.env.BOT_TOKEN);
