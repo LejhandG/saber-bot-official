@@ -139,7 +139,7 @@ Prefix - \`${bot.prefix}\`
     .setDescription(`
     **__Utility Commands__**
 \`poll\`, \`weather\`, \`setsuggest\`
-\`suggestion\`, \`timer\`
+\`suggestion\`, \`timer\`, \`afk\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
