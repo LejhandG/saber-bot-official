@@ -27,7 +27,7 @@
     "node": "14.x"
   },
   "dependencies": {
-    "@discordjs/opus": "*",
+    "@discordjs/opus": "^0.4.0",
     "adf.ly": "^1.2.0",
     "alexa-bot-api": "^0.2.1",
     "canvacord": "^5.0.8",
