@@ -13,10 +13,6 @@ const bot = new Client({
 const { GiveawayCreator } = require('discord-giveaway');
 const Creator = new GiveawayCreator(bot, 'mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test');
 const db = require('quick.db')
-const { EconomyManager } = require("quick.eco");
-const eco = new EconomyManager({
-    adapter: 'sqlite'
-});
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true})
 const Levels = require('discord-xp')
@@ -30,19 +26,6 @@ const queue = new Map();
 bot.aliases = new Collection();
 bot.commands = new Collection();
 bot.giveaways = Creator;
-bot.eco = new EconomyManager.Manager();
-bot.db = EconomyManager.db;
-bot.shop = {
-  laptop: {
-    cost: 2000
-  },
-  mobile: {
-    cost: 1000
-  },
-  pc: {
-    cost: 3000
-  }
-};
 
 bot.on("warn", console.warn);
 bot.on("error", console.error);
@@ -91,8 +74,6 @@ bot.on("message", async message => {
     const user = await Levels.fetch(message.author.id, message.guild.id)
     message.channel.send(`You leveled up to ${user.level}! Keep it going!`)
   }
-  
-  bot.ecoAddUser = message.author.id;
   
   async function handleVideo(video, message, voiceChannel, playlist = false) {
     const serverQueue = queue.get(message.guild.id);
