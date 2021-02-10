@@ -22,7 +22,7 @@ ${bot.prefix}gstart #giveaways 1d 1 Nitro
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
     
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permission to do that!");
     
     let priz = args.slice(4).join(" ")
     let time = args[2]
