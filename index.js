@@ -13,7 +13,10 @@ const bot = new Client({
 const { GiveawayCreator } = require('discord-giveaway');
 const Creator = new GiveawayCreator(bot, 'mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test');
 const db = require('quick.db')
-const Eco = require("quick.eco")
+const { EconomyManager } = require("quick.eco");
+const eco = new EconomyManager({
+    adapter: 'sqlite'
+});
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true})
 const Levels = require('discord-xp')
@@ -27,8 +30,8 @@ const queue = new Map();
 bot.aliases = new Collection();
 bot.commands = new Collection();
 bot.giveaways = Creator;
-bot.eco = new Eco.Manager();
-bot.db = Eco.db;
+bot.eco = new EconomyManager.Manager();
+bot.db = EconomyManager.db;
 bot.shop = {
   laptop: {
     cost: 2000
