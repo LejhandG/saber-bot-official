@@ -22,14 +22,15 @@ module.exports = {
 🔸 4. Moderation Commands
 🔸 5. Rank Commands
 🔸 6. Ticket Commands
-🔸 7. Fun Commands
-🔸 8. Image Commands
-🔸 9. Utility Commands
-🔸 10. Info Commands
-🔸 11. Misc Commands
-🔸 12. Embed Commands
-🔸 13. API Commands
-🔸 14. Suggest Commands
+🔸 7. Giveaway Commands
+🔸 8. Fun Commands
+🔸 9. Image Commands
+🔸 10. Utility Commands
+🔸 11. Info Commands
+🔸 12. Misc Commands
+🔸 13. Embed Commands
+🔸 14. API Commands
+🔸 15. Suggest Commands
 
 Prefix - \`${bot.prefix}\`
 
@@ -103,6 +104,15 @@ Prefix - \`${bot.prefix}\`
     **__Ticket Commands__**
 \`tnew\`, \`tclose\`, \`trole\`
 \`tcategory\`, \`tadduser\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
+    
+    const giveaway = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Giveaway Commands__**
+\`gstart\`, \`gend\`, \`greroll\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -200,6 +210,7 @@ Prefix - \`${bot.prefix}\`
       moderation,
       rank,
       ticket,
+      giveaway,
       fun,
       image,
       utility,
