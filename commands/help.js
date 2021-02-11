@@ -16,29 +16,30 @@ module.exports = {
 
     **__Important Info__**
 
-🔸 1. Music Commands
-🔸 2. Chat Commands
-🔸 3. Invites Commands
-🔸 4. Moderation Commands
-🔸 5. Rank Commands
-🔸 6. Ticket Commands
-🔸 7. Giveaway Commands
-🔸 8. Fun Commands
-🔸 9. Image Commands
-🔸 10. Utility Commands
-🔸 11. Info Commands
-🔸 12. Misc Commands
-🔸 13. Embed Commands
-🔸 14. API Commands
-🔸 15. Suggest Commands
+<:S_DND:770582506940006431> 1. Music Commands
+<:S_DND:770582506940006431> 2. Chat Commands
+<:S_DND:770582506940006431> 3. Invites Commands
+<:S_DND:770582506940006431> 4. Moderation Commands
+<:S_DND:770582506940006431> 5. Rank Commands
+<:S_DND:770582506940006431> 6. Economy Commands
+<:S_DND:770582506940006431> 7. Ticket Commands
+<:S_DND:770582506940006431> 8. Giveaway Commands
+<:S_DND:770582506940006431> 9. Fun Commands
+<:S_DND:770582506940006431> 10. Image Commands
+<:S_DND:770582506940006431> 11. Utility Commands
+<:S_DND:770582506940006431> 12. Info Commands
+<:S_DND:770582506940006431> 13. Misc Commands
+<:S_DND:770582506940006431> 14. Embed Commands
+<:S_DND:770582506940006431> 15. API Commands
+<:S_DND:770582506940006431> 16. Suggest Commands
 
-Prefix - \`${bot.prefix}\`
+<:S_Online:770582506994532363> Prefix - \`${bot.prefix}\`
 
-[**INVITE OUR BOT**](https://discord.com/oauth2/authorize?client_id=751079643980890225&scope=bot&permissions=2146958847)
-[**CHECK OUT OUR WEBSITE**](https://saberofficial.ml/)
-[**DONATE US**](https://patreon.com/saberbot)
-[**JOIN OUR SUPPORT SERVER**](https://discord.gg/kBPpv47EJp)
-[**DOCUMENTATION**](https://docs.saberofficial.ml/)
+<:1235_arrow_right:809423996550381578> [**INVITE OUR BOT**](https://discord.com/oauth2/authorize?client_id=751079643980890225&scope=bot&permissions=2146958847)
+<:1235_arrow_right:809423996550381578> [**CHECK OUT OUR WEBSITE**](https://saberofficial.ml/)
+<:1235_arrow_right:809423996550381578> [**DONATE US**](https://patreon.com/saberbot)
+<:1235_arrow_right:809423996550381578> [**JOIN OUR SUPPORT SERVER**](https://discord.gg/kBPpv47EJp)
+<:1235_arrow_right:809423996550381578> [**DOCUMENTATION**](https://docs.saberofficial.ml/)
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -94,6 +95,19 @@ Prefix - \`${bot.prefix}\`
     .setDescription(`
     **__Rank Commands__**
 \`rank\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
+    
+    const economy = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Economy Commands__**
+\`balance\`, \`beg\`, \`buy\`, \`daily\`
+\`deposit\`, \`pay\`, \`profile\`, \`rob\`
+\`roulette\`, \`sell\`, \`slots\`, \`store\`
+\`storeinfo\`, \`weekly\`, \`withdraw\`
+\`work\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
