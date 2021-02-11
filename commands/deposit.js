@@ -5,7 +5,7 @@ const ms = require("parse-ms")
 
 module.exports = {
     name: "deposit",
-    timeout : 1,
+    timeout : 5000,
     description: "Deposit money into bank",
     alias: ["dep"],
     run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
