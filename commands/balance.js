@@ -6,7 +6,7 @@ module.exports = {
     name: "balance",
     timeout : 5000,
     description: "Shows your balance in economy system",
-    alias: [],
+    alias: ["bal"],
     run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
         let user = message.mentions.members.first() || message.author;
 
