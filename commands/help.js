@@ -223,6 +223,7 @@ module.exports = {
       invites,
       moderation,
       rank,
+      economy,
       ticket,
       giveaway,
       fun,
