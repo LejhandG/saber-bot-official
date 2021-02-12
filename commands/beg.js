@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js")
 const db = require("quick.db")
 const Discord = require("discord.js")
+const random = require("random")
 
 module.exports = {
     name: "beg",
@@ -11,7 +12,7 @@ module.exports = {
 
         let user = message.author;
 
-  let amount = 5;
+  let amount = random.int(5, 20);
 
   let beg = await db.fetch(`beg_${message.guild.id}_${user.id}`);
 
