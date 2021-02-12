@@ -107,7 +107,7 @@ module.exports = {
 \`deposit\`, \`pay\`, \`profile\`, \`rob\`
 \`roulette\`, \`sell\`, \`slots\`, \`store\`
 \`storeinfo\`, \`weekly\`, \`withdraw\`
-\`work\`
+\`work\`, \`hourly\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
