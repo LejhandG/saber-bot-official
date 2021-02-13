@@ -16,22 +16,22 @@ module.exports = {
 
     **__Important Info__**
 
-<:S_DND:770582506940006431> 1. Music Commands
-<:S_DND:770582506940006431> 2. Chat Commands
-<:S_DND:770582506940006431> 3. Invites Commands
-<:S_DND:770582506940006431> 4. Moderation Commands
-<:S_DND:770582506940006431> 5. Rank Commands
-<:S_DND:770582506940006431> 6. Economy Commands
-<:S_DND:770582506940006431> 7. Ticket Commands
-<:S_DND:770582506940006431> 8. Giveaway Commands
-<:S_DND:770582506940006431> 9. Fun Commands
-<:S_DND:770582506940006431> 10. Image Commands
-<:S_DND:770582506940006431> 11. Utility Commands
-<:S_DND:770582506940006431> 12. Info Commands
-<:S_DND:770582506940006431> 13. Misc Commands
-<:S_DND:770582506940006431> 14. Embed Commands
-<:S_DND:770582506940006431> 15. API Commands
-<:S_DND:770582506940006431> 16. Suggest Commands
+<:S_gbarrow:810158662831177729> 1. Music Commands
+<:S_gbarrow:810158662831177729> 2. Chat Commands
+<:S_gbarrow:810158662831177729> 3. Invites Commands
+<:S_gbarrow:810158662831177729> 4. Moderation Commands
+<:S_gbarrow:810158662831177729> 5. Rank Commands
+<:S_gbarrow:810158662831177729> 6. Economy Commands
+<:S_gbarrow:810158662831177729> 7. Ticket Commands
+<:S_gbarrow:810158662831177729> 8. Giveaway Commands
+<:S_gbarrow:810158662831177729> 9. Fun Commands
+<:S_gbarrow:810158662831177729> 10. Image Commands
+<:S_gbarrow:810158662831177729> 11. Utility Commands
+<:S_gbarrow:810158662831177729> 12. Info Commands
+<:S_gbarrow:810158662831177729> 13. Misc Commands
+<:S_gbarrow:810158662831177729> 14. Embed Commands
+<:S_gbarrow:810158662831177729> 15. API Commands
+<:S_gbarrow:810158662831177729> 16. Suggest Commands
 
 <:S_Online:770582506994532363> Prefix - \`${bot.prefix}\`
 
