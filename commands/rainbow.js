@@ -14,7 +14,7 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
   const helpembed = new MessageEmbed()
       .setColor("RANDOM")
-      .setTitle("Gun Command")
+      .setTitle("Rainbow Command")
       .setImage("https://api.devs-hub.xyz/rainbow?image=" + avatar)
       .setFooter(message.author.tag, message.author.avatarURL())
     message.channel.send(helpembed).catch(err => {
