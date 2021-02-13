@@ -155,7 +155,6 @@ module.exports = {
 \`buzz\`, \`wasted\`, \`trash\`
 \`blueify\`, \`simpcard\`, \`snow\`
 \`hitler\`, \`gun\`, \`rainbow\`
-\`grab\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
