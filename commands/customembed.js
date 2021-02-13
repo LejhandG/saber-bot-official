@@ -36,6 +36,7 @@ if (!args[3]) return message.reply(wrong)
 
 const sendembed = new MessageEmbed()
 .setDescription(text)
+.setColor("ORANGE")
 
         message.channel.createWebhook(username, {
             avatar: photo
