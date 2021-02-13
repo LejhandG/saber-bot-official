@@ -22,10 +22,6 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
         max: 1,
         time: 30000,
     })
-        
-        if (!/\.(jpe?g|png|gif)$/i.test(photo)) {
-    return message.reply('That was not a valid URL.')
-}
     
     let embed = new MessageEmbed()
     message.reply('What should the title of the embed be? if none then type `none`').then(m => m.delete({timeout: 30000}))
