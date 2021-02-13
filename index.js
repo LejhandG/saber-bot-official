@@ -57,7 +57,7 @@ bot.on("message", async message => {
   const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || "/"
   bot.prefix = PREFIX;
   if (message.content.startsWith(`<@!${bot.user.id}>`) || message.content.startsWith(`<@${bot.user.id}>`)) {
-    PREFIX = `<@!${bot.user.id}> `;
+    const PREFIX = `<@!${bot.user.id}> `;
   }
   // eslint-disable-line
   if (message.author.bot) return;
