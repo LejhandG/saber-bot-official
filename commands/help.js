@@ -195,7 +195,8 @@ module.exports = {
     .setDescription(`
     **__Embed Commands__**
 \`say\`, \`advancedembed\`, \`rules\`
-\`announce\`, \`embed\`, \`imageembed\`    
+\`announce\`, \`embed\`, \`imageembed\`
+\`customembed\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
