@@ -6,8 +6,9 @@ module.exports = {
   description: "Show your avatar",
   alias: ["ava", "avatar", "av"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
-    let user = message.mentions.members.first()
-  if (!user) user = message.author
+    
+    let user = message.mentions.users.first()
+    if (!user) user = message.author
 
   let avatar = user.displayAvatarURL({size: 4096, dynamic: true});
   let pngavatar = user.displayAvatarURL({ format: 'png' });
