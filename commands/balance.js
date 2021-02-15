@@ -19,7 +19,8 @@ module.exports = {
 
   let moneyEmbed = new Discord.MessageEmbed()
   .setColor("#FFFFFF")
-  .setDescription(`**${user}'s Balance**\n\nPocket: ${bal}\nBank: ${bank}`);
+  .setDescription(`**${user}'s Balance**\n\nPocket: ${bal}\nBank: ${bank}`)
+  .setImage("https://ncentral.sirv.com/Balance.jpg?text.0.text=%24" + bal + "&text.0.position.x=-40%25&text.0.position.y=-62%25&text.0.size=19&text.0.color=000000&text.0.font.family=Cabin&text.1.text=%24" + bank + "&text.1.position.x=-40%25&text.1.position.y=-28%25&text.1.size=19&text.1.color=000000&text.1.font.family=Cabin")
   message.channel.send(moneyEmbed)
     }
   }
