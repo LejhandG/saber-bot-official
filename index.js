@@ -193,7 +193,7 @@ bot.on('messageDelete', async function(message, channel){
 
   const embed = new MessageEmbed()
   .setTitle("Message Deleted")
-  .setDescription(`Message deleted in <#${message.channel.id}> by **${message.author.tag}**> \n ${message.content}`)
+  .setDescription(`Message deleted in \n Channel - <#${message.channel.id}> \n By **${message.author.tag}** \n Message - ${message.content}`)
   .setTimestamp()
   .setColor("ORANGE")
 
