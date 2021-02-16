@@ -138,6 +138,7 @@ module.exports = {
 \`meme\`, \`roast\`
 \`8ball\`, \`dadjokes\`, \`coin\`
 \`pokemon\`, \`sudo\`, \`snipe\`
+\`tictactoe\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -189,7 +190,7 @@ module.exports = {
     **__Misc Commands__**
 \`invite\`, \`support\`, \`website\`
 \`botnick\`, \`donate\`, \`vote\`
-\`setprefix\`
+\`setprefix\`, \`setlogs\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
