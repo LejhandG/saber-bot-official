@@ -174,14 +174,30 @@ bot.on("message", async message => {
   }
 })
 bot.snipes = new Map()
-bot.on('messageDelete', function(message, channel){
+bot.on('messageDelete', async function(message, channel){
   
   bot.snipes.set(message.channel.id, {
     content:message.content,
     author:message.author.tag,
     image:message.attachments.first() ? message.attachments.first().proxyURL : null
   })
-  
+  if (message.partial) await message.fetch();
+
+  let modlog = db.get(`moderation.${message.guild.id}.modlog`);
+  if (!modlog) return;
+
+  if (message.channel.id === modlog.channel) return;
+
+  let toggle = modlog.toggle;
+  if (!toggle || toggle == null || toggle == false) return;
+
+  const embed = new MessageEmbed()
+  .setTitle("Message Deleted")
+  .setDescription(`Message deleted in <#${message.channel.id}> by **${message.author.tag}**> \n ${message.content}`)
+  .setTimestamp()
+  .setColor("ORANGE")
+
+  return message.guild.channels.cache.get(modlog.channel).send(embed);
 })
 
 bot.on('guildCreate', (guild) => {
