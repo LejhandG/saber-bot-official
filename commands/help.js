@@ -39,7 +39,7 @@ module.exports = {
 <:1235_arrow_right:809423996550381578> [**CHECK OUT OUR WEBSITE**](https://saberofficial.ml/)
 <:1235_arrow_right:809423996550381578> [**DONATE US**](https://patreon.com/saberbot)
 <:1235_arrow_right:809423996550381578> [**JOIN OUR SUPPORT SERVER**](https://discord.gg/kBPpv47EJp)
-<:1235_arrow_right:809423996550381578> [**DOCUMENTATION**](https://docs.saberofficial.ml/)
+<:1235_arrow_right:809423996550381578> [**VOTE OUR BOT**](http://bit.ly/sabervote)
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -86,6 +86,7 @@ module.exports = {
 \`createtext\`, \`createvoice\`
 \`createcategory\`, \`hackban\`
 \`unban\`, \`moveall\`, \`nuke\`
+\`perms\`
     `)
     .setFooter("©️ 2021 Saber Bot");
     
