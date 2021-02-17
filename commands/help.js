@@ -43,7 +43,7 @@ module.exports = {
 <:1235_arrow_right:809423996550381578> [**JOIN OUR SUPPORT SERVER**](https://discord.gg/kBPpv47EJp)
 <:1235_arrow_right:809423996550381578> [**VOTE OUR BOT**](http://bit.ly/sabervote)
 
-<:S_Online:770582506994532363> Use \`{bot.prefix}help [command]\` for information about the command.
+<:S_Online:770582506994532363> Use \`/help [command]\` for information about the command.
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -273,12 +273,6 @@ pagination(message, pages, emojiList, timeout).catch(err => {
         .addField(
           "COMMAND:",
           command.name ? `\`${command.name}\`` : "No name for this command."
-        )
-        .addField(
-          "ALIASES:",
-          command.aliases
-            ? `\`${command.aliases.join("` `")}\``
-            : "No aliases for this command."
         )
         .addField(
           "DESCRIPTION:",
