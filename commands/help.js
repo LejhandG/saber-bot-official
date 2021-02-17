@@ -180,6 +180,7 @@ module.exports = {
 **__Info Commands__**
 \`serverinfo\`, \`whois\`, \`avatar\`
 \`stats\`, \`roles\`, \`djs\`, \`npm\`
+\`wikipedia\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
