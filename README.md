@@ -1,26 +1,36 @@
-## About
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Saber" src="https://cdn.discordapp.com/avatars/751079643980890225/64b5f19cb49b07dbfa1064255919c6d9.png?size=1024"> 
 
-A music bot made by Lejhand
+# Saber Bot ✨
 
-This open sourced project is a dedicated example tutorial for our community's content, feel free to use and modify as good as you like. Written with [discord.js](https://discord.js.org/#/) and [v12 (stable)](https://discordjs.guide/additional-info/changes-in-v12.html) as the version.
+[![](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm)](https://github.com/discordjs)
+>  A Mulitpurpose Discord Bot used by 200K+ users and more than 170 servers. 
 
-## Features
-* Full playback control
-* Simple queue system
-* We're here to help
-* Moderation System
+## Categories 📑
+- [x] Music
+- [x] Moderation
+- [x] Leveling
+- [x] Invites
+- [x] Chatbot
+- [X] Giveaway
+- [X] Economy
 
-## Required modules
-```
-"@discordjs/opus": "^0.3.2",
-"discord.js": "^12.2.0",
-"dotenv": "^8.2.0",
-"express": "^4.17.1",
-"node-opus": "^0.3.3",
-"opusscript": "0.0.7",
-"simple-youtube-api": "^5.2.1",
-"ytdl-core": "^3.2.0"
-```
+## Status 📥
 
-## Links
--> [Discord](https://discord.gg/dieop)
+[![Status](https://top.gg/api/widget/status/751079643980890225.svg)](https://top.gg/bot/751079643980890225)
+[![Servers](https://top.gg/api/widget/servers/751079643980890225.svg)](https://top.gg/bot/751079643980890225)
+[![Lib](https://top.gg/api/widget/lib/751079643980890225.svg)](https://top.gg/bot/751079643980890225)
+[![Upvotes](https://top.gg/api/widget/upvotes/751079643980890225.svg)](https://top.gg/bot/751079643980890225)
+[![Owner](https://top.gg/api/widget/owner/751079643980890225.svg)](https://top.gg/bot/751079643980890225)
+
+## Invite the Bot 💕
+
+<a href="https://top.gg/bot/751079643980890225">
+    <img src="https://top.gg/api/widget/751079643980890225.svg" alt="Saber Bot" />
+</a>
+
+
+* **Any Questions/Suggestions? Ask them in our Support Server**
+</br></br>
+<a href="https://discord.gg/kBPpv47EJp"><img src="https://invidget.switchblade.xyz/kBPpv47EJp"/></a>
+<br><br>
+* **[Website](https://saberofficial.ml)**
