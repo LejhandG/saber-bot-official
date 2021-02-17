@@ -8,6 +8,8 @@ module.exports = {
   description: "Show bot commands list",
   alias: ["cmd", "command", "commands", "helps"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    if (!args[1]) {
 
     const impinfo = new Discord.MessageEmbed()
     .setColor("ORANGE")
@@ -40,6 +42,8 @@ module.exports = {
 <:1235_arrow_right:809423996550381578> [**DONATE US**](https://patreon.com/saberbot)
 <:1235_arrow_right:809423996550381578> [**JOIN OUR SUPPORT SERVER**](https://discord.gg/kBPpv47EJp)
 <:1235_arrow_right:809423996550381578> [**VOTE OUR BOT**](http://bit.ly/sabervote)
+
+<:S_Online:770582506994532363> Use \`help [command]\` for information about the command.
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -252,5 +256,43 @@ const timeout = '120000';
 pagination(message, pages, emojiList, timeout).catch(err => {
             message.reply("An error occurred");
           });
+    } else {
+        const command =
+        bot.commands.get(args[1].toLowerCase()) ||
+        bot.commands.find(
+          (c) => c.aliases && c.aliases.includes(args[1].toLowerCase())
+        );
+
+        if (!command) {
+            return message.channel.send(`Invalid command! Use \`${bot.prefix}help\ for all my commands!`);
+          }
+
+      const embed1 = new MessageEmbed()
+        .setTitle("Command Details:")
+        .addField("PREFIX:", `\`${bot.prefix}\``)
+        .addField(
+          "COMMAND:",
+          command.name ? `\`${command.name}\`` : "No name for this command."
+        )
+        .addField(
+          "ALIASES:",
+          command.aliases
+            ? `\`${command.aliases.join("` `")}\``
+            : "No aliases for this command."
+        )
+        .addField(
+          "DESCRIPTION:",
+          command.description
+            ? command.description
+            : "No description for this command."
+        )
+        .setFooter(
+          `Requested by ${message.author.tag}`,
+          message.author.displayAvatarURL({ dynamic: true })
+        )
+        .setTimestamp()
+        .setColor("RANDOM");
+      return message.channel.send(embed1);
+    }
   }
 }
