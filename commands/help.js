@@ -122,7 +122,7 @@ module.exports = {
     .setDescription(`
     **__Ticket Commands__**
 \`tnew\`, \`tclose\`, \`trole\`
-\`tcategory\`, \`tadduser\`
+\`tcategory\`, \`tadduser\`, \`transcript\`
     `)
     .setFooter("©️ 2021 Saber Bot");
     
