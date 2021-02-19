@@ -53,6 +53,8 @@ commandFile.forEach(file => {
   console.log(`Loaded command ${command.name} with alias(es) => ${command.alias}`)
   })
 
+const schema = require('./models/custom-commands')
+
 bot.on("message", async message => {
   const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || "/"
   bot.prefix = PREFIX;
@@ -67,6 +69,9 @@ bot.on("message", async message => {
 
   let command = message.content.toLowerCase().split(" ")[0];
   command = command.slice(PREFIX.length);
+  
+  const data = await schema.findOne({ Guild: message.guild.id, Command: command});
+  if(data) message.channel.send(data.Response)
   
   const randomXp = Math.floor(Math.random() *9) + 1;
   const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXp);
