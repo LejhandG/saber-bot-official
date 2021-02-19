@@ -23,17 +23,18 @@ module.exports = {
 <:S_gbarrow:810158662831177729> 3. Invites Commands
 <:S_gbarrow:810158662831177729> 4. Moderation Commands
 <:S_gbarrow:810158662831177729> 5. Rank Commands
-<:S_gbarrow:810158662831177729> 6. Economy Commands
-<:S_gbarrow:810158662831177729> 7. Ticket Commands
-<:S_gbarrow:810158662831177729> 8. Giveaway Commands
-<:S_gbarrow:810158662831177729> 9. Fun Commands
-<:S_gbarrow:810158662831177729> 10. Image Commands
-<:S_gbarrow:810158662831177729> 11. Utility Commands
-<:S_gbarrow:810158662831177729> 12. Info Commands
-<:S_gbarrow:810158662831177729> 13. Misc Commands
-<:S_gbarrow:810158662831177729> 14. Embed Commands
-<:S_gbarrow:810158662831177729> 15. API Commands
-<:S_gbarrow:810158662831177729> 16. Suggest Commands
+<:S_gbarrow:810158662831177729> 6. Custom Commands
+<:S_gbarrow:810158662831177729> 7. Economy Commands
+<:S_gbarrow:810158662831177729> 8. Ticket Commands
+<:S_gbarrow:810158662831177729> 9. Giveaway Commands
+<:S_gbarrow:810158662831177729> 10. Fun Commands
+<:S_gbarrow:810158662831177729> 11. Image Commands
+<:S_gbarrow:810158662831177729> 12. Utility Commands
+<:S_gbarrow:810158662831177729> 13. Info Commands
+<:S_gbarrow:810158662831177729> 14. Misc Commands
+<:S_gbarrow:810158662831177729> 15. Embed Commands
+<:S_gbarrow:810158662831177729> 16. API Commands
+<:S_gbarrow:810158662831177729> 17. Suggest Commands
 
 <:S_Online:770582506994532363> Prefix - \`${bot.prefix}\`
 
@@ -100,6 +101,15 @@ module.exports = {
     .setDescription(`
     **__Rank Commands__**
 \`rank\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
+      
+      const cc = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Custom Commands__**
+\`cc-create\`, \`cc-delete\`, \`cc-list\`
     `)
     .setFooter("©️ 2021 Saber Bot");
     
@@ -236,6 +246,7 @@ module.exports = {
       invites,
       moderation,
       rank,
+      cc,
       economy,
       ticket,
       giveaway,
