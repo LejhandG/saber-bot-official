@@ -1,67 +1,44 @@
-const Discord = require('discord.js');
-const fs = require("fs");
-const db = require('quick.db')
-const { MessageEmbed } = require('discord.js')
+const db = require('../models/warns')
+const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "warn",
     timeout : 5000,
-description: "Warns the user",
-alias: [],
-run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
-
-  let wrong = new MessageEmbed()
-        .setTitle(`Command: ${bot.prefix}warn`)
-        .setDescription(`
-**Description:** 
-It warns the mentioned user
-**Usage:**
-${bot.prefix}warn @user [reason]
-**Example:**
-${bot.prefix}warn @Vortex No NSFW
-**Subcommands**
-${bot.prefix}checkwarns @user
-${bot.prefix}clearwarns @user
-`)
-        .setFooter(message.author.tag, message.author.avatarURL())
-        .setColor(`RANDOM`);
-
-  if(!message.member.hasPermission("MANAGE_ROLES")) {
-    return message.channel.send("You do not have the permission to use this command")
-  }
-  
-  const user = message.mentions.members.first()
-  
-   if(!user) {
-    return message.channel.send(wrong)
-  }
-  if(message.mentions.users.first().bot) {
-    return message.channel.send("You can not warn bots")
-  }
-  if(message.author.id === user.id) {
-    return message.channel.send("You can not warn yourself")
-  }
-  if(user.id === message.guild.owner.id) {
-    return message.channel.send("You can not warn server owner")
-  }
-  const reason = args.slice(2).join(" ")
-
-  if(!reason) {
-      return message.channel.send(wrong)
+    description: "Warns the user",
+    alias: [],
+    run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permissions to use this command.')
+        const user = message.mentions.members.first() || message.guild.members.cache.get(args[1])
+        if(!user) return message.channel.send('User not found.')
+        const reason = args.slice(2).join(" ")
+        db.findOne({ guildid: message.guild.id, user: user.user.id}, async(err, data) => {
+            if(err) throw err;
+            if(!data) {
+                data = new db({
+                    guildid: message.guild.id,
+                    user : user.user.id,
+                    content : [
+                        {
+                            moderator : message.author.id,
+                            reason : reason
+                        }
+                    ]
+                })
+            } else {
+                const obj = {
+                    moderator: message.author.id,
+                    reason : reason
+                }
+                data.content.push(obj)
+            }
+            data.save()
+        });
+        user.send(new MessageEmbed()
+            .setDescription(`You have been warned for ${reason}`)
+            .setColor("RED")
+        )
+        message.channel.send(new MessageEmbed()
+            .setDescription(`Warned ${user} for ${reason}`).setColor('BLUE')
+        )
     }
-    let warnings = db.get(`warnings_${message.guild.id}_${user.id}`)
-    if(warnings === 10) {
-      return message.channel.send(`${message.mentions.users.first().username} already reached his/her limit with **10 warnings**`)
-    }
-    if(warnings === null) {
-      db.set(`warnings_${message.guild.id}_${user.id}`, 1)
-      user.send(`You have been warned in **${message.guild.name}** for ${reason}`)
-      await message.channel.send(`You warned **${message.mentions.users.first().username}** for ${reason}`)//DO NOT FORGET TO USE ASYNC FUNCTION
-    }
-    else if(warnings !== null) {
-      db.add(`warnings_${message.guild.id}_${user.id}`, 1)
-     user.send(`You have been warned in **${message.guild.name}** for ${reason}`)
-    await message.channel.send(`You warned **${message.mentions.users.first().username}** for ${reason}`) //DO NOT FORGET TO USE ASYNC FUNCTION
   }
-}
-}
