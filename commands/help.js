@@ -91,7 +91,8 @@ module.exports = {
 \`createtext\`, \`createvoice\`
 \`createcategory\`, \`hackban\`
 \`unban\`, \`moveall\`, \`nuke\`
-\`perms\`
+\`perms\`, \`checkwarns\`, \`clearwarns\`
+\`removewarn\`
     `)
     .setFooter("©️ 2021 Saber Bot");
     
