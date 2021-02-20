@@ -1,6 +1,5 @@
-const Discord = require('discord.js');
-const fs = require("fs");
-const db = require('quick.db')
+const db = require('../models/warns')
+const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "checkwarns",
@@ -9,11 +8,27 @@ description: "Check warns of the user",
 alias: [],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
-    const user = message.mentions.members.first() || message.author
-    let warnings = db.get(`warnings_${message.guild.id}_${user.id}`)
+    if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permissions to use this command.')
+        const user = message.mentions.members.first() || message.guild.members.cache.get(args[1])
+        if(!user) return message.channel.send('User not found.')
+        const reason = args.slice(2).join(" ")
+        db.findOne({ guildid: message.guild.id, user: user.user.id}, async(err, data) => {
+            if(err) throw err;
+            if(data) {
+                message.channel.send(new MessageEmbed()
+                    .setTitle(`${user.user.tag}'s warns`)
+                    .setDescription(
+                        data.content.map(
+                            (w, i) => 
+                            `\`${i + 1}\` | Moderator : ${message.guild.members.cache.get(w.moderator).user.tag}\nReason : ${w.reason}`
+                        )
+                    )
+                    .setColor("BLUE")
+                )
+            } else {
+                message.channel.send('User has no data')
+            }
 
-    if(warnings === null) warnings = 0;
-
-    message.channel.send(`He/She has **${warnings}** warning(s)`)
+        })
 }
 }
