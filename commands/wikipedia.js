@@ -3,7 +3,7 @@ const fetch = require('node-fetch') // npm i node-fetch
 
 module.exports = {
     name: "wiki",
-    timeout: "3000",
+    timeout: "10000",
     description: "Wikipedia Command",
     alias: ["wikipedia"],
     run: async (bot, message, args, searchString, youtube, handleVideo, serverQueue, play) => {
