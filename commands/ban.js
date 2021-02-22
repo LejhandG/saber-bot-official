@@ -8,7 +8,7 @@ module.exports = {
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
     
-    if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("You don't have premission to do that!");
+    if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("You don't have permission to do that!");
     
     const user = message.mentions.users.first();
 
