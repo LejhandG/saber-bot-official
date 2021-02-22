@@ -54,6 +54,7 @@ commandFile.forEach(file => {
   })
 
 const schema = require('./models/custom-commands')
+const blacklist = require('./models/blacklist')
 
 bot.on("message", async message => {
   const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || "/"
@@ -157,26 +158,33 @@ bot.on("message", async message => {
       }
     });
   }
-  try {
-    const file = bot.commands.get(command) || bot.aliases.get(command)
-    if(!file) return;
-    if (file) {
-      if(file.timeout) {
-        if(Timeout.has(`${file.name}${message.author.id}`)) return message.channel.send(`You are on a ${ms(Timeout.get(`${file.name}${message.author.id}`) - Date.now(), {long : true})} cooldown.`)
-        file.run(bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play)
-        Timeout.set(`${file.name}${message.author.id}`, Date.now() + file.timeout)
-        setTimeout(() => {
-          Timeout.delete(`${file.name}${message.author.id}`)
-        }, file.timeout)
+  blacklist.findOne({ id : message.author.id }, async(err, data) => {
+    if(err) throw err;
+    if(!data) {
+      try {
+        const file = bot.commands.get(command) || bot.aliases.get(command)
+        if(!file) return message.channel.send("You are using wrong command")
+        if (file) {
+          if(file.timeout) {
+            if(Timeout.has(`${file.name}${message.author.id}`)) return message.channel.send(`You are on a ${ms(Timeout.get(`${file.name}${message.author.id}`) - Date.now(), {long : true})} cooldown.`)
+            file.run(bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play)
+            Timeout.set(`${file.name}${message.author.id}`, Date.now() + file.timeout)
+            setTimeout(() => {
+              Timeout.delete(`${file.name}${message.author.id}`)
+            }, file.timeout)
+          }
+        }
+      } catch (err) {
+        console.error(err)
+      } finally {
+        console.log(`${message.author.tag} used ${command} command`)
+        const hook = new Discord.WebhookClient('780686530556985384', 'BOv_LNi-U_Nte1yzRc5AGaxl_e8Wd5kF_lJ3ILCEggapLSWeIodWNKV_vzbSyfN_cOVy');
+        hook.send(`${message.author.tag} with id ${message.author.id} used ${command} command`)
       }
+    } else {
+      message.channel.send("You are blacklisted. To get whitelisted back join the support server.")
     }
-  } catch (err) {
-    console.error(err)
-  } finally {
-    console.log(`${message.author.tag} used ${command} command`)
-    const hook = new Discord.WebhookClient('780686530556985384', 'BOv_LNi-U_Nte1yzRc5AGaxl_e8Wd5kF_lJ3ILCEggapLSWeIodWNKV_vzbSyfN_cOVy');
-    hook.send(`${message.author.tag} used ${command} command`)
-  }
+  })
 })
 bot.snipes = new Map()
 bot.on('messageDelete', async function(message, channel){
