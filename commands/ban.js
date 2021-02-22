@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js');
+const db = require("quick.db");
 
 module.exports = {
   name: "ban",
@@ -38,6 +39,17 @@ ${bot.prefix}ban @Vortex
           })
           .catch(err => {
             message.reply("I was unable to ban the member");
+          
+            let modlog = db.get(`moderation.${message.guild.id}.modlog`);
+            if (!modlog) return;
+
+            const embedlog = new MessageEmbed()
+            .setTitle("Message Banned")
+            .setDescription(`${user} was banned by ${message.author.tag}`)
+            .setTimestamp()
+            .setColor("ORANGE")
+          
+            return message.guild.channels.cache.get(modlog.channel).send(embedlog);
             console.error(err);
           });
       } else {
