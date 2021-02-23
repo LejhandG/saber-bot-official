@@ -26,6 +26,7 @@ const queue = new Map();
 
 bot.aliases = new Collection();
 bot.commands = new Collection();
+bot.timeout = new Collection();
 bot.giveaways = Creator;
 
 bot.on("warn", console.warn);
@@ -51,6 +52,7 @@ commandFile.forEach(file => {
   bot.aliases.set(alias, command);
   })
   }
+  bot.timeout.set(command.timeout, command)
   console.log(`Loaded command ${command.name} with alias(es) => ${command.alias}`)
   })
 
