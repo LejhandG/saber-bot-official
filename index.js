@@ -62,6 +62,23 @@ bot.on("message", async message => {
   bot.prefix = PREFIX;
   // eslint-disable-line
   if (message.author.bot) return;
+  
+  if (message.content === `<@!${bot.user.id}>`) {
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setTitle("Settings for this server")
+        .setDescription(
+          `Prefix of this server: \`${bot.prefix}\`
+          Server Region: \`${message.guild.region}\`
+          Server ID: \`${message.guild.id}\`
+
+          Type \`${bot.prefix}help\` for the command list.
+          [Support](https://saberofficial.ml/support.html) | [Invite](https://saberofficial.ml/invite.html)`
+        )
+        .setColor("ORANGE")
+    );
+  }
+  
   if(await dbb.has(`afk-${message.author.id}+${message.guild.id}`)) {
     const info = dbb.get(`afk-${message.author.id}+${message.guild.id}`)
     await dbb.delete(`afk-${message.author.id}+${message.guild.id}`)
