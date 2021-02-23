@@ -281,7 +281,6 @@ pagination(message, pages, emojiList, timeout).catch(err => {
 
       const embed1 = new MessageEmbed()
         .setTitle("Command Details:")
-        .addField("PREFIX:", `\`${bot.prefix}\``)
         .addField(
           "COMMAND:",
           command.name ? `\`${command.name}\`` : "No name for this command."
@@ -291,6 +290,10 @@ pagination(message, pages, emojiList, timeout).catch(err => {
           command.description
             ? command.description
             : "No description for this command."
+        )
+      .addField(
+          "COOLDOWN:",
+          command.timeout
         )
         .setFooter(
           `Requested by ${message.author.tag}`,
