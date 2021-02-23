@@ -13,6 +13,7 @@ const bot = new Client({
 const { GiveawayCreator } = require('discord-giveaway');
 const Creator = new GiveawayCreator(bot, 'mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test');
 const db = require('quick.db')
+const dbb = require('./reconDB')
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true})
 const Levels = require('discord-xp')
@@ -61,6 +62,17 @@ bot.on("message", async message => {
   bot.prefix = PREFIX;
   // eslint-disable-line
   if (message.author.bot) return;
+  if(await dbb.has(`afk-${message.author.id}+${message.guild.id}`)) {
+    const info = dbb.get(`afk-${message.author.id}+${message.guild.id}`)
+    await dbb.delete(`afk-${message.author.id}+${message.guild.id}`)
+    message.reply(`Your afk status have been removed`)
+}
+//checking for mentions
+if(message.mentions.members.first()) {
+    if(await dbb.has(`afk-${message.mentions.members.first().id}+${message.guild.id}`)) {
+        message.channel.send(message.mentions.members.first().user.tag + " is AFK. Reason : " + await dbb.get(`afk-${message.mentions.members.first().id}+${message.guild.id}`))
+    }else return;
+}else;
   if (!message.content.startsWith(PREFIX)) return;
 
   const args = message.content.split(" ");
