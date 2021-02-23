@@ -178,7 +178,7 @@ if(message.mentions.members.first()) {
         if(!file) return message.channel.send("You are using wrong command")
         if (file) {
           if(file.timeout) {
-            if(Timeout.has(`${file.name}${message.author.id}`)) return message.channel.send(`You are on a ${ms(Timeout.get(`${file.name}${message.author.id}`) - Date.now(), {long : true})} cooldown.`)
+            if(Timeout.has(`${file.name}${message.author.id}`)) return message.reply(`, a little too quick there.`)
             file.run(bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play)
             Timeout.set(`${file.name}${message.author.id}`, Date.now() + file.timeout)
             setTimeout(() => {
