@@ -34,7 +34,7 @@ module.exports = {
     rank.build()
     .then(data => {
         const attatchment = new Discord.MessageAttachment(data, 'rank.png')
-        message.channel.send("10% boost is active")
+        message.channel.send("10% rank boost is active")
         message.channel.send(attatchment);
     })
     }
@@ -52,7 +52,7 @@ module.exports = {
     rank.build()
     .then(data => {
         const attatchment = new Discord.MessageAttachment(data, 'rank.png')
-        message.channel.send("Vote Booster: Vote now for a 10% boost. https://saberofficial.ml/vote.html")
+        message.channel.send("Vote Booster: Vote now for a 10% boost. https://saberofficial.ml/sabervote.html")
         message.channel.send(attatchment);
     })
     }
