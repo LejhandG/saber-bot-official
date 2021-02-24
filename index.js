@@ -92,6 +92,14 @@ if(message.mentions.members.first()) {
         message.channel.send(message.mentions.members.first().user.tag + " is AFK. Reason : " + await dbb.get(`afk-${message.mentions.members.first().id}+${message.guild.id}`))
     }else return;
 }else;
+  
+  const randomXp = Math.floor(Math.random() *9) + 1;
+  const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXp);
+  if (hasLeveledUp) {
+    const user = await Levels.fetch(message.author.id, message.guild.id)
+    message.channel.send(`You leveled up to ${user.level}! Keep it going!`)
+  }
+  
   if (!message.content.startsWith(PREFIX)) return;
 
   const args = message.content.split(" ");
@@ -104,13 +112,6 @@ if(message.mentions.members.first()) {
   
   const data = await schema.findOne({ Guild: message.guild.id, Command: command});
   if(data) message.channel.send(data.Response)
-  
-  const randomXp = Math.floor(Math.random() *9) + 1;
-  const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXp);
-  if (hasLeveledUp) {
-    const user = await Levels.fetch(message.author.id, message.guild.id)
-    message.channel.send(`You leveled up to ${user.level}! Keep it going!`)
-  }
   
   async function handleVideo(video, message, voiceChannel, playlist = false) {
     const serverQueue = queue.get(message.guild.id);
