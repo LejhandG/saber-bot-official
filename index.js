@@ -20,6 +20,9 @@ const Levels = require('discord-xp')
 
 Levels.setURL("mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test")
 
+const DBL = require("dblapi.js");
+const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MTA3OTY0Mzk4MDg5MDIyNSIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA3Mjc1ODQwfQ.3jq8XhAoxzjXFDuoty8d5on2EV7jjDhAmAqLfmOeyxc', client);
+
 const Timeout = new Collection();
 const youtube = new YouTube(process.env.YTAPI_KEY);
 const queue = new Map();
@@ -93,12 +96,25 @@ if(message.mentions.members.first()) {
     }else return;
 }else;
   
-  const randomXp = Math.floor(Math.random() *9) + 1;
+  dbl.hasVoted(user.id).then(voted => {
+    if (voted) {
+      const randomXp = Math.floor(Math.random() *10) + 1;
   const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXp);
   if (hasLeveledUp) {
     const user = await Levels.fetch(message.author.id, message.guild.id)
     message.channel.send(`You leveled up to ${user.level}! Keep it going!`)
   }
+    }
+    
+    else {
+      const randomXp = Math.floor(Math.random() *9) + 1;
+  const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXp);
+  if (hasLeveledUp) {
+    const user = await Levels.fetch(message.author.id, message.guild.id)
+    message.channel.send(`You leveled up to ${user.level}! Keep it going!`)
+  }
+    }
+});
   
   if (!message.content.startsWith(PREFIX)) return;
 
