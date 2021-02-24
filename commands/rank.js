@@ -36,6 +36,7 @@ module.exports = {
         const attatchment = new Discord.MessageAttachment(data, 'rank.png')
         message.channel.send("10% boost is active")
         message.channel.send(attatchment);
+    })
     }
     
     else {
@@ -53,8 +54,8 @@ module.exports = {
         const attatchment = new Discord.MessageAttachment(data, 'rank.png')
         message.channel.send("Vote Booster: Vote now for a 10% boost. https://saberofficial.ml/vote.html")
         message.channel.send(attatchment);
-    }
-});
     })
     }
-  }
+});
+    }
+    }
