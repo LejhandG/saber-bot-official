@@ -154,7 +154,7 @@ module.exports = {
 \`meme\`, \`roast\`
 \`8ball\`, \`dadjokes\`, \`coin\`
 \`pokemon\`, \`sudo\`, \`snipe\`
-\`tictactoe\`, \`joke\`
+\`tictactoe\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
