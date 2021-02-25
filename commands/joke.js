@@ -14,7 +14,10 @@ const setup = joke.setup
 const punchline = joke.punchline
 const embed = new Discord.MessageEmbed()
 .setTitle("A Random Joke")
-.addFields(setup, punchline)
+.setDescription(`
+**${joke}**
+**${punchline}**
+`)
 .setFooter(message.author.tag, message.author.avatarURL())
 message.channel.send(embed).then(() => {
     message.channel.stopTyping();
