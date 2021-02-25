@@ -195,7 +195,7 @@ if(message.mentions.members.first()) {
     if(!data) {
       try {
         const file = bot.commands.get(command) || bot.aliases.get(command)
-        if(!file) return message.channel.send("You are using wrong command")
+        if(!file) return;
         if (file) {
           if(file.timeout) {
             if(Timeout.has(`${file.name}${message.author.id}`)) return message.reply(`, a little too quick there.`)
