@@ -7,7 +7,7 @@ description: "Announcement Command",
 alias: ["announcement", "ann"],
 run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
 
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permission to do that!");
     
     let wrong = new MessageEmbed()
         .setTitle(`Command: ${bot.prefix}announce`)
