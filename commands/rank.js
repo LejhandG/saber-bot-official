@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const Levels = require("discord-xp");
 const { MessageEmbed } = require("discord.js");
 const canvacord = require("canvacord");
+const db = require('quick.db');
 
 module.exports = {
     name: "rank",
@@ -9,6 +10,9 @@ module.exports = {
     description: "Sends the rank in image form",
     alias: ["level"],
     run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+        
+        if(db.has(`ranktoggle-${message.guild.id}`)=== true) {
+            
         const target = message.author;
 
         const user = await Levels.fetch(target.id, message.guild.id);
@@ -32,5 +36,8 @@ module.exports = {
         message.channel.send("Vote Booster: Vote now for a 10% boost. https://saberofficial.ml/sabervote.html")
         message.channel.send(attatchment);
     })
+        } else {
+            message.channel.send("Leveling system has been disabled by the admins")
+        }
     }
   }
