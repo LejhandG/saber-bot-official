@@ -27,7 +27,7 @@ module.exports = {
                 }).then(update => {
                     let channel = bot.channels.cache.get(update.id)
                     const updateembed = new MessageEmbed()
-                    .setDescription("**All the new features/commands added or removed in the bot will be sent here. Do not change the name of this channel.**")
+                    .setDescription("**All the new features/commands added or removed in the bot will be sent here. Follow the channel update channel of the support server**")
                     .setColor("ORANGE")
                     channel.send(updateembed)
                 })
