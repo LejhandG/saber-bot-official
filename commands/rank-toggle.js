@@ -6,6 +6,9 @@ module.exports = {
   description: "Turns off or on the rank system",
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have premission to do that!");
+    
     if(args[1] === 'on') {
       await db.set(`ranktoggle-${message.guild.id}`, true)
       message.channel.send("Turned on leveling feature")
