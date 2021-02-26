@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 
 module.exports = {
   name: "help",
-  timeout : 4000,
+  timeout : 5000,
   description: "Show bot commands list",
   alias: ["cmd", "command", "commands", "helps"],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
@@ -18,23 +18,24 @@ module.exports = {
 
     **__Important Info__**
 
-<:S_gbarrow:810158662831177729> 1. Music Commands
-<:S_gbarrow:810158662831177729> 2. Chat Commands
-<:S_gbarrow:810158662831177729> 3. Invites Commands
-<:S_gbarrow:810158662831177729> 4. Moderation Commands
-<:S_gbarrow:810158662831177729> 5. Rank Commands
-<:S_gbarrow:810158662831177729> 6. Custom Commands
-<:S_gbarrow:810158662831177729> 7. Economy Commands
-<:S_gbarrow:810158662831177729> 8. Ticket Commands
-<:S_gbarrow:810158662831177729> 9. Giveaway Commands
-<:S_gbarrow:810158662831177729> 10. Fun Commands
-<:S_gbarrow:810158662831177729> 11. Image Commands
-<:S_gbarrow:810158662831177729> 12. Utility Commands
-<:S_gbarrow:810158662831177729> 13. Info Commands
-<:S_gbarrow:810158662831177729> 14. Misc Commands
-<:S_gbarrow:810158662831177729> 15. Embed Commands
-<:S_gbarrow:810158662831177729> 16. API Commands
-<:S_gbarrow:810158662831177729> 17. Suggest Commands
+<:S_gbarrow:810158662831177729> 1. Getting Started
+<:S_gbarrow:810158662831177729> 2. Music Commands
+<:S_gbarrow:810158662831177729> 3. Chat Commands
+<:S_gbarrow:810158662831177729> 4. Invites Commands
+<:S_gbarrow:810158662831177729> 5. Moderation Commands
+<:S_gbarrow:810158662831177729> 6. Rank Commands
+<:S_gbarrow:810158662831177729> 7. Custom Commands
+<:S_gbarrow:810158662831177729> 8. Economy Commands
+<:S_gbarrow:810158662831177729> 9. Ticket Commands
+<:S_gbarrow:810158662831177729> 10. Giveaway Commands
+<:S_gbarrow:810158662831177729> 11. Fun Commands
+<:S_gbarrow:810158662831177729> 12. Image Commands
+<:S_gbarrow:810158662831177729> 13. Utility Commands
+<:S_gbarrow:810158662831177729> 14. Info Commands
+<:S_gbarrow:810158662831177729> 15. Misc Commands
+<:S_gbarrow:810158662831177729> 16. Embed Commands
+<:S_gbarrow:810158662831177729> 17. API Commands
+<:S_gbarrow:810158662831177729> 18. Suggest Commands
 
 <:S_Online:770582506994532363> Prefix - \`${bot.prefix}\`
 
@@ -45,6 +46,15 @@ module.exports = {
 <:1235_arrow_right:809423996550381578> [**VOTE OUR BOT**](http://bit.ly/sabervote)
 
 <:S_Online:770582506994532363> Use \`/help [command]\` for information about the command.
+    `)
+    .setFooter("©️ 2021 Saber Bot");
+      
+      const gs = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Getting Started__**
+\`setup\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
@@ -241,6 +251,7 @@ module.exports = {
     .setFooter("©️ 2021 Saber Bot");
 
     const pages = [
+      gs,
       impinfo,
       music,
       chat,
