@@ -90,7 +90,7 @@ bot.on("message", async message => {
 if(message.mentions.members.first()) {
     if(await dbb.has(`afk-${message.mentions.members.first().id}+${message.guild.id}`)) {
         message.channel.send(message.mentions.members.first().user.tag + " is AFK. Reason : " + await dbb.get(`afk-${message.mentions.members.first().id}+${message.guild.id}`))
-    }else return;
+    }else;
 }else;
   
   if(db.has(`ranktoggle-${message.guild.id}`)=== true) {
