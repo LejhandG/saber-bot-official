@@ -21,7 +21,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const activities_list = [
-    `/help`, 
+    `/help`,
+    `/setup`,
     `/invite`,
     `/website`,
     `/vote`,
