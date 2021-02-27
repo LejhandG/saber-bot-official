@@ -19,10 +19,22 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
 
     if (args[1] === "enable") {
         let channel = message.mentions.channels.first();
+        let webhookid;
+        let webhooktoken;
         if (!channel) return message.channel.send("Please provide the channel that you want to make it as a mod log.");
 
         await db.set(`moderation.${message.guild.id}.modlog.toggle`, true);
-        await db.set(`moderation.${message.guild.id}.modlog.channel`, channel.id);
+
+        channel.createWebhook("Saber Logs", {
+            avatar: "https://cdn.discordapp.com/avatars/751079643980890225/64b5f19cb49b07dbfa1064255919c6d9.png"
+        }).then(webhook =>{
+        webhookid = webhook.id;
+        webhooktoken = webhook.token;
+
+        db.set(`moderation.${message.guild.id}.modlog.id`, webhookid)
+        db.set(`moderation.${message.guild.id}.modlog.token`, webhooktoken)
+        })
+
         return message.channel.send(`The mod log has been enabled for <#${channel.id}>`);
     }
 
@@ -30,7 +42,10 @@ run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQ
         let toggle = db.get(`moderation.${message.guild.id}.modlog.toggle`);
         if (!toggle || toggle == false) return message.channel.send("The mod log has already been disabled before.")
         db.set(`moderation.${message.guild.id}.modlog.toggle`, false)
-        db.delete(`moderation.${message.guild.id}.modlog.toggle`);
+
+        db.delete(`moderation.${message.guild.id}.modlog.id`, webhookid)
+        db.delete(`moderation.${message.guild.id}.modlog.token`, webhooktoken)
+
         return message.channel.send("The mod log has been disabled")
     }
 }
