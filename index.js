@@ -230,12 +230,12 @@ bot.on('messageDelete', async function(message, channel){
   })
   if (message.partial) await message.fetch();
 
-  let modlog = db.get(`moderation.${message.guild.id}.modlog`);
-  if (!modlog) return;
+  let modlogid = db.get(`moderation.${message.guild.id}.modlog.id`)
+  let modlogtoken = db.get(`moderation.${message.guild.id}.modlog.token`)
+  const hook = new Discord.WebhookClient(modlogid, modlogtoken);
+  if (!hook) return;
 
-  if (message.channel.id === modlog.channel) return;
-
-  let toggle = modlog.toggle;
+  let toggle = db.get(`moderation.${message.guild.id}.modlog.toggle`);
   if (!toggle || toggle == null || toggle == false) return;
 
   const embed = new MessageEmbed()
@@ -244,7 +244,7 @@ bot.on('messageDelete', async function(message, channel){
   .setTimestamp()
   .setColor("ORANGE")
 
-  return message.guild.channels.cache.get(modlog.channel).send(embed);
+  return hook.send(embed)
 })
 
 bot.on('guildCreate', (guild) => {
