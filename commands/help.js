@@ -251,8 +251,8 @@ module.exports = {
     .setFooter("©️ 2021 Saber Bot");
 
     const pages = [
-      gs,
       impinfo,
+      gs,
       music,
       chat,
       invites,
