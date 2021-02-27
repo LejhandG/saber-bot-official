@@ -40,8 +40,10 @@ ${bot.prefix}ban @Vortex
           .catch(err => {
             message.reply("I was unable to ban the member");
           
-            let modlog = db.get(`moderation.${message.guild.id}.modlog`);
-            if (!modlog) return;
+  let modlogid = db.get(`moderation.${message.guild.id}.modlog.id`)
+  let modlogtoken = db.get(`moderation.${message.guild.id}.modlog.token`)
+  const hook = new Discord.WebhookClient(modlogid, modlogtoken);
+  if (!hook) return;
 
             const embedlog = new MessageEmbed()
             .setTitle("Message Banned")
@@ -49,7 +51,7 @@ ${bot.prefix}ban @Vortex
             .setTimestamp()
             .setColor("ORANGE")
           
-            return message.guild.channels.cache.get(modlog.channel).send(embedlog);
+            return hook.send(embedlog)
             console.error(err);
           });
       } else {
