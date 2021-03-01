@@ -6,8 +6,8 @@ const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MTA3OTY0Mz
 
 module.exports = {
     name: 'filter',
-    timeout: '1000',
-    description: 'Idk',
+    timeout: '5000',
+    description: 'Applies filter to the current song',
     alias: [],
     run: async (bot, message, args) => {
 
