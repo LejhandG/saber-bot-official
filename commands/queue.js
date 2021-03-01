@@ -5,7 +5,7 @@ module.exports = {
     name: 'queue',
     timeout: '5000',
     description: 'Shows the queue of the current guild',
-    alias: [],
+    alias: ["q"],
     run: async (bot, message, args) => {
         if (!message.member.voice.channel) return message.channel.send(`${bot.emotes.error} - You're not in a voice channel !`);
 
