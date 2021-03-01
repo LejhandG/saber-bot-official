@@ -5,7 +5,7 @@ module.exports = {
     name: 'volume',
     timeout: '5000',
     description: 'Adjusts the volume of the song',
-    alias: [],
+    alias: ["vol"],
     run: async (bot, message, args) => {
         if (!message.member.voice.channel) return message.channel.send(`${bot.emotes.error} - You're not in a voice channel !`);
 
