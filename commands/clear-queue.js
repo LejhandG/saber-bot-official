@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'clear-queue',
-    timeout: '1000',
+    timeout: '60000',
     description: 'Clears the queue',
     alias: [],
     run: async (bot, message, args) => {
