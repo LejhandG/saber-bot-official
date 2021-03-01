@@ -115,7 +115,6 @@ if(message.mentions.members.first()) {
   if (!message.content.startsWith(PREFIX)) return;
 
   const args = message.content.split(" ");
-  const searchString = args.slice(1).join(" ");
 
   let command = message.content.toLowerCase().split(" ")[0];
   command = command.slice(PREFIX.length);
