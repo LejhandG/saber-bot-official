@@ -63,11 +63,10 @@ module.exports = {
     .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
     .setDescription(`
     **__Music Commands__**
-\`play\` > **\`play [title/url]\`**
-\`search\` > **\`search [title]\`**
-\`skip\`, \`stop\`,  \`pause\`, \`resume\`
-\`nowplaying\`, \`queue\`, \`volume\`
-\`lyrics\`, \`skipto\`, \`remove\`
+\`play\`, \`clear-queue\`, \`filter\`
+\`nowplaying\`, \`queue\`, \`search\`
+\`shuffle\`, \`skip\`, \`stop\`
+\`volume\`, \`w-filters\`, \`lyrics\`
     `)
     .setFooter("©️ 2021 Saber Bot");
 
