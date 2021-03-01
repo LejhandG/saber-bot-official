@@ -10,6 +10,7 @@ const client = new Discord.Client();
 const bot = new Client({
   disableMentions: "everyone"
 });
+const { Player } = require('discord-player');
 const { GiveawayCreator } = require('discord-giveaway');
 const Creator = new GiveawayCreator(bot, 'mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test');
 const db = require('quick.db')
@@ -21,13 +22,22 @@ const Levels = require('discord-xp')
 Levels.setURL("mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test")
 
 const Timeout = new Collection();
-const youtube = new YouTube(process.env.YTAPI_KEY);
-const queue = new Map();
 
 bot.aliases = new Collection();
 bot.commands = new Collection();
 bot.timeout = new Collection();
 bot.giveaways = Creator;
+bot.player = new Player(client);
+bot.config = require('./config/bot');
+bot.emotes = bot.config.emojis;
+bot.filters = bot.config.filters;
+
+const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
+
+for (const file of player) {
+  const event = require(`./player/${file}`);
+  bot.player.on(file.split(".")[0], event.bind(null, bot));
+};
 
 bot.on("warn", console.warn);
 bot.on("error", console.error);
@@ -115,83 +125,6 @@ if(message.mentions.members.first()) {
   const data = await schema.findOne({ Guild: message.guild.id, Command: command});
   if(data) message.channel.send(data.Response)
   
-  async function handleVideo(video, message, voiceChannel, playlist = false) {
-    const serverQueue = queue.get(message.guild.id);
-    const song = {
-      id: video.id,
-      title: Util.escapeMarkdown(video.title),
-      url: `https://www.youtube.com/watch?v=${video.id}`
-    };
-    if (!serverQueue) {
-      const queueConstruct = {
-        textChannel: message.channel,
-        voiceChannel: voiceChannel,
-        connection: null,
-        songs: [],
-        volume: 100,
-        playing: true,
-        loop: false
-      };
-      queue.set(message.guild.id, queueConstruct);
-      queueConstruct.songs.push(song);
-
-      try {
-        var connection = await voiceChannel.join();
-        queueConstruct.connection = connection;
-        play(message.guild, queueConstruct.songs[0]);
-      } catch (error) {
-        console.error(
-          `[ERROR] I could not join the voice channel, because: ${error}`
-        );
-        queue.delete(message.guild.id);
-        return message.channel.send({
-          embed: {
-            color: "GOLD",
-            description: `❌ I could not join the voice channel, because: **\`${error}\`**`
-          }
-        });
-      }
-    } else {
-      serverQueue.songs.push(song);
-      if (playlist) return;
-      else
-        return message.channel.send({
-          embed: {
-            color: "GOLD",
-            description: `✅ **|**  **\`${song.title}\`** has been added to the queue`
-          }
-        });
-    }
-    return;
-  }
-
-  function play(guild, song) {
-    const serverQueue = queue.get(guild.id);
-
-    if (!song) {
-      serverQueue.voiceChannel.leave();
-      return queue.delete(guild.id);
-    }
-
-    const dispatcher = serverQueue.connection
-      .play(ytdl(song.url))
-      .on("finish", () => {
-        const shiffed = serverQueue.songs.shift();
-        if (serverQueue.loop === true) {
-          serverQueue.songs.push(shiffed);
-        }
-        play(guild, serverQueue.songs[0]);
-      })
-      .on("error", error => console.error(error));
-    dispatcher.setVolume(serverQueue.volume / 100);
-
-    serverQueue.textChannel.send({
-      embed: {
-        color: "GOLD",
-        description: `✅ **|**  Start Playing: **\`${song.title}\`**`
-      }
-    });
-  }
   blacklist.findOne({ id : message.author.id }, async(err, data) => {
     if(err) throw err;
     if(!data) {
@@ -201,7 +134,7 @@ if(message.mentions.members.first()) {
         if (file) {
           if(file.timeout) {
             if(Timeout.has(`${file.name}${message.author.id}`)) return message.reply(`, a little too quick there.`)
-            file.run(bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play)
+            file.run(bot, message, args)
             Timeout.set(`${file.name}${message.author.id}`, Date.now() + file.timeout)
             setTimeout(() => {
               Timeout.delete(`${file.name}${message.author.id}`)
