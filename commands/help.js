@@ -25,17 +25,18 @@ module.exports = {
 <:S_gbarrow:810158662831177729> 5. Moderation Commands
 <:S_gbarrow:810158662831177729> 6. Rank Commands
 <:S_gbarrow:810158662831177729> 7. Custom Commands
-<:S_gbarrow:810158662831177729> 8. Economy Commands
-<:S_gbarrow:810158662831177729> 9. Ticket Commands
-<:S_gbarrow:810158662831177729> 10. Giveaway Commands
-<:S_gbarrow:810158662831177729> 11. Fun Commands
-<:S_gbarrow:810158662831177729> 12. Image Commands
-<:S_gbarrow:810158662831177729> 13. Utility Commands
-<:S_gbarrow:810158662831177729> 14. Info Commands
-<:S_gbarrow:810158662831177729> 15. Misc Commands
-<:S_gbarrow:810158662831177729> 16. Embed Commands
-<:S_gbarrow:810158662831177729> 17. API Commands
-<:S_gbarrow:810158662831177729> 18. Suggest Commands
+<:S_gbarrow:810158662831177729> 8. Reactionrole Commands
+<:S_gbarrow:810158662831177729> 9. Economy Commands
+<:S_gbarrow:810158662831177729> 10. Ticket Commands
+<:S_gbarrow:810158662831177729> 11. Giveaway Commands
+<:S_gbarrow:810158662831177729> 12. Fun Commands
+<:S_gbarrow:810158662831177729> 13. Image Commands
+<:S_gbarrow:810158662831177729> 14. Utility Commands
+<:S_gbarrow:810158662831177729> 15. Info Commands
+<:S_gbarrow:810158662831177729> 16. Misc Commands
+<:S_gbarrow:810158662831177729> 17. Embed Commands
+<:S_gbarrow:810158662831177729> 18. API Commands
+<:S_gbarrow:810158662831177729> 19. Suggest Commands
 
 <:S_Online:770582506994532363> Prefix - \`${bot.prefix}\`
 
@@ -120,6 +121,15 @@ module.exports = {
     .setDescription(`
     **__Custom Commands__**
 \`cc-create\`, \`cc-delete\`, \`cc-list\`
+    `)
+    .setFooter("©️ 2021 Saber Bot");
+      
+      const rr = new Discord.MessageEmbed()
+    .setColor("ORANGE")
+    .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+    .setDescription(`
+    **__Reactionrole Commands__**
+\`rradd\`, \`rrremove\`
     `)
     .setFooter("©️ 2021 Saber Bot");
     
@@ -258,6 +268,7 @@ module.exports = {
       moderation,
       rank,
       cc,
+      rr,
       economy,
       ticket,
       giveaway,
