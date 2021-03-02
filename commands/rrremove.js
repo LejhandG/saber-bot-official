@@ -25,4 +25,3 @@ module.exports = {
         await reactionRoleManager.deleteReactionRole({message: msg, emoji});
     }
     }
-}
