@@ -20,6 +20,8 @@ ${bot.prefix}kick @Vortex
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
     
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("You don't have permission to do that!");
+    
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
