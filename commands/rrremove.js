@@ -8,6 +8,8 @@ module.exports = {
     description: 'Removes reaction role to the message id',
     alias: [],
     run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+        
+        if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have the required permission to use this command.')
 
     const reactionRoleManager = new ReactionRoleManager(bot, {
     storage: false,
