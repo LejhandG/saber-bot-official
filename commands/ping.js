@@ -7,21 +7,11 @@ module.exports = {
   description: "Show bot's ping",
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
-    
-    const time = require('ms')
-
-let inline = true
-
-const pingMessage = await message.channel.send("Here are my Latency and API Latency");
-
-const Embede = new Discord.MessageEmbed()
-.addField("My Latency is:", `${pingMessage.createdTimestamp - message.createdTimestamp}ms`, inline)
-.setColor("#11bed3")
-.addField("My API Latency is:", `${Math.round(bot.ws.ping)}ms`, inline)
-
-Embede.setTimestamp()
-message.channel.send(Embede).catch(err => {
-            message.reply("An error occured");
-          });
+            const msg = await message.channel.send(`🏓 Pinging...`)
+            const embed = new MessageEmbed()
+            .setTitle('Pong!')
+            .setDescription(`WebSocket ping is ${bot.ws.ping}MS\nMessage edit ping is ${Math.floor(msg.createdAt - message.createdAt)}MS!`)
+            await message.channel.send(embed)
+            msg.delete()
   }
 }
