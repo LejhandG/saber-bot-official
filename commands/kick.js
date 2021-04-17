@@ -1,51 +1,44 @@
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 module.exports = {
   name: "kick",
-  timeout : 8000,
+  timeout : 10000,
   description: "Kick user",
   alias: [],
   run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+    
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("You don't have permission to do that!");
+    
+    const user = message.mentions.users.first();
+
+    if (user === message.author) return message.channel.send("You can't kick yourself.");
     
     let wrong = new MessageEmbed()
         .setTitle(`Command: ${bot.prefix}kick`)
         .setDescription(`
 **Description:** 
-Kicks the user from the guild
+Kicks the member from the guild
 **Usage:**
-${bot.prefix}kick @user
+${bot.prefix}kick [user]
 **Example:**
 ${bot.prefix}kick @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
     
-    if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("You don't have permission to do that!");
+    if(!user) return message.reply("Please mention someone to kick");
     
-    const user = message.mentions.users.first();
-    if (user) {
-      const member = message.guild.member(user);
-      const modavt = message.author.displayAvatarURL({ format: 'png' });
-      const victim = user.displayAvatarURL({ format: 'png' });
-      if (member) {
-        member
-          .kick("Optional reason that will display in the audit logs")
-          .then(() => {
-            let embed = new MessageEmbed()
-            .setTitle(`Successfully kicked ${user.tag}`)
-            .setImage("https://api.no-api-key.com/api/v2/kick?&kicked=" + victim + "&kicker=" + modavt)
-
-            message.channel.send(embed)
-          })
-          .catch(err => {
-            message.reply("I was unable to kick the member");
-            console.error(err);
-          });
-      } else {
-        message.reply("That user isn't in this guild");
-      }
-    } else {
-      message.reply(wrong);
-    }
-  }
-}
+    if(
+      message.member.roles.highest.position <=
+      message.roles.highest.position
+    )
+      return message.reply(
+        "You cant punish because you share the same role or have a lower role"
+      );
+    
+    const reason = args.slice(2).join(" ") || "No Reason Provided";
+    
+    user.kick({ reason });
+    message.channel.send(`Kicked ${user} for ${reason}`);
+  },
+};
