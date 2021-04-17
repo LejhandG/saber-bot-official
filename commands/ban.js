@@ -28,14 +28,6 @@ ${bot.prefix}ban @Vortex
     
     if(!user) return message.reply("Please mention someone to ban");
     
-    if(
-      message.member.roles.highest.position <=
-      message.roles.highest.position
-    )
-      return message.reply(
-        "You cant punish because you share the same role or have a lower role"
-      );
-    
     const reason = args.slice(2).join(" ") || "No Reason Provided";
     
     user.ban({ reason });
