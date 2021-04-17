@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js')
-const reactions = ['🇦', '🇧', '🇨', '🇩', '🇪', '🇫', '🇬', '🇭', '🇮', '🇯', '🇰', '🇱', '🇲', '🇳', '🇴', '🇵', '🇶', '🇷', '🇸', '🇹']
+const reactions = ['🇦', '🇧', '🇨', '🇩', '🇪']
 
 module.exports = {
     name: "poll",
@@ -27,7 +27,7 @@ ${bot.prefix}poll How are you all | Fine | Sad
         const [question, ...choices] = args.splice(1).join(' ').split(' | ')
         if (!question) return message.reply(wrong)
         if (!choices.length) return message.reply(wrong)
-        if (choices.length > 20) return message.reply("Your poll can't have more than 20 choices !")
+        if (choices.length > 5) return message.reply("Your poll can't have more than 5 choices !")
         message.delete()
         const sent = await message.channel.send(new Discord.MessageEmbed()
             .setTitle("New Poll !")
