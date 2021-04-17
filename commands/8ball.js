@@ -74,8 +74,9 @@ ${bot.prefix}8ball Will I get a dog?
       let response =
         responses[Math.floor(Math.random() * responses.length - 1)];
       let Embed = new MessageEmbed()
-        .setTitle(`8Ball!`)
-        .setDescription(`Your question: ${question}\nMy reply: ${response}`)
+        .setTitle(`8Ball! 🎱`)
+        .addField("**Question**", `\`\`\`Js\n${question}\`\`\``)
+        .addField("**Reply**", `\`\`\`Js\n${response}\`\`\``)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
       message.channel.send(Embed).catch(err => {
