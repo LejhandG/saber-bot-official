@@ -1,5 +1,4 @@
 const { MessageEmbed } = require('discord.js');
-const db = require("quick.db");
 
 module.exports = {
   name: "ban",
@@ -26,39 +25,20 @@ ${bot.prefix}ban @Vortex
 `)
         .setFooter(message.author.tag, message.author.avatarURL())
         .setColor(`RANDOM`);
-
-    if (user) {
-      const member = message.guild.member(user);
-      if (member) {
-        member
-          .ban({
-            reason: "They were bad!"
-          })
-          .then(() => {
-            message.reply(`Successfully banned ${user.tag}`);
-          })
-          .catch(err => {
-            message.reply("I was unable to ban the member");
-          
-  let modlogid = db.get(`moderation.${message.guild.id}.modlog.id`)
-  let modlogtoken = db.get(`moderation.${message.guild.id}.modlog.token`)
-  const hook = new Discord.WebhookClient(modlogid, modlogtoken);
-  if (!hook) return;
-
-            const embedlog = new MessageEmbed()
-            .setTitle("Message Banned")
-            .setDescription(`${user} was banned by ${message.author.tag}`)
-            .setTimestamp()
-            .setColor("ORANGE")
-          
-            return hook.send(embedlog)
-            console.error(err);
-          });
-      } else {
-        message.reply("That user isn't in this guild!");
-      }
-    } else {
-      message.reply(wrong);
-    }
-  }
-}
+    
+    if(!user) return message.reply("Please mention someone to ban");
+    
+    if(
+      message.member.roles.highest.position <=
+      message.roles.highest.position
+    )
+      return message.reply(
+        "You cant punish because you share the same role or have a lower role"
+      );
+    
+    const reason = args.slice(2).join(" ") || "No Reason Provided";
+    
+    user.ban({ reason });
+    message.channel.send(`Banned ${user} for ${reason}`);
+  },
+};
