@@ -10,7 +10,7 @@ module.exports = {
     timeout : 5000,
 description: "Announcement Command",
 alias: ["announcement", "ann"],
-run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
+run: async (client, message, args) => {
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You do not have permission to use this command');
 
         let mention;
