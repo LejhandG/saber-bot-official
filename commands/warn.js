@@ -11,7 +11,7 @@ module.exports = {
         const user = message.mentions.members.first() || message.guild.members.cache.get(args[1])
         if(!user) return message.channel.send('User not found.')
         if(
-      message.member.roles.highest.position <=
+      message.user.roles.highest.position <=
       message.roles.highest.position
     )
       return message.reply(
