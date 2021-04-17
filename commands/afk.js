@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: "afk",
     timeout : 5000,
-    description: "Show bot's ping",
+    description: "Sets your status as AFK",
     alias: [],
     run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
         const content = args.slice(1).join(" ");
