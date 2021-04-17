@@ -130,7 +130,7 @@ if(message.mentions.members.first()) {
         if(!file) return;
         if (file) {
           if(file.timeout) {
-            if(Timeout.has(`${file.name}${message.author.id}`)) return message.reply(`, a little too quick there.`)
+            if(Timeout.has(`${file.name}${message.author.id}`)) return message.reply(` a little too quick there.`)
             file.run(bot, message, args)
             Timeout.set(`${file.name}${message.author.id}`, Date.now() + file.timeout)
             setTimeout(() => {
