@@ -9,15 +9,8 @@ module.exports = {
     run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permissions to use this command.')
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[1])
-        if(!member) return message.channel.send('User not found.')
-        if(
-      message.member.roles.highest.position <=
-      message.roles.highest.position
-    )
-      return message.reply(
-        "You cant punish because you share the same role or have a lower role"
-      );
-        const reason = args.slice(2).join(" ")
+        if(!member) return message.channel.send('User not found.');
+        const reason = args.slice(2).join(" ");
         db.findOne({ guildid: message.guild.id, user: member.user.id}, async(err, data) => {
             if(err) throw err;
             if(!data) {
