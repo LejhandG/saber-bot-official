@@ -12,13 +12,12 @@ module.exports = {
     const member = message.mentions.users.first();
     if(!member) return message.reply("Please mention a member to kick!");
     
-    if(
-      message.member.roles.highest.position <=
-      member.roles.highest.position
-    )
-      return message.reply(
-        "You cant kick the member because you share the same role or your role is lower"
-      );
+    let banUser = message.mentions.members.first();
+    let bannerHighRole = message.member.roles.highest.position;
+    let getBannedHighRole = banUser.roles.highest.position;
+    if (bannerHighRole < getBannedHighRole) return message.reply("You cannot kick users that have higher roles than you!");
+//you had x = y, which is an assignment
+    if (bannerHighRole === getBannedHighRole) return message.reply("You cannot kick users that have same highest role!");
     
     const reason = args.slice(2).join(" ") || "No Reason Provided";
     
