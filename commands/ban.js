@@ -9,28 +9,20 @@ module.exports = {
     
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("You don't have permission to do that!");
     
-    const user = message.mentions.users.first();
-
-    if (user === message.author) return message.channel.send("You can't ban yourself.");
+    const member = message.mentions.users.first();
+    if(!member) return message.reply("Please mention a member to ban!");
     
-    let wrong = new MessageEmbed()
-        .setTitle(`Command: ${bot.prefix}ban`)
-        .setDescription(`
-**Description:** 
-Bans the member from the guild
-**Usage:**
-${bot.prefix}ban [user]
-**Example:**
-${bot.prefix}ban @Vortex
-`)
-        .setFooter(message.author.tag, message.author.avatarURL())
-        .setColor(`RANDOM`);
-    
-    if(!user) return message.reply("Please mention someone to ban");
+    if(
+      message.member.roles.highest.position <=
+      member.roles.highest.position
+    )
+      return message.reply(
+        "You cant ban the member because you share the same role or your role is lower"
+      );
     
     const reason = args.slice(2).join(" ") || "No Reason Provided";
     
-    user.ban({ reason });
-    message.channel.send(`Banned ${user} for ${reason}`);
+    member.ban({ reason });
+    message.channel.send(`Banned ${member} for ${reason}`);
   },
 };
