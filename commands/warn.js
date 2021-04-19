@@ -10,13 +10,12 @@ module.exports = {
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permissions to use this command.')
         const member = message.mentions.members.first();
         if(!member) return message.channel.send('User not found.');
-        if(
-      message.member.roles.highest.position <=
-      member.roles.highest.position
-    )
-      return message.reply(
-        "You cant ban the member because you share the same role or your role is lower"
-      );
+        let banUser = message.mentions.members.first();
+        let bannerHighRole = message.member.roles.highest.position;
+        let getBannedHighRole = banUser.roles.highest.position;
+        if (bannerHighRole < getBannedHighRole) return message.reply("You cannot warn users that have higher roles than you!");
+//you had x = y, which is an assignment
+        if (bannerHighRole === getBannedHighRole) return message.reply("You cannot warn users that have same highest role!");
         const reason = args.slice(2).join(" ");
         db.findOne({ guildid: message.guild.id, user: member.user.id}, async(err, data) => {
             if(err) throw err;
