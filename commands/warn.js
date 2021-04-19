@@ -8,7 +8,7 @@ module.exports = {
     alias: [],
     run: async (bot, message, args, url, searchString, youtube, handleVideo, serverQueue, play) => {
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permissions to use this command.')
-        const member = message.mentions.members.first();
+        const member = message.mentions.members.first() || message.guild.members.cache.get(args[1]);
         if(!member) return message.channel.send('User not found.');
         let banUser = message.mentions.members.first();
         let bannerHighRole = message.member.roles.highest.position;
