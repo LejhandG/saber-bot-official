@@ -9,28 +9,20 @@ module.exports = {
     
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("You don't have permission to do that!");
     
-    const user = message.mentions.users.first();
-
-    if (user === message.author) return message.channel.send("You can't kick yourself.");
+    const member = message.mentions.users.first();
+    if(!member) return message.reply("Please mention a member to kick!");
     
-    let wrong = new MessageEmbed()
-        .setTitle(`Command: ${bot.prefix}kick`)
-        .setDescription(`
-**Description:** 
-Kicks the member from the guild
-**Usage:**
-${bot.prefix}kick [user]
-**Example:**
-${bot.prefix}kick @Vortex
-`)
-        .setFooter(message.author.tag, message.author.avatarURL())
-        .setColor(`RANDOM`);
-    
-    if(!user) return message.reply("Please mention someone to kick");
+    if(
+      message.member.roles.highest.position <=
+      member.roles.highest.position
+    )
+      return message.reply(
+        "You cant kick the member because you share the same role or your role is lower"
+      );
     
     const reason = args.slice(2).join(" ") || "No Reason Provided";
     
-    user.kick({ reason });
-    message.channel.send(`Kicked ${user} for ${reason}`);
+    member.kick({ reason });
+    message.channel.send(`Kicked ${member} for ${reason}`);
   },
 };
