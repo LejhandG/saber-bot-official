@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     slash: true,
-    testOnly: true,
+    testOnly: false,
     description: 'Shows you the weather of the region',
     minArgs: 1,
     expectedArgs: '<region>',
