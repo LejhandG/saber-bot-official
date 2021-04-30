@@ -10,6 +10,7 @@ const client = new Discord.Client();
 const bot = new Client({
   disableMentions: "everyone"
 });
+const WokCommands = require('wokcommands');
 const { Player } = require('discord-player');
 const { GiveawayCreator } = require('discord-giveaway');
 const Creator = new GiveawayCreator(bot, 'mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test');
@@ -41,9 +42,22 @@ for (const file of player) {
 
 bot.on("warn", console.warn);
 bot.on("error", console.error);
-bot.on("ready", () =>
-  console.log(`[READY] ${bot.user.tag} has been successfully booted up!`)
-);
+bot.on('ready', () => {
+    console.log(`[READY] ${bot.user.tag} has been successfully booted up!`);
+
+    new WokCommands(bot, {
+      commandsDir: 'scommands',
+      testServers: ['784361380081958913'],
+      disabledDefaultCommands: [
+        'help',
+        'command',
+        'language',
+        'prefix',
+        'requiredrole'
+      ],
+      showWarns: false
+    })
+});
 bot.on("shardDisconnect", (event, id) =>
   console.log(
     `[SHARD] Shard ${id} disconnected (${event.code}) ${event}, trying to reconnect...`
