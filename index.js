@@ -13,14 +13,14 @@ const bot = new Client({
 const WokCommands = require('wokcommands');
 const { Player } = require('discord-player');
 const { GiveawayCreator } = require('discord-giveaway');
-const Creator = new GiveawayCreator(bot, 'mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test');
+const Creator = new GiveawayCreator(bot, 'YOUR MONGO DB URL');
 const db = require('quick.db')
 const dbb = require('./reconDB')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('YOUR MONGO DB URL', { useNewUrlParser: true, useUnifiedTopology: true})
 const Levels = require('discord-xp')
 
-Levels.setURL("mongodb+srv://Lejhand:united60@saberofficial.ta9ju.mongodb.net/test")
+Levels.setURL("YOUR MONGO DB URL")
 
 const Timeout = new Collection();
 
@@ -47,7 +47,7 @@ bot.on('ready', () => {
 
     new WokCommands(bot, {
       commandsDir: 'scommands',
-      testServers: ['784361380081958913'],
+      testServers: ['TEST SERVER ID'],
       disabledDefaultCommands: [
         'help',
         'command',
@@ -156,7 +156,7 @@ if(message.mentions.members.first()) {
         console.error(err)
       } finally {
         console.log(`${message.author.tag} used ${command} command`)
-        const hook = new Discord.WebhookClient('780686530556985384', 'BOv_LNi-U_Nte1yzRc5AGaxl_e8Wd5kF_lJ3ILCEggapLSWeIodWNKV_vzbSyfN_cOVy');
+        const hook = new Discord.WebhookClient('WEBHOOK ID', 'WEBHOOK TOKEN');
         hook.send(`${message.author.tag} with id ${message.author.id} used ${command} command`)
       }
     } else {
