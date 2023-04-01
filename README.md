@@ -1,6 +1,6 @@
 <img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Saber" src="https://cdn.discordapp.com/avatars/751079643980890225/64b5f19cb49b07dbfa1064255919c6d9.png?size=1024"> 
 
-# Saber Bot ✨
+# Saber Bot ✨ [Deprecated]
 
 [![](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm)](https://github.com/discordjs)
 >  A Mulitpurpose Discord Bot used by 200K+ users and more than 170 servers. 
