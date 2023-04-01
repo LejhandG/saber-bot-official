@@ -31,7 +31,7 @@ const activities_list = [
 client.on('ready', () => {
 console.log(`Logged in as ${client.user.tag}!`);
 console.log("Streamstatus by Lejhand")
-const hook = new Discord.WebhookClient('780685250149482528', 'bZ7YupqNKT_nWdmJX-9nNen5rIPlsfnGdTqpbTCVO8YKNZg7q7BSpD6MlbFE16K0EbnW');
+const hook = new Discord.WebhookClient('WEBHOOK ID', 'WEBHOOK TOKEN');
 hook.send("Bot Is Online")
 
 setInterval(() => {
@@ -40,4 +40,4 @@ setInterval(() => {
     }, 10000);
 });
 
-client.login('NzUxMDc5NjQzOTgwODkwMjI1.X1D3bQ.4HuQT9Gh9K0OZpWAzBfCX7yVYkY');
+client.login('YOUR TOKEN');
